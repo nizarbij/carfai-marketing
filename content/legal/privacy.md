@@ -1,12 +1,9 @@
 # CarFai Privacy Policy
 
-> ⚠️ **v0 DRAFT — NOT FOR PUBLICATION.** For lawyer review only.
-> See `docs/legal/README.md` for status + placeholders.
+**Effective date**: 2026-05-20
+**Last updated**: 2026-05-20
 
-**Effective date**: [Effective Date]
-**Last updated**: [Effective Date]
-
-This Privacy Policy describes how **[CarFai Legal Entity]** ("CarFai", "we", "us", "our") collects, uses, shares, and protects information when you use the CarFai mobile application and any related services (collectively, the "Service").
+This Privacy Policy describes how **CarFai** ("CarFai", "we", "us", "our") collects, uses, shares, and protects information when you use the CarFai mobile application and any related services (collectively, the "Service").
 
 By using the Service you agree to the collection and use of information in accordance with this Policy. If you do not agree, do not use the Service.
 
@@ -57,7 +54,7 @@ The Service is built on top of several third-party processors. Each is bound by 
 | Processor | Purpose | Data shared | Region | Privacy link |
 |---|---|---|---|---|
 | **Anthropic, PBC** | AI processing (Claude API) for AI Advisor, document classification, maintenance recommendations | Vehicle metadata, document text/images, conversation prompts, OBD2 readings (when relevant to a query) | United States | https://www.anthropic.com/legal/privacy |
-| **Supabase Inc.** | Database, authentication, storage (your account, vehicles, documents) | All data described in Section 1 except payment card details | United States (provisioned region as of [Effective Date]) | https://supabase.com/privacy |
+| **Supabase Inc.** | Database, authentication, storage (your account, vehicles, documents) | All data described in Section 1 except payment card details | United States (provisioned region as of 2026-05-20) | https://supabase.com/privacy |
 | **RevenueCat, Inc.** | Subscription state management (interfaces with Apple/Google) | Subscription tier, purchase history, an opaque ID linking you to Apple/Google | United States | https://www.revenuecat.com/privacy |
 | **Resend Inc.** | Transactional email delivery (welcome, receipts, password reset) | Email address, language preference, transactional content | United States | https://resend.com/legal/privacy-policy |
 | **Apple Inc.** | App Store distribution, In-App Purchase processing (iOS) | Subscription state, IAP events; payment card details remain with Apple | United States | https://www.apple.com/legal/privacy/ |
@@ -80,7 +77,7 @@ When you use these features:
 - We do **not** send Anthropic your authentication credentials, payment information, or contact details (other than your opaque user ID).
 - Anthropic may temporarily retain prompts and outputs for safety classification, abuse detection, and operational diagnostics. See Anthropic's Privacy Policy for retention specifics.
 
-**Outputs from the AI Advisor are AI-generated and may be incorrect, incomplete, or out of date.** Treat them as informational guidance, not professional advice. See `AI_DISCLOSURE.md` for the full caveat.
+**Outputs from the AI Advisor are AI-generated and may be incorrect, incomplete, or out of date.** Treat them as informational guidance, not professional advice. See `/ai-disclosure` for the full caveat.
 
 ### 4.1 Three-layer data strategy for AI features
 
@@ -114,7 +111,7 @@ Outputs are returned as aggregate JSON like `{ avg_price, median_price, sample_s
 
 ### 4.4 Right to request human review of AI decisions
 
-For users in Quebec (Law 25 s. 12.1) and the EEA / UK (GDPR Art. 22), you have the right not to be subject to a solely-automated decision with legal or significant effects on you. The AI Advisor's outputs in CarFai are **informational** (recommendations, valuations, maintenance suggestions) — they are not legally binding decisions. However, if you believe an AI Advisor output materially affected a decision you made, you may request human review by contacting `[Email: privacy@carfai.app]` with the analysis identifier (visible at the bottom of every Detailed Analysis output).
+For users in Quebec (Law 25 s. 12.1) and the EEA / UK (GDPR Art. 22), you have the right not to be subject to a solely-automated decision with legal or significant effects on you. The AI Advisor's outputs in CarFai are **informational** (recommendations, valuations, maintenance suggestions) — they are not legally binding decisions. However, if you believe an AI Advisor output materially affected a decision you made, you may request human review by contacting privacy@carfai.app with the analysis identifier (visible at the bottom of every Detailed Analysis output).
 
 We will respond within 30 days. The review is performed by CarFai personnel (the founder, in v1; the support team thereafter).
 
@@ -158,11 +155,11 @@ Depending on your jurisdiction, you have some or all of the following rights:
 
 **California residents (CCPA/CPRA)** also have the right to know what categories of personal information are collected, the categories of sources, the purposes of use, and the categories of third parties with whom data is shared (covered above), and the right to opt out of "sale" or "sharing" of personal information. **CarFai does not sell or share personal information for cross-context behavioral advertising.** You can confirm this and exercise the related opt-out at any time from **Settings → About → Do Not Sell or Share My Personal Information**.
 
-**Other US state residents (added 2026-05-18 — M1.10)** — Texas (TDPSA, eff. 2024), Colorado (CPA), Connecticut (CTDPA), Virginia (VCDPA), Utah (UCPA), Oregon (OCPA), Montana (MTCDPA), Indiana (INCDPA), Tennessee (TIPA), Iowa (ICDPA), Delaware (DPDPA), New Hampshire (NHPA), New Jersey (NJDPL) and other state comprehensive privacy laws confer substantially the same rights as the EU baseline above: access, deletion, correction, portability, and opt-out of targeted advertising / sale / profiling for significant decisions. **CarFai does not engage in targeted advertising, does not sell personal information, and does not use personal information for profiling with legal or similarly significant effects.** To exercise any of these rights, contact `[Email: privacy@carfai.app]` or use the in-app **Settings → About → Do Not Sell or Share My Personal Information** entry.
+**Other US state residents (added 2026-05-18 — M1.10)** — Texas (TDPSA, eff. 2024), Colorado (CPA), Connecticut (CTDPA), Virginia (VCDPA), Utah (UCPA), Oregon (OCPA), Montana (MTCDPA), Indiana (INCDPA), Tennessee (TIPA), Iowa (ICDPA), Delaware (DPDPA), New Hampshire (NHPA), New Jersey (NJDPL) and other state comprehensive privacy laws confer substantially the same rights as the EU baseline above: access, deletion, correction, portability, and opt-out of targeted advertising / sale / profiling for significant decisions. **CarFai does not engage in targeted advertising, does not sell personal information, and does not use personal information for profiling with legal or similarly significant effects.** To exercise any of these rights, contact privacy@carfai.app or use the in-app **Settings → About → Do Not Sell or Share My Personal Information** entry.
 
 **UAE PDPL / Saudi PDPL / Egypt DPL** — equivalent rights to access, rectification, deletion, and objection apply. We comply with the local supervisory authority's requirements in each country.
 
-To exercise any right, contact `[Email: privacy@carfai.app]`. We respond within 30 days (or the period required by your jurisdiction's law if shorter).
+To exercise any right, contact privacy@carfai.app. We respond within 30 days (or the period required by your jurisdiction's law if shorter).
 
 ## 8. International data transfers
 
@@ -216,9 +213,9 @@ Listed for transparency. Not currently processing your Personal Data. Will be ad
 
 ## 14. Contact
 
-- **General privacy inquiries**: `[Email: privacy@carfai.app]`
+- **General privacy inquiries**: privacy@carfai.app
 - **Data Protection Officer (GDPR)**: `[DPO Email: dpo@carfai.app]`
-- **Postal address**: `[CarFai Legal Entity], [Registered Address]`
+- **Postal address**: `CarFai, address available on request via privacy@carfai.app`
 - **EEA representative (if required by GDPR Article 27)**: `[TBD by lawyer]`
 - **UK representative (if required by UK GDPR Article 27)**: `[TBD by lawyer]`
 
@@ -228,4 +225,4 @@ Listed for transparency. Not currently processing your Personal Data. Will be ad
 
 | Version | Date | Notes |
 |---|---|---|
-| v0 (DRAFT) | [Effective Date] | First lawyer-review draft. Not yet published. |
+| v1 | 2026-05-20 | Initial publication. |

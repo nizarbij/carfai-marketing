@@ -42,7 +42,7 @@ export function Maintenance() {
               alt="CarFai OBD2 dashboard: 2 fault codes (P0000 info, P0043 warning), key readings (battery 13.1 V, coolant 63 °C, odometer 65,415 km), and a 30-day drive summary."
               fill
               sizes="(min-width: 768px) 320px, 80vw"
-              className="object-cover"
+              className="phone-screen-img"
             />
           ) : (
             <div className="absolute inset-0 flex items-center justify-center text-center px-6 bg-paperDeep">
@@ -68,7 +68,7 @@ export function Maintenance() {
                 <p className="font-mono text-xs uppercase tracking-widest text-accent mb-2">
                   {b.eyebrow}
                 </p>
-                <p className="text-base md:text-lg text-slate2 leading-relaxed max-w-prose">
+                <p className="text-lg md:text-xl text-slate2 leading-relaxed max-w-prose">
                   {b.body}
                 </p>
               </li>

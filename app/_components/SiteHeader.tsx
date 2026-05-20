@@ -8,15 +8,15 @@ import Link from 'next/link';
 export function SiteHeader() {
   return (
     <header className="sticky top-0 z-40 backdrop-blur-sm bg-paper/85 border-b border-rule">
-      <div className="mx-auto max-w-6xl px-6 h-16 flex items-center justify-between">
+      <div className="mx-auto max-w-6xl px-6 h-20 flex items-center justify-between">
         <Link href="/" aria-label="CarFai home" className="flex items-center">
           <Image
             src="/logo.png"
             alt="CarFai"
-            width={140}
-            height={32}
+            width={220}
+            height={48}
             priority
-            className="h-7 w-auto"
+            className="h-11 md:h-12 w-auto"
           />
         </Link>
 

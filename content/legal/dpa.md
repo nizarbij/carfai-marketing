@@ -1,15 +1,12 @@
 # CarFai Data Processing Addendum (DPA) — B2B
 
-> ⚠️ **v0 DRAFT — NOT FOR PUBLICATION.** For lawyer review only.
-> This DPA is intended for B2B customers (Pro / Fleet / Enterprise tiers) where CarFai acts as a Processor under GDPR / UK GDPR / Swiss FADP / equivalents.
-
 **Effective date**: The date this DPA is signed by both parties or, if accepted electronically through the CarFai admin dashboard, the date of acceptance.
 
 ## 1. Parties
 
 This Data Processing Addendum ("DPA") is between:
 - **Customer** ("you" or "Controller") — the entity identified in the CarFai subscription agreement.
-- **CarFai** — **[CarFai Legal Entity]** ("we" or "Processor"), located at **[Registered Address]**.
+- **CarFai** — **CarFai** ("we" or "Processor"), located at **address available on request via privacy@carfai.app**.
 
 ## 2. Scope and applicability
 
@@ -131,9 +128,9 @@ CarFai may update this DPA to reflect changes in applicable law or in CarFai's p
 
 ## 15. Governing law
 
-This DPA is governed by the laws of **[Governing Law jurisdiction]** to the extent consistent with applicable Data Protection Laws. Mandatory provisions of Data Protection Laws supersede the choice of law where they apply.
+This DPA is governed by the laws of **Quebec, Canada** to the extent consistent with applicable Data Protection Laws. Mandatory provisions of Data Protection Laws supersede the choice of law where they apply.
 
-## Schedule 1 — Sub-processors (as of [Effective Date])
+## Schedule 1 — Sub-processors (as of 2026-05-20)
 
 | Sub-processor | Service provided | Region | Privacy link |
 |---|---|---|---|
@@ -212,4 +209,4 @@ Signature: __________________________
 
 | Version | Date | Notes |
 |---|---|---|
-| v0 (DRAFT) | [Effective Date] | First lawyer-review draft. Not yet published. |
+| v1 | 2026-05-20 | Initial publication. |

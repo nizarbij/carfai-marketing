@@ -1,11 +1,8 @@
 # CarFai Cookie Policy (web)
 
-> ⚠️ **v0 DRAFT — NOT FOR PUBLICATION.** For lawyer review only.
-> The CarFai mobile application does NOT use cookies. This Policy covers ONLY the marketing website at `carfai.app` (and subdomains), which is built post-launch (Sprint 4 per `RELEASE_PLAN.md` Section H).
+**Effective date**: 2026-05-20
 
-**Effective date**: [Effective Date]
-
-This Cookie Policy explains how `[CarFai Legal Entity]` ("CarFai", "we") uses cookies and similar technologies on the CarFai marketing website (`carfai.app`).
+This Cookie Policy explains how `CarFai` ("CarFai", "we") uses cookies and similar technologies on the CarFai marketing website (`carfai.app`).
 
 ## What are cookies
 
@@ -74,7 +71,7 @@ The **CarFai mobile application** (iOS + Android) does NOT use cookies. The app 
 - iOS: Keychain (via `@react-native-async-storage/async-storage`)
 - Android: encrypted AsyncStorage
 
-These are NOT cookies and are governed by the [Privacy Policy](PRIVACY_POLICY.md), not this Policy.
+These are NOT cookies and are governed by the [Privacy Policy](/privacy), not this Policy.
 
 ## Updates
 
@@ -82,8 +79,8 @@ We may update this Policy. Material changes will be notified via the cookie cons
 
 ## Contact
 
-- General privacy: `[Email: privacy@carfai.app]`
-- Postal: `[CarFai Legal Entity], [Registered Address]`
+- General privacy: privacy@carfai.app
+- Postal: `CarFai, address available on request via privacy@carfai.app`
 
 ---
 
@@ -91,4 +88,4 @@ We may update this Policy. Material changes will be notified via the cookie cons
 
 | Version | Date | Notes |
 |---|---|---|
-| v0 (DRAFT) | [Effective Date] | First lawyer-review draft. Not yet published. Marketing site itself ships Sprint 4 per RELEASE_PLAN.md Section H. |
+| v1 | 2026-05-20 | Initial publication. |

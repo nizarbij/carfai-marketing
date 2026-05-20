@@ -1,12 +1,9 @@
 # CarFai Terms of Service
 
-> ⚠️ **v0 DRAFT — NOT FOR PUBLICATION.** For lawyer review only.
-> See `docs/legal/README.md` for status + placeholders.
+**Effective date**: 2026-05-20
+**Last updated**: 2026-05-20
 
-**Effective date**: [Effective Date]
-**Last updated**: [Effective Date]
-
-These Terms of Service ("Terms") govern your access to and use of the CarFai mobile application and related services (the "Service") provided by **[CarFai Legal Entity]** ("CarFai", "we", "us", "our").
+These Terms of Service ("Terms") govern your access to and use of the CarFai mobile application and related services (the "Service") provided by **CarFai** ("CarFai", "we", "us", "our").
 
 By creating an account, downloading the app, or otherwise accessing the Service, you agree to these Terms. **If you do not agree, do not use the Service.**
 
@@ -24,7 +21,7 @@ You may register for an account using:
 - Google Sign In
 - Microsoft Sign In
 
-You are responsible for maintaining the confidentiality of your credentials. You must promptly notify us at `[Email: security@carfai.app]` if you suspect unauthorized access. You are responsible for activities that occur under your account.
+You are responsible for maintaining the confidentiality of your credentials. You must promptly notify us at security@carfai.app if you suspect unauthorized access. You are responsible for activities that occur under your account.
 
 You agree to provide accurate, current information at registration and to keep it accurate.
 
@@ -98,7 +95,7 @@ For subscriptions (Sections 4.1-4.6), the 14-day right does NOT apply once a bil
 
 You are solely responsible for verifying any AI-generated information against authoritative sources before acting on it. **CarFai disclaims all liability for actions taken based on AI Advisor outputs to the maximum extent permitted by law.**
 
-See `AI_DISCLOSURE.md` for the complete disclosure.
+See `/ai-disclosure` for the complete disclosure.
 
 ## 6. OBD2 integration disclaimer
 
@@ -129,7 +126,7 @@ We do not claim ownership of User Content. Upon account deletion, we delete your
 
 ## 9. Acceptable use
 
-Your use of the Service is subject to the **Acceptable Use Policy** at `https://carfai.app/aup` (or in `docs/legal/ACCEPTABLE_USE_POLICY.md`). Prohibited uses include:
+Your use of the Service is subject to the **Acceptable Use Policy** at `https://carfai.app/aup` (or in `docs/legal//aup`). Prohibited uses include:
 - Illegal activity
 - Harassment or abuse of other users
 - Attempts to circumvent access controls, RBAC, or token limits
@@ -155,7 +152,7 @@ The Service relies on third-party services including Apple, Google, Anthropic, S
 ## 12. Termination
 
 ### 12.1 By you
-You may terminate your account at any time via the in-app "Delete account" flow or by contacting `[Email: support@carfai.app]`.
+You may terminate your account at any time via the in-app "Delete account" flow or by contacting support@carfai.app.
 
 ### 12.2 By us
 We may suspend or terminate your account if:
@@ -209,10 +206,10 @@ You agree to indemnify, defend, and hold harmless CarFai and its officers, direc
 ## 16. Dispute resolution
 
 ### 16.1 Informal resolution
-Before filing a formal dispute, you agree to attempt informal resolution by contacting `[Email: legal@carfai.app]`. We will respond within 30 days.
+Before filing a formal dispute, you agree to attempt informal resolution by contacting legal@carfai.app. We will respond within 30 days.
 
 ### 16.2 [JURISDICTION-SPECIFIC clauses to be reviewed by lawyer]
-**[FOR US USERS]**: Any dispute arising out of or relating to these Terms shall be resolved by **binding individual arbitration** administered by **[Arbitration Forum: e.g., AAA]** under its consumer arbitration rules. **You waive the right to bring claims as a class action or in a representative capacity.** This arbitration agreement does not apply to claims that may be brought in small claims court.
+**[FOR US USERS]**: Any dispute arising out of or relating to these Terms shall be resolved by **binding individual arbitration** administered by **JAMS** under its consumer arbitration rules. **You waive the right to bring claims as a class action or in a representative capacity.** This arbitration agreement does not apply to claims that may be brought in small claims court.
 
 **[FOR EU/UK USERS]**: Mandatory consumer protection laws of your country of residence apply, and you may also bring claims in the courts of your country.
 
@@ -223,7 +220,7 @@ Any claim must be brought within **one (1) year** from the date the cause of act
 
 ## 17. Governing law
 
-These Terms are governed by the laws of **[Governing Law jurisdiction]**, without regard to conflict-of-laws principles. The choice of law does not deprive consumers of mandatory protections under the law of their country of habitual residence.
+These Terms are governed by the laws of **Quebec, Canada**, without regard to conflict-of-laws principles. The choice of law does not deprive consumers of mandatory protections under the law of their country of habitual residence.
 
 ## 18. Apple-specific provisions
 
@@ -232,7 +229,7 @@ If you use the iOS app, the following additional terms apply:
 - Apple is a third-party beneficiary of these Terms and may enforce them against you.
 - In the event of a Service failure to conform to applicable warranties, you may notify Apple, who will refund the purchase price (if any). Apple has no other warranty obligation.
 - Maintenance, support, and product liability claims are addressed by these Terms; Apple is not responsible.
-- Compliance with U.S. export law, sanctioned-country lists, and Apple's standard EULA (referenced via `EULA.md`) applies.
+- Compliance with U.S. export law, sanctioned-country lists, and Apple's standard EULA (referenced via `/eula`) applies.
 
 ## 19. Changes to the Terms
 
@@ -245,13 +242,13 @@ We may update these Terms. We will notify you of material changes via email and 
 - **No waiver** — our failure to enforce a provision is not a waiver of future enforcement.
 - **Assignment** — you may not assign these Terms without our consent. We may assign these Terms to an affiliate or in connection with a merger or sale.
 - **Force majeure** — neither party is liable for delays due to circumstances beyond its reasonable control.
-- **Notices** — we send notices to your registered email or via in-app notification. You send notices to `[Email: legal@carfai.app]`.
+- **Notices** — we send notices to your registered email or via in-app notification. You send notices to legal@carfai.app.
 
 ## 21. Contact
 
-- **General**: `[Email: support@carfai.app]`
-- **Legal**: `[Email: legal@carfai.app]`
-- **Postal**: `[CarFai Legal Entity], [Registered Address]`
+- **General**: support@carfai.app
+- **Legal**: legal@carfai.app
+- **Postal**: `CarFai, address available on request via privacy@carfai.app`
 
 ---
 
@@ -259,4 +256,4 @@ We may update these Terms. We will notify you of material changes via email and 
 
 | Version | Date | Notes |
 |---|---|---|
-| v0 (DRAFT) | [Effective Date] | First lawyer-review draft. Not yet published. |
+| v1 | 2026-05-20 | Initial publication. |

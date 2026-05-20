@@ -13,14 +13,17 @@ export function Footer() {
               <Image
                 src="/logo.png"
                 alt="CarFai"
-                width={160}
-                height={36}
-                className="h-9 w-auto"
+                width={240}
+                height={56}
+                className="h-14 w-auto"
               />
             </Link>
-            <p className="mt-4 text-sm text-slate2 max-w-prose">
-              AI-assisted vehicle ownership. Cost tracking, OBD2 diagnostics,
-              document scanning, and an advisor that actually knows your car.
+            <p className="mt-5 text-sm text-slate2 max-w-prose">
+              <strong className="text-ink font-medium">
+                Car Financial &amp; Administrative Intelligence
+              </strong>
+              {' '}— powered by AI. Cost tracking, OBD2 diagnostics, document
+              scanning, and an advisor that actually knows your car.
             </p>
           </div>
 
@@ -34,7 +37,11 @@ export function Footer() {
                   Home
                 </Link>
               </li>
-              {/* H1b will fill in /pricing, /contact, /support, /press */}
+              <li>
+                <Link href="/pricing" className="hover:text-accent">
+                  Pricing
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -56,7 +63,6 @@ export function Footer() {
 
         <div className="mt-10 pt-6 border-t border-rule text-xs text-slate2 flex flex-wrap gap-x-6 gap-y-2">
           <span>© {year} CarFai</span>
-          <span>Built in Québec.</span>
           <a
             href="mailto:privacy@carfai.app"
             className="hover:text-accent"

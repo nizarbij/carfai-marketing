@@ -56,70 +56,82 @@ if (!API_KEY) {
 /* ─── The hero prompt — locked per docs/DESIGN_TOKENS.md ──────────────────── */
 
 const PROMPT = `
-Editorial product photograph for a mobile-app marketing site. Wide
-cinematic landscape composition. Hyper-realistic, shot on a full-
-frame DSLR with a 35mm prime lens at f/2.8.
+Editorial product photograph for a mobile-app marketing landing.
+Wide cinematic landscape composition. Hyper-realistic, shot on a
+full-frame DSLR with a 50mm prime lens at f/2.0. Slight overhead
+angle — the camera looks DOWN from approximately driver's-eye
+height onto the lap area.
 
-Subject: a clean human hand holding a modern smartphone vertically.
-The phone is the visual hero of the frame. CRITICAL: the phone's
-display is completely BLACK / OFF / powered down — a pure dark
-matte rectangular surface with subtle ambient reflections only.
-Absolutely NO user interface, NO text, NO icons, NO graphics, NO
-brand wordmarks on the screen. The screen reads as glossy black
-glass. We will composite real app UI onto this screen separately
-in code.
+Subject: a single human hand holding a modern smartphone
+vertically, positioned ABOVE a car's steering wheel. The phone
+is closer to the camera; the steering wheel is just below it,
+softly out of focus, framing the lower third of the image.
 
-The hand: relaxed, natural grip, holding the phone from the bottom
-edge with thumb visible. Real human skin, slightly weathered (not
-model-perfect). Plain neutral-toned long-sleeve cuff visible at
-the wrist — no jewelry, no watch, no tattoos, no nail polish.
+CRITICAL — the phone screen: completely BLACK / OFF / matte
+glass. NO user interface, NO text, NO icons, NO graphics, NO
+brand wordmarks, NO glow, NO patterns. Just dark glossy glass
+with a subtle gradient reflection of the warm cabin ambient
+light. We composite real app UI onto this screen later in code.
 
-Context: out-of-focus warm car interior in the background — soft
-hint of a dashboard surface, a slice of steering wheel rim, and
-a window letting in golden sunlight. The car is generic premium
-(no badges, no logos, no recognizable manufacturer). The viewer
-should read this as 'sitting in a parked car at sunset, checking
-something on a phone' without ever seeing a brand mark.
+The hand: a single relaxed adult hand, palm up, holding the
+phone from the bottom edge between thumb and the side of the
+hand. Real human skin, slightly weathered (not model-perfect).
+Plain neutral cotton sleeve cuff visible at the wrist. No watch,
+no jewelry, no tattoos, no nail polish. Five fingers, total.
+ONE hand only.
+
+The steering wheel: a generic premium-sedan steering wheel,
+leather-wrapped, three-spoke. NO recognizable badges, NO
+manufacturer logos, NO model markings, NO visible audio buttons
+with brand names. The wheel sits in the bottom third of the
+frame, out of focus, providing context.
+
+Background: the upper portion of the frame is the dashboard
+edge and the lower part of the windshield, also out of focus.
+A thin slice of golden sunlight enters from the upper right
+corner of the frame. The cabin is calm and ordinary — no
+passengers, no clutter.
 
 Composition (CRITICAL — 16:9 landscape):
-- Phone occupies the CENTRE-RIGHT, vertically oriented, tilted
-  about 8 degrees toward the camera so the screen catches some
-  warm ambient light.
-- Hand enters from the bottom-right corner of the frame.
-- LEFT THIRD of the frame is the soft out-of-focus dashboard
-  surface — generous negative space.
-- Background extends past the phone with depth, not a flat wall.
+- Phone centered horizontally, occupying the centre-top half
+  of the frame (about 35% of frame height).
+- Steering wheel rim arc visible across the bottom 25–30% of
+  the frame, out of focus.
+- Hand enters from the bottom-right.
+- The camera looks slightly down (~15-degree top-down angle)
+  so the phone face is visible to the viewer.
 
-Light: golden-hour sunlight raking in from the right edge of the
-frame, off-camera. Warm 3000K color temperature. One warm rim
-catchlight on the phone's right bezel. Soft warm ambient
-reflection on the black screen surface (so the screen isn't
-matte-dead — it has gentle gradient reflection of the warm
-interior). The hand is lit warmly from the right, slightly
-shadowed on the left.
+Light: warm golden-hour sunlight from upper right (off-frame).
+3000K color temperature. Soft directional light wrapping the
+phone bezel and the side of the hand. The dashboard ambient
+provides cool fill on the underside of the phone. The black
+phone screen catches a soft warm gradient reflection (so it
+doesn't look matte-dead).
 
-Color story: warm cream highlights, deep charcoal shadows, no
-saturated colors anywhere. Cream paper / charcoal / matte black
-phone / warm skin. ABSOLUTELY no teal, no blue, no green — the
-brand color goes on the composited app UI layer later.
+Color story: warm cream highlights, deep charcoal shadows,
+muted leather brown on the wheel. ABSOLUTELY NO saturated
+colors — no teal, no blue, no green, no red, no neon. The
+brand color will be added in code via the composited app UI.
 
-Camera detail: subtle film grain, mild lens vignetting in corners,
-true depth of field (phone tack sharp, hand sharp, background
-softly blurred). NO HDR, NO over-sharpening, NO clarity boost,
-NO aggressive bokeh balls.
+Camera detail: subtle film grain, mild lens vignetting, true
+shallow DOF (phone sharp; hand sharp; wheel + dashboard soft).
+NO HDR, NO clarity boost, NO over-sharpening, NO heavy bokeh
+balls.
 
-Mood: calm, considered, premium, lived-in. The viewer feels like
-they're watching someone in their own car at the end of the day.
+Mood: calm, considered, premium, lived-in. The viewer feels
+like they have just sat in their parked car at the end of a
+long day and pulled out their phone.
 
-Strictly forbidden: anything on the phone screen (text / icons /
-UI / brand / glow / wallpaper / pattern — the screen must be
-pure black glass), square crop, vertical crop, AI-art glossy
-plastic, impossible specular highlights, visible badges or
-text anywhere in the frame, sci-fi blue HUDs, holograms, neon,
-anime stylization, motion blur, rain, lens flare flares,
-sunset gradient skies, multiple phones, two hands.
+Strictly forbidden: anything on the phone screen (text / icons
+/ UI / glow / wallpaper / brand mark — phone screen must be
+PURE BLACK GLASS), square crop, vertical crop, two hands,
+extra fingers, sci-fi HUDs, holograms, neon, fisheye, motion
+blur, rain on the windshield, dramatic lens flare, visible
+manufacturer badges, gear-shift detail in foreground, GPS
+unit, hanging air freshener, child seat, sunset gradient
+in sky, anime stylization, glossy CGI feel.
 
-Output: highest resolution available, 16:9 aspect ratio.
+Output: highest resolution available, strict 16:9 aspect ratio.
 `.trim();
 
 /* ─── Generate ───────────────────────────────────────────────────────────── */

@@ -67,8 +67,8 @@ export function ScanTrack() {
       eyebrow: '01 · scan',
       title:   'Point. Don’t type.',
       body:    'Snap any receipt, repair order, registration, or quote. The model pulls amount, vendor, date, and category before you put the phone down.',
-      image:   '/app-home.jpg',
-      alt:     'CarFai home screen showing the current vehicle and a camera-first quick-action layout.',
+      image:   '/app-scan-extract.jpg',
+      alt:     'CarFai Review & Refine screen showing date, vendor and amount auto-extracted from a maintenance receipt, plus AI-inferred type, category, and line items.',
     },
     {
       eyebrow: '02 · categorize',
@@ -105,7 +105,7 @@ export function ScanTrack() {
               <h3 className="text-3xl md:text-4xl font-medium tracking-tight text-ink leading-[1.1] mb-4">
                 {s.title}
               </h3>
-              <p className="text-base md:text-lg text-slate2 leading-relaxed max-w-prose">
+              <p className="text-lg md:text-xl text-slate2 leading-relaxed max-w-prose">
                 {s.body}
               </p>
             </div>
@@ -127,7 +127,7 @@ export function ScanTrack() {
                 alt={s.alt}
                 fill
                 sizes="(min-width: 768px) 320px, 80vw"
-                className="object-cover"
+                className="phone-screen-img"
               />
             </div>
           ))}

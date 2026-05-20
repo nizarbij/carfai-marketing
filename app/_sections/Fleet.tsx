@@ -99,7 +99,7 @@ export function Fleet() {
                   alt={c.alt}
                   fill
                   sizes="200px"
-                  className="object-cover"
+                  className="phone-screen-img"
                 />
               </div>
 
@@ -108,10 +108,10 @@ export function Fleet() {
                 <p className="font-mono text-xs uppercase tracking-widest text-accent mb-3">
                   {String(i + 1).padStart(2, '0')} · {c.eyebrow}
                 </p>
-                <h3 className="text-xl md:text-2xl font-medium tracking-tight text-ink leading-tight mb-3">
+                <h3 className="text-2xl md:text-3xl font-medium tracking-tight text-ink leading-tight mb-3">
                   {c.title}
                 </h3>
-                <p className="text-base text-slate2 leading-relaxed">
+                <p className="text-lg text-slate2 leading-relaxed">
                   {c.body}
                 </p>
               </div>

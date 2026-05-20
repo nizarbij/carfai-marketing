@@ -2,9 +2,9 @@
 
 > ⚠️ **v0 DRAFT — NOT FOR PUBLICATION.** For lawyer review only.
 
-**Effective date**: [Effective Date]
+**Effective date**: 2026-05-20
 
-This End-User License Agreement ("EULA") is between you and **[CarFai Legal Entity]** ("CarFai") and governs your use of the CarFai mobile application ("Software").
+This End-User License Agreement ("EULA") is between you and **CarFai** ("CarFai") and governs your use of the CarFai mobile application ("Software").
 
 ## 1. Apple App Store users — standard EULA applies
 
@@ -31,7 +31,7 @@ You may not:
 
 ## 5. AI processing — special caveat
 
-The Software uses Anthropic Claude to power AI features. **AI outputs are not advice.** See `AI_DISCLOSURE.md` for the full disclosure.
+The Software uses Anthropic Claude to power AI features. **AI outputs are not advice.** See `/ai-disclosure` for the full disclosure.
 
 You acknowledge that:
 - AI outputs may be incorrect, incomplete, or out of date.
@@ -71,7 +71,7 @@ For users of the Apple App Store version:
 
 ## 12. Governing law
 
-This EULA is governed by the laws of **[Governing Law jurisdiction]**, without regard to conflict-of-laws principles, except where local consumer protection laws apply (in which case those laws govern).
+This EULA is governed by the laws of **Quebec, Canada**, without regard to conflict-of-laws principles, except where local consumer protection laws apply (in which case those laws govern).
 
 ## 13. Entire agreement
 
@@ -79,8 +79,8 @@ This EULA, together with the Terms of Service, Privacy Policy, AI Disclosure, an
 
 ## 14. Contact
 
-- `[Email: legal@carfai.app]`
-- `[CarFai Legal Entity], [Registered Address]`
+- legal@carfai.app
+- `CarFai, address available on request via privacy@carfai.app`
 
 ---
 
@@ -88,4 +88,4 @@ This EULA, together with the Terms of Service, Privacy Policy, AI Disclosure, an
 
 | Version | Date | Notes |
 |---|---|---|
-| v0 (DRAFT) | [Effective Date] | First lawyer-review draft. Not yet published. |
+| v1 | 2026-05-20 | Initial publication. |

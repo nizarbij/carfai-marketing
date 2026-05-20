@@ -2,7 +2,7 @@
 
 > ⚠️ **v0 DRAFT — NOT FOR PUBLICATION.** For lawyer review only.
 
-**Effective date**: [Effective Date]
+**Effective date**: 2026-05-20
 
 This Acceptable Use Policy ("AUP") sets out activities that are prohibited when using the CarFai mobile application and related services (the "Service"). The AUP supplements the Terms of Service. **Violations may result in immediate suspension or termination of your account, without refund.**
 
@@ -72,7 +72,7 @@ You may not:
 
 You may not conduct security testing, vulnerability scanning, or penetration testing against CarFai's infrastructure (the mobile app, Supabase backend, AI Advisor edge functions, or any other component) without our **written permission**.
 
-If you discover a security vulnerability, we welcome a responsible disclosure to `[Email: security@carfai.app]`. We commit to responding within 72 hours and to not pursuing legal action against good-faith researchers who follow our forthcoming **Responsible Disclosure Policy** (post-launch).
+If you discover a security vulnerability, we welcome a responsible disclosure to security@carfai.app. We commit to responding within 72 hours and to not pursuing legal action against good-faith researchers who follow our forthcoming **Responsible Disclosure Policy** (post-launch).
 
 ## 10. B2B-specific prohibitions
 
@@ -91,7 +91,7 @@ Your use of features that integrate with third-party services must comply with t
 
 ## 12. Reporting violations
 
-If you become aware of a violation of this AUP by another user (including in B2B contexts), report it to `[Email: support@carfai.app]`. We investigate reports and respond within 5 business days.
+If you become aware of a violation of this AUP by another user (including in B2B contexts), report it to support@carfai.app. We investigate reports and respond within 5 business days.
 
 ## 13. Consequences of violation
 
@@ -109,9 +109,9 @@ We may update this AUP. Material changes will be notified via email and require 
 
 ## 15. Contact
 
-- General: `[Email: support@carfai.app]`
-- Security: `[Email: security@carfai.app]`
-- Legal: `[Email: legal@carfai.app]`
+- General: support@carfai.app
+- Security: security@carfai.app
+- Legal: legal@carfai.app
 
 ---
 
@@ -119,4 +119,4 @@ We may update this AUP. Material changes will be notified via email and require 
 
 | Version | Date | Notes |
 |---|---|---|
-| v0 (DRAFT) | [Effective Date] | First lawyer-review draft. Not yet published. |
+| v1 | 2026-05-20 | Initial publication. |

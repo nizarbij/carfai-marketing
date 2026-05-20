@@ -37,7 +37,7 @@ export function Valuation() {
             Know what your car is actually worth.
           </SplitTextReveal>
 
-          <p className="mt-8 text-base md:text-lg text-paper/60 max-w-prose leading-relaxed">
+          <p className="mt-8 text-lg md:text-xl text-paper/70 max-w-prose leading-relaxed">
             CarFai cross-references current market listings, your
             service history, accident flags, and what other owners
             in your country are paying — then shows you a defended
@@ -79,7 +79,7 @@ export function Valuation() {
               alt="CarFai vehicle valuation screen showing the estimated value, market band, and applied factors."
               fill
               sizes="(min-width: 768px) 320px, 80vw"
-              className="object-cover"
+              className="phone-screen-img"
             />
           ) : (
             <div className="absolute inset-0 flex items-center justify-center text-center px-6">

@@ -66,7 +66,7 @@ export function Advisor() {
                 alt="CarFai AI Advisor screen showing a question and an answer."
                 fill
                 sizes="(min-width: 768px) 320px, 80vw"
-                className="object-cover"
+                className="phone-screen-img"
               />
             ) : (
               <div className="absolute inset-0 flex items-center justify-center text-center px-6 bg-paperDeep">
