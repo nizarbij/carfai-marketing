@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import { LEGAL_PAGES } from '../legal/_data/pages';
 
@@ -8,10 +9,16 @@ export function Footer() {
       <div className="mx-auto max-w-6xl px-6 py-12">
         <div className="grid gap-10 md:grid-cols-3">
           <div>
-            <Link href="/" className="font-mono text-lg tracking-tight">
-              CarFai
+            <Link href="/" aria-label="CarFai home" className="inline-flex items-center">
+              <Image
+                src="/logo.png"
+                alt="CarFai"
+                width={160}
+                height={36}
+                className="h-9 w-auto"
+              />
             </Link>
-            <p className="mt-3 text-sm text-slate2 max-w-prose">
+            <p className="mt-4 text-sm text-slate2 max-w-prose">
               AI-assisted vehicle ownership. Cost tracking, OBD2 diagnostics,
               document scanning, and an advisor that actually knows your car.
             </p>

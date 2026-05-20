@@ -26,7 +26,7 @@
  */
 
 import { GoogleGenAI } from '@google/genai';
-import { readFileSync, writeFileSync, existsSync } from 'node:fs';
+import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -56,38 +56,53 @@ if (!API_KEY) {
 /* ─── The hero prompt — locked per docs/DESIGN_TOKENS.md ──────────────────── */
 
 const PROMPT = `
-Editorial product photograph, hyper-realistic.
+Editorial automotive product photograph. Wide cinematic landscape
+composition. Hyper-realistic, shot on a full-frame DSLR with a
+35mm prime lens at f/2.8.
 
-Subject: a tight close-up of a car's instrument cluster — analog
-tachometer and speedometer side-by-side, a small recessed digital
-readout between them. Slightly older premium European sedan
-aesthetic (think understated, not flashy).
+Subject: a modern car's instrument cluster — twin analog gauges
+(tachometer left, speedometer right) flanking a centered rectangular
+digital info display. The digital display glows a distinct, clearly
+visible teal color (hex #089BC3) — this teal is the visual anchor
+of the entire image and the ONLY saturated color anywhere in the
+frame. Everything else is warm cream, deep charcoal, and chrome.
 
-Light: golden-hour sunlight raking in from the driver's-left
-window. Warm tone, long shadows, soft falloff. One subtle catchlight
-on the gauge bezel. Faint blue ambient bounce from the dashboard's
-black plastic.
+The car is a generic understated premium sedan — no manufacturer
+badges, no recognizable model lines, no logos, no brand names
+anywhere visible. NOT a sports car. NOT a Subaru, NOT a BMW, NOT
+any identifiable make.
 
-Composition: dashboard fills frame; gauges occupy the right two-
-thirds; the left third is dark plastic and steering wheel rim with
-shallow depth-of-field falloff. Eye-level perspective, 35mm
-equivalent focal length, f/2.8 feel.
+Composition (CRITICAL): true landscape orientation 16:9. The
+instrument cluster sits in the RIGHT THIRD of the frame, allowing
+the LEFT TWO-THIRDS to show the broader dark dashboard surface
+and a slice of out-of-focus steering wheel rim on the far left
+edge. The right edge of the frame includes a soft hint of a
+window with golden light spilling in. Plenty of negative space
+on the dashboard surface (cream-warm reflection of sky light).
 
-Camera detail: faint film grain, real lens chromatic aberration on
-the gauge needles, no over-sharpening. Mood is calm, premium,
-considered. NOT motion-blurred, NOT a moving car, NOT an action shot.
+Light: golden-hour sunlight raking in from the driver's-right
+window (off-frame right). Warm 3000K color temperature. Long
+soft shadows across the dashboard. The chrome rings of the gauges
+catch a single warm rim of light. The teal digital display is
+self-luminous against the surrounding warm light, making it pop
+without being neon.
 
-Color story: warm cream highlights tying to a #FAFAF7 page
-background, deep #0B0E13-ish shadows, a faint teal #089BC3 glow
-from the digital readout — that teal is the only saturated color
-in the frame.
+Camera detail: subtle film grain, mild lens vignetting in corners,
+real-world depth of field (gauges sharpest, steering wheel
+rim soft, dashboard ambient soft). NO HDR, NO over-sharpening,
+NO clarity boost.
 
-Strictly avoid: AI-art hallmarks (over-rendered specular highlights,
-impossible reflections, fisheye distortion, glossy CGI plastic,
-visible UI elements, neon colors, anime stylization, sci-fi
-elements, text overlays, watermarks).
+Mood: calm, considered, premium, almost still-life. The viewer
+should feel like they just opened a parked car at sunset.
 
-Aspect ratio 16:9. High resolution.
+Strictly forbidden: square crop, vertical crop, AI-art glossy
+plastic, fisheye distortion, impossible specular highlights,
+visible badges or text or numbers (gauges can have abstract tick
+marks but no readable numerals), sci-fi blue HUDs, futuristic
+holograms, neon, anime, motion blur, rain droplets, lens flare,
+bokeh balls, sunset gradient sky.
+
+Output resolution: as high as possible.
 `.trim();
 
 /* ─── Generate ───────────────────────────────────────────────────────────── */
@@ -96,8 +111,13 @@ console.log('  → Calling gemini-2.5-flash-image...');
 const ai = new GoogleGenAI({ apiKey: API_KEY });
 
 const response = await ai.models.generateContent({
-  model: 'gemini-2.5-flash-image-preview',
+  model:    'gemini-2.5-flash-image',
   contents: PROMPT,
+  config: {
+    // Force 16:9 landscape — the prompt alone isn't enough; the
+    // model defaults to 1:1 unless aspectRatio is set via config.
+    imageConfig: { aspectRatio: '16:9' },
+  },
 });
 
 /* ─── Extract the image bytes ────────────────────────────────────────────── */
@@ -120,6 +140,7 @@ if (!imageData) {
 }
 
 const outPath = join(ROOT, 'public', 'hero.png');
+mkdirSync(dirname(outPath), { recursive: true });
 writeFileSync(outPath, Buffer.from(imageData, 'base64'));
 
 const sizeKb = (Buffer.from(imageData, 'base64').length / 1024).toFixed(0);
