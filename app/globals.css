@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-paper text-ink font-sans;
+  }
+
+  ::selection {
+    @apply bg-accent text-white;
+  }
+}
+
+@layer components {
+  /* Long-form legal page typography — generous spacing, restrained colour. */
+  .prose-legal {
+    @apply text-ink leading-relaxed text-[0.975rem];
+  }
+  .prose-legal h1 {
+    @apply text-3xl md:text-4xl font-semibold tracking-tight mb-3 mt-0;
+  }
+  .prose-legal h2 {
+    @apply text-xl md:text-2xl font-semibold tracking-tight mt-12 mb-3 text-graphite;
+  }
+  .prose-legal h3 {
+    @apply text-base md:text-lg font-semibold mt-8 mb-2 text-graphite;
+  }
+  .prose-legal p {
+    @apply my-4;
+  }
+  .prose-legal ul {
+    @apply list-disc pl-6 my-4 space-y-1;
+  }
+  .prose-legal ol {
+    @apply list-decimal pl-6 my-4 space-y-1;
+  }
+  .prose-legal a {
+    @apply text-accent underline decoration-1 underline-offset-2 hover:no-underline;
+  }
+  .prose-legal blockquote {
+    @apply border-l-2 border-rule pl-4 italic text-slate2 my-6;
+  }
+  .prose-legal code {
+    @apply font-mono text-sm bg-rule/40 rounded px-1 py-0.5;
+  }
+  .prose-legal pre {
+    @apply font-mono text-xs bg-graphite text-paper rounded-md p-4 overflow-x-auto my-4;
+  }
+  .prose-legal hr {
+    @apply border-rule my-10;
+  }
+  .prose-legal table {
+    @apply w-full text-sm my-6 border-collapse;
+  }
+  .prose-legal th,
+  .prose-legal td {
+    @apply border border-rule px-3 py-2 text-left align-top;
+  }
+  .prose-legal th {
+    @apply bg-rule/30 font-semibold;
+  }
+}
