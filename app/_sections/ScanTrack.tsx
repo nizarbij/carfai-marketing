@@ -1,8 +1,9 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useGSAP } from '@gsap/react';
 
 if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger);
@@ -24,37 +25,31 @@ export function ScanTrack() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const stepRefs = useRef<HTMLDivElement[]>([]);
 
-  useEffect(() => {
-    if (!sectionRef.current) return;
-    const steps = stepRefs.current;
-    if (steps.length === 0) return;
+  useGSAP(
+    () => {
+      const steps = stepRefs.current;
+      if (steps.length === 0) return;
 
-    // Initial state: step 0 visible, others hidden
-    gsap.set(steps.slice(1), { opacity: 0, y: 24 });
+      gsap.set(steps.slice(1), { opacity: 0, y: 24 });
 
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger:  sectionRef.current,
-        start:    'top top',
-        end:      '+=150%',
-        scrub:    0.6,
-        pin:      true,
-        anticipatePin: 1,
-      },
-    });
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger:  sectionRef.current,
+          start:    'top top',
+          end:      '+=150%',
+          scrub:    0.6,
+          pin:      true,
+          anticipatePin: 1,
+        },
+      });
 
-    // Crossfade step 0 → 1
-    tl.to(steps[0],  { opacity: 0, y: -24, duration: 1 }, 0)
-      .to(steps[1],  { opacity: 1, y: 0,   duration: 1 }, 0)
-      // step 1 → 2
-      .to(steps[1],  { opacity: 0, y: -24, duration: 1 }, 1.2)
-      .to(steps[2],  { opacity: 1, y: 0,   duration: 1 }, 1.2);
-
-    return () => {
-      tl.scrollTrigger?.kill();
-      tl.kill();
-    };
-  }, []);
+      tl.to(steps[0], { opacity: 0, y: -24, duration: 1 }, 0)
+        .to(steps[1], { opacity: 1, y: 0,   duration: 1 }, 0)
+        .to(steps[1], { opacity: 0, y: -24, duration: 1 }, 1.2)
+        .to(steps[2], { opacity: 1, y: 0,   duration: 1 }, 1.2);
+    },
+    { scope: sectionRef },
+  );
 
   const steps = [
     {

@@ -1,9 +1,10 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useRef } from 'react';
 import SplitType from 'split-type';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useGSAP } from '@gsap/react';
 
 if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger);
@@ -38,33 +39,31 @@ export function SplitTextReveal({
 }: Props) {
   const ref = useRef<HTMLElement>(null);
 
-  useEffect(() => {
-    if (!ref.current) return;
-    const split = new SplitType(ref.current, { types: 'chars,words' });
+  useGSAP(
+    () => {
+      if (!ref.current) return;
+      const split = new SplitType(ref.current, { types: 'chars,words' });
+      const targets = split.chars ?? [];
 
-    const targets = split.chars ?? [];
-    gsap.set(targets, { y: 8, opacity: 0 });
+      gsap.set(targets, { y: 8, opacity: 0 });
+      gsap.to(targets, {
+        y: 0,
+        opacity: 1,
+        duration: 0.6,
+        ease: 'power3.out',
+        stagger: 0.018,
+        scrollTrigger: onScroll
+          ? { trigger: ref.current, start: 'top 80%', once: true }
+          : undefined,
+      });
 
-    const tween = gsap.to(targets, {
-      y: 0,
-      opacity: 1,
-      duration: 0.6,
-      ease: 'power3.out',
-      stagger: 0.018,
-      scrollTrigger: onScroll
-        ? {
-            trigger: ref.current,
-            start:   'top 80%',
-            once:    true,
-          }
-        : undefined,
-    });
-
-    return () => {
-      tween.kill();
-      split.revert();
-    };
-  }, [onScroll]);
+      // gsap.context() (set up by useGSAP) reverts the tween + ScrollTrigger
+      // automatically on unmount. SplitType is outside that scope, so its
+      // revert is registered as a manual cleanup.
+      return () => split.revert();
+    },
+    { scope: ref, dependencies: [onScroll] },
+  );
 
   return (
     <Tag ref={ref as never} className={className}>

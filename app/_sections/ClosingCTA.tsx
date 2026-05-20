@@ -1,7 +1,8 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useRef } from 'react';
 import { gsap } from 'gsap';
+import { useGSAP } from '@gsap/react';
 import { SplitTextReveal } from '../_components/SplitTextReveal';
 
 /**
@@ -13,41 +14,46 @@ import { SplitTextReveal } from '../_components/SplitTextReveal';
  * raw mouse events to avoid pulling in a cursor library.
  */
 export function ClosingCTA() {
+  const sectionRef = useRef<HTMLElement>(null);
   const btnRef = useRef<HTMLAnchorElement>(null);
 
-  useEffect(() => {
-    const btn = btnRef.current;
-    if (!btn) return;
-
-    function onMove(e: MouseEvent) {
+  useGSAP(
+    (context) => {
+      const btn = btnRef.current;
       if (!btn) return;
-      const rect = btn.getBoundingClientRect();
-      const cx = rect.left + rect.width / 2;
-      const cy = rect.top + rect.height / 2;
-      const dx = e.clientX - cx;
-      const dy = e.clientY - cy;
-      const dist = Math.hypot(dx, dy);
-      const radius = 160;
 
-      if (dist < radius) {
-        const pull = (1 - dist / radius) * 0.4;
-        gsap.to(btn, {
-          x: dx * pull,
-          y: dy * pull,
-          duration: 0.35,
-          ease: 'power3.out',
-        });
-      } else {
-        gsap.to(btn, { x: 0, y: 0, duration: 0.5, ease: 'elastic.out(1, 0.5)' });
+      function onMove(e: MouseEvent) {
+        if (!btn) return;
+        const rect = btn.getBoundingClientRect();
+        const cx = rect.left + rect.width / 2;
+        const cy = rect.top + rect.height / 2;
+        const dx = e.clientX - cx;
+        const dy = e.clientY - cy;
+        const dist = Math.hypot(dx, dy);
+        const radius = 160;
+
+        if (dist < radius) {
+          const pull = (1 - dist / radius) * 0.4;
+          gsap.to(btn, {
+            x: dx * pull,
+            y: dy * pull,
+            duration: 0.35,
+            ease: 'power3.out',
+          });
+        } else {
+          gsap.to(btn, { x: 0, y: 0, duration: 0.5, ease: 'elastic.out(1, 0.5)' });
+        }
       }
-    }
 
-    window.addEventListener('mousemove', onMove);
-    return () => window.removeEventListener('mousemove', onMove);
-  }, []);
+      window.addEventListener('mousemove', onMove);
+      // gsap.context cleanup handles tweens; we still own the listener.
+      context.add(() => window.removeEventListener('mousemove', onMove));
+    },
+    { scope: sectionRef },
+  );
 
   return (
-    <section className="border-t border-rule bg-ink text-paper">
+    <section ref={sectionRef} className="border-t border-rule bg-ink text-paper">
       <div className="mx-auto max-w-6xl px-6 py-32 md:py-48 text-center">
         <p className="font-mono text-xs uppercase tracking-widest text-paper/50 mb-8">
           One more thing

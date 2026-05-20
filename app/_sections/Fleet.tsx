@@ -1,8 +1,9 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useGSAP } from '@gsap/react';
 
 if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger);
@@ -19,31 +20,29 @@ export function Fleet() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const trackRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    if (!sectionRef.current || !trackRef.current) return;
-    const track = trackRef.current;
-    const distance = track.scrollWidth - track.clientWidth;
-    if (distance <= 0) return;
+  useGSAP(
+    () => {
+      const track = trackRef.current;
+      if (!track) return;
+      const distance = track.scrollWidth - track.clientWidth;
+      if (distance <= 0) return;
 
-    const tween = gsap.to(track, {
-      x: -distance,
-      ease: 'none',
-      scrollTrigger: {
-        trigger:  sectionRef.current,
-        start:    'top top',
-        end:      () => `+=${distance + 200}`,
-        scrub:    0.5,
-        pin:      true,
-        anticipatePin: 1,
-        invalidateOnRefresh: true,
-      },
-    });
-
-    return () => {
-      tween.scrollTrigger?.kill();
-      tween.kill();
-    };
-  }, []);
+      gsap.to(track, {
+        x: -distance,
+        ease: 'none',
+        scrollTrigger: {
+          trigger:  sectionRef.current,
+          start:    'top top',
+          end:      () => `+=${distance + 200}`,
+          scrub:    0.5,
+          pin:      true,
+          anticipatePin: 1,
+          invalidateOnRefresh: true,
+        },
+      });
+    },
+    { scope: sectionRef },
+  );
 
   const cards = [
     {
