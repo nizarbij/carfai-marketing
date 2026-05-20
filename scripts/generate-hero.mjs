@@ -56,53 +56,70 @@ if (!API_KEY) {
 /* ─── The hero prompt — locked per docs/DESIGN_TOKENS.md ──────────────────── */
 
 const PROMPT = `
-Editorial automotive product photograph. Wide cinematic landscape
-composition. Hyper-realistic, shot on a full-frame DSLR with a
-35mm prime lens at f/2.8.
+Editorial product photograph for a mobile-app marketing site. Wide
+cinematic landscape composition. Hyper-realistic, shot on a full-
+frame DSLR with a 35mm prime lens at f/2.8.
 
-Subject: a modern car's instrument cluster — twin analog gauges
-(tachometer left, speedometer right) flanking a centered rectangular
-digital info display. The digital display glows a distinct, clearly
-visible teal color (hex #089BC3) — this teal is the visual anchor
-of the entire image and the ONLY saturated color anywhere in the
-frame. Everything else is warm cream, deep charcoal, and chrome.
+Subject: a clean human hand holding a modern smartphone vertically.
+The phone is the visual hero of the frame. CRITICAL: the phone's
+display is completely BLACK / OFF / powered down — a pure dark
+matte rectangular surface with subtle ambient reflections only.
+Absolutely NO user interface, NO text, NO icons, NO graphics, NO
+brand wordmarks on the screen. The screen reads as glossy black
+glass. We will composite real app UI onto this screen separately
+in code.
 
-The car is a generic understated premium sedan — no manufacturer
-badges, no recognizable model lines, no logos, no brand names
-anywhere visible. NOT a sports car. NOT a Subaru, NOT a BMW, NOT
-any identifiable make.
+The hand: relaxed, natural grip, holding the phone from the bottom
+edge with thumb visible. Real human skin, slightly weathered (not
+model-perfect). Plain neutral-toned long-sleeve cuff visible at
+the wrist — no jewelry, no watch, no tattoos, no nail polish.
 
-Composition (CRITICAL): true landscape orientation 16:9. The
-instrument cluster sits in the RIGHT THIRD of the frame, allowing
-the LEFT TWO-THIRDS to show the broader dark dashboard surface
-and a slice of out-of-focus steering wheel rim on the far left
-edge. The right edge of the frame includes a soft hint of a
-window with golden light spilling in. Plenty of negative space
-on the dashboard surface (cream-warm reflection of sky light).
+Context: out-of-focus warm car interior in the background — soft
+hint of a dashboard surface, a slice of steering wheel rim, and
+a window letting in golden sunlight. The car is generic premium
+(no badges, no logos, no recognizable manufacturer). The viewer
+should read this as 'sitting in a parked car at sunset, checking
+something on a phone' without ever seeing a brand mark.
 
-Light: golden-hour sunlight raking in from the driver's-right
-window (off-frame right). Warm 3000K color temperature. Long
-soft shadows across the dashboard. The chrome rings of the gauges
-catch a single warm rim of light. The teal digital display is
-self-luminous against the surrounding warm light, making it pop
-without being neon.
+Composition (CRITICAL — 16:9 landscape):
+- Phone occupies the CENTRE-RIGHT, vertically oriented, tilted
+  about 8 degrees toward the camera so the screen catches some
+  warm ambient light.
+- Hand enters from the bottom-right corner of the frame.
+- LEFT THIRD of the frame is the soft out-of-focus dashboard
+  surface — generous negative space.
+- Background extends past the phone with depth, not a flat wall.
+
+Light: golden-hour sunlight raking in from the right edge of the
+frame, off-camera. Warm 3000K color temperature. One warm rim
+catchlight on the phone's right bezel. Soft warm ambient
+reflection on the black screen surface (so the screen isn't
+matte-dead — it has gentle gradient reflection of the warm
+interior). The hand is lit warmly from the right, slightly
+shadowed on the left.
+
+Color story: warm cream highlights, deep charcoal shadows, no
+saturated colors anywhere. Cream paper / charcoal / matte black
+phone / warm skin. ABSOLUTELY no teal, no blue, no green — the
+brand color goes on the composited app UI layer later.
 
 Camera detail: subtle film grain, mild lens vignetting in corners,
-real-world depth of field (gauges sharpest, steering wheel
-rim soft, dashboard ambient soft). NO HDR, NO over-sharpening,
-NO clarity boost.
+true depth of field (phone tack sharp, hand sharp, background
+softly blurred). NO HDR, NO over-sharpening, NO clarity boost,
+NO aggressive bokeh balls.
 
-Mood: calm, considered, premium, almost still-life. The viewer
-should feel like they just opened a parked car at sunset.
+Mood: calm, considered, premium, lived-in. The viewer feels like
+they're watching someone in their own car at the end of the day.
 
-Strictly forbidden: square crop, vertical crop, AI-art glossy
-plastic, fisheye distortion, impossible specular highlights,
-visible badges or text or numbers (gauges can have abstract tick
-marks but no readable numerals), sci-fi blue HUDs, futuristic
-holograms, neon, anime, motion blur, rain droplets, lens flare,
-bokeh balls, sunset gradient sky.
+Strictly forbidden: anything on the phone screen (text / icons /
+UI / brand / glow / wallpaper / pattern — the screen must be
+pure black glass), square crop, vertical crop, AI-art glossy
+plastic, impossible specular highlights, visible badges or
+text anywhere in the frame, sci-fi blue HUDs, holograms, neon,
+anime stylization, motion blur, rain, lens flare flares,
+sunset gradient skies, multiple phones, two hands.
 
-Output resolution: as high as possible.
+Output: highest resolution available, 16:9 aspect ratio.
 `.trim();
 
 /* ─── Generate ───────────────────────────────────────────────────────────── */

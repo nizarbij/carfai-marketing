@@ -1,6 +1,7 @@
 'use client';
 
 import { useRef } from 'react';
+import Image from 'next/image';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
@@ -24,13 +25,16 @@ if (typeof window !== 'undefined') {
 export function ScanTrack() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const stepRefs = useRef<HTMLDivElement[]>([]);
+  const screenRefs = useRef<HTMLDivElement[]>([]);
 
   useGSAP(
     () => {
       const steps = stepRefs.current;
-      if (steps.length === 0) return;
+      const screens = screenRefs.current;
+      if (steps.length === 0 || screens.length === 0) return;
 
-      gsap.set(steps.slice(1), { opacity: 0, y: 24 });
+      gsap.set(steps.slice(1),   { opacity: 0, y: 24 });
+      gsap.set(screens.slice(1), { opacity: 0 });
 
       const tl = gsap.timeline({
         scrollTrigger: {
@@ -43,10 +47,17 @@ export function ScanTrack() {
         },
       });
 
+      // Copy crossfade (step 0 → 1 → 2)
       tl.to(steps[0], { opacity: 0, y: -24, duration: 1 }, 0)
         .to(steps[1], { opacity: 1, y: 0,   duration: 1 }, 0)
         .to(steps[1], { opacity: 0, y: -24, duration: 1 }, 1.2)
         .to(steps[2], { opacity: 1, y: 0,   duration: 1 }, 1.2);
+
+      // Screenshot crossfade aligned to the copy beats
+      tl.to(screens[0], { opacity: 0, duration: 1 }, 0)
+        .to(screens[1], { opacity: 1, duration: 1 }, 0)
+        .to(screens[1], { opacity: 0, duration: 1 }, 1.2)
+        .to(screens[2], { opacity: 1, duration: 1 }, 1.2);
     },
     { scope: sectionRef },
   );
@@ -56,16 +67,22 @@ export function ScanTrack() {
       eyebrow: '01 · scan',
       title:   'Point. Don’t type.',
       body:    'Snap any receipt, repair order, registration, or quote. The model pulls amount, vendor, date, and category before you put the phone down.',
+      image:   '/app-home.jpg',
+      alt:     'CarFai home screen showing the current vehicle and a camera-first quick-action layout.',
     },
     {
       eyebrow: '02 · categorize',
       title:   'Goes in the right bucket.',
       body:    'Fuel, insurance, maintenance, parts, parking, tickets — categorised at the line-item level. Tax-deductible flags stay flagged.',
+      image:   '/app-documents.jpg',
+      alt:     'Documents screen grouping receipts into Contravention, Fuel, Insurance, Maintenance, Parking, and Toll folders.',
     },
     {
       eyebrow: '03 · trend',
       title:   'See what it actually costs you.',
       body:    'Per month. Per category. Per vehicle. Per year-over-year. Without a single manual entry.',
+      image:   '/app-analytics-spending.jpg',
+      alt:     'Analytics screen with monthly spending totals, average per month, document counts, and trend chart.',
     },
   ];
 
@@ -95,12 +112,25 @@ export function ScanTrack() {
           ))}
         </div>
 
-        {/* Right: app screenshot slot. */}
-        <div className="aspect-[9/16] max-h-[78vh] rounded-3xl border border-rule bg-paperDeep flex items-center justify-center">
-          <p className="font-mono text-xs uppercase tracking-widest text-slate2 text-center px-6">
-            app screenshot slot<br />
-            (analysisScreen + cost rollup)
-          </p>
+        {/* Right: phone-shaped frame holding the 3 crossfading screenshots */}
+        <div className="relative aspect-[9/19] max-h-[78vh] mx-auto w-full max-w-xs rounded-[2.5rem] border-[10px] border-ink bg-ink overflow-hidden shadow-[0_30px_60px_-20px_rgba(11,14,19,0.35)]">
+          {steps.map((s, i) => (
+            <div
+              key={i}
+              ref={(el) => {
+                if (el) screenRefs.current[i] = el;
+              }}
+              className="absolute inset-0"
+            >
+              <Image
+                src={s.image}
+                alt={s.alt}
+                fill
+                sizes="(min-width: 768px) 320px, 80vw"
+                className="object-cover"
+              />
+            </div>
+          ))}
         </div>
       </div>
     </section>
