@@ -33,10 +33,20 @@ export function Hero() {
           A second opinion for your car.
         </SplitTextReveal>
 
+        {/* Marketing pull-quote — the editorial swing the original
+            subhead was missing. AI advantage stated as a promise,
+            not a feature list. */}
+        <blockquote className="mt-10 max-w-3xl">
+          <p className="text-2xl md:text-4xl font-medium tracking-tight text-ink leading-[1.15] italic">
+            <span aria-hidden className="text-accent">“</span>
+            The first AI that&apos;s actually seen what your car has seen.
+            <span aria-hidden className="text-accent">”</span>
+          </p>
+        </blockquote>
+
         <p className="mt-8 text-lg md:text-xl text-slate2 max-w-prose leading-relaxed">
-          CarFai watches your maintenance receipts, OBD2 codes, and
-          ownership history, then tells you what they actually mean —
-          using your data, not the internet's.
+          Receipts, OBD2 codes, repair history, documents. CarFai reads
+          them all — then answers questions a search engine never could.
         </p>
 
         <div className="mt-10 flex flex-wrap items-center gap-4">
