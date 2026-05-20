@@ -8,8 +8,11 @@ import Image from 'next/image';
 // the section sits between the pinned ScanTrack and the
 // horizontal-on-vertical Fleet later — too much motion compounding.
 
-const MAINT_IMAGE_EXISTS = existsSync(
-  join(process.cwd(), 'public', 'app-analytics-maintenance.jpg'),
+// Visual leans on the OBD2 dashboard since OBD2 is the section's
+// most differentiating capability (fault codes + live readings).
+// The maintenance/calendar story stays in the bullet copy.
+const OBD2_IMAGE_EXISTS = existsSync(
+  join(process.cwd(), 'public', 'app-obd2.jpg'),
 );
 
 const bullets = [
@@ -33,10 +36,10 @@ export function Maintenance() {
       <div className="mx-auto max-w-6xl px-6 py-28 md:py-40 grid md:grid-cols-[1fr_1fr] gap-12 md:gap-16 items-center">
         {/* Left: phone-shaped frame with the maintenance screen */}
         <div className="relative aspect-[9/19] max-h-[78vh] mx-auto w-full max-w-xs rounded-[2.5rem] border-[10px] border-ink bg-ink overflow-hidden shadow-[0_30px_60px_-20px_rgba(11,14,19,0.35)] order-2 md:order-1">
-          {MAINT_IMAGE_EXISTS ? (
+          {OBD2_IMAGE_EXISTS ? (
             <Image
-              src="/app-analytics-maintenance.jpg"
-              alt="CarFai maintenance screen with AI Maintenance Calendar, OBD2 Scanner card, and an Insurance Renewal entry due in 186 days."
+              src="/app-obd2.jpg"
+              alt="CarFai OBD2 dashboard: 2 fault codes (P0000 info, P0043 warning), key readings (battery 13.1 V, coolant 63 °C, odometer 65,415 km), and a 30-day drive summary."
               fill
               sizes="(min-width: 768px) 320px, 80vw"
               className="object-cover"
@@ -44,7 +47,7 @@ export function Maintenance() {
           ) : (
             <div className="absolute inset-0 flex items-center justify-center text-center px-6 bg-paperDeep">
               <p className="font-mono text-xs uppercase tracking-widest text-slate2">
-                missing<br />/public/app-analytics-maintenance.jpg
+                missing<br />/public/app-obd2.jpg
               </p>
             </div>
           )}
