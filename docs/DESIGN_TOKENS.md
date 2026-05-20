@@ -114,19 +114,30 @@ intentional and named, never decorative.
 
 ---
 
-## Section plan (skill step 3 — LOCKED)
+## Section plan v2 (revised 2026-05-20 — LOCKED)
 
-7 sections for `/` (the home landing). B2C-led per founder direction.
+**9 sections** for `/` (the home landing). B2C-led per founder
+direction. Founder feedback during build: original 7-section plan
+under-explained the differentiating features (OBD2, AI maintenance
+calendar, vehicle valuation, document expiry). Two sections added
+between ScanTrack and Advisor to fix that.
 
 | # | Section | One-liner | Motion |
 |---|---|---|---|
-| 1 | Hero | "A second opinion for your car." Subhead + dual CTA + product imagery slot. | `splittext-reveal` |
-| 2 | Problem | "Owning a car is expensive and confusing. We didn't fix the cost. We made it less confusing." | static |
-| 3 | Scan → track | The receipt-to-rollup story (snap → AI extract → category → trend). Real app screenshots. | `pinned-scrub` |
-| 4 | AI Advisor | The "ask your car anything" story. Chat-bubble copy reveals on entry. | `splittext-reveal` on copy; static UI |
-| 5 | For fleets | A B2B band that doesn't break flow — 3 dashboard cards, "From 1 vehicle to 200." | `horizontal-on-vertical` |
-| 6 | Pricing | All 5 tiers as sticky-stack cards. Locked teal accent on the recommended tier (Max). | `sticky-stack` |
-| 7 | Closing CTA | Single line ("Start free. No card.") + one button. | `magnetic-cursor` + `splittext-reveal` |
+| 1 | Hero | "A second opinion for your car." Subhead + dual CTA + photo slot. | `splittext-reveal` |
+| 2 | Problem | "Owning a car is expensive and confusing. We didn't fix the cost." | static |
+| 3 | Scan → track | Receipt → category → trend story. 3 real app screens crossfade inside a phone-shaped frame. | `pinned-scrub` |
+| 4 | Maintenance & OBD2 | NEW. Editorial split — `app-analytics-maintenance.jpg` left + 3 bullets right (AI calendar / OBD2 / document expiry). | static (rhythm breather between two motion sections) |
+| 5 | Valuation | NEW. Dark band — Stripe-style stat callout (`$25,400 ± 4%`) + factor chips + phone-frame screenshot right. | `splittext-reveal` on headline |
+| 6 | Advisor | "Ask your car anything." `app-aiadvisor.jpg` in phone frame. | `splittext-reveal` on copy |
+| 7 | For fleets | A B2B band — 4 cards, "From 1 vehicle to 200." | `horizontal-on-vertical` |
+| 8 | Pricing | All 5 tiers as sticky-stack cards. Locked teal accent on Max. | `sticky-stack` |
+| 9 | Closing CTA | "Start free. No card." + one button. | `magnetic-cursor` + `splittext-reveal` |
+
+**Rhythm guard**: the dark Valuation band at section 5 breaks
+the cream paper into two halves. That contrast is intentional —
+without it the 9 sections of cream paper would feel flat. Closing
+CTA also dark, bookending.
 
 **Other routes (lighter treatments):**
 

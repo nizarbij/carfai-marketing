@@ -3,7 +3,7 @@ import { join } from 'path';
 import Image from 'next/image';
 import { SplitTextReveal } from '../_components/SplitTextReveal';
 
-const ADVISOR_IMAGE_EXISTS = existsSync(join(process.cwd(), 'public', 'app-advisor.jpg'));
+const ADVISOR_IMAGE_EXISTS = existsSync(join(process.cwd(), 'public', 'app-aiadvisor.jpg'));
 
 /**
  * Section 4 — AI Advisor.
@@ -58,11 +58,11 @@ export function Advisor() {
           </ul>
 
           {/* Phone-shaped frame; holds the real AIAdvisorScreen
-              screenshot once /public/app-advisor.jpg exists. */}
+              screenshot once /public/app-aiadvisor.jpg exists. */}
           <div className="relative aspect-[9/19] max-h-[78vh] mx-auto w-full max-w-xs rounded-[2.5rem] border-[10px] border-ink bg-ink overflow-hidden shadow-[0_30px_60px_-20px_rgba(11,14,19,0.35)]">
             {ADVISOR_IMAGE_EXISTS ? (
               <Image
-                src="/app-advisor.jpg"
+                src="/app-aiadvisor.jpg"
                 alt="CarFai AI Advisor screen showing a question and an answer."
                 fill
                 sizes="(min-width: 768px) 320px, 80vw"
@@ -73,7 +73,7 @@ export function Advisor() {
                 <p className="font-mono text-xs uppercase tracking-widest text-slate2">
                   drop AIAdvisorScreen<br />
                   screenshot at<br />
-                  /public/app-advisor.jpg
+                  /public/app-aiadvisor.jpg
                 </p>
               </div>
             )}
