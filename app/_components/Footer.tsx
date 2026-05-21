@@ -15,7 +15,7 @@ export function Footer() {
                 alt="CarFai"
                 width={420}
                 height={96}
-                className="h-20 md:h-28 w-auto"
+                className="h-14 md:h-16 w-auto"
               />
             </Link>
             <p className="mt-5 text-sm text-slate2 max-w-prose">

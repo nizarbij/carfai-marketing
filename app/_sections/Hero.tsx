@@ -21,15 +21,15 @@ const HERO_IMAGE_EXISTS = existsSync(join(process.cwd(), 'public', 'hero.png'));
 export function Hero() {
   return (
     <section className="relative overflow-hidden">
-      <div className="mx-auto max-w-6xl px-6 pt-20 pb-28 md:pt-32 md:pb-40">
-        <p className="font-mono text-base uppercase tracking-widest text-slate2 mb-8">
+      <div className="mx-auto max-w-6xl px-6 pt-12 pb-20 md:pt-32 md:pb-40">
+        <p className="font-mono text-xs sm:text-sm md:text-base uppercase tracking-widest text-slate2 mb-6 md:mb-8">
           For drivers · for fleets
         </p>
 
         <SplitTextReveal
           as="h1"
           onScroll={false}
-          className="text-5xl md:text-7xl font-medium tracking-tight text-ink max-w-4xl leading-[1.05]"
+          className="text-4xl sm:text-5xl md:text-7xl font-medium tracking-tight text-ink max-w-4xl leading-[1.1] md:leading-[1.05]"
         >
           A second opinion for your car.
         </SplitTextReveal>
@@ -37,15 +37,15 @@ export function Hero() {
         {/* Marketing pull-quote — the editorial swing the original
             subhead was missing. AI advantage stated as a promise,
             not a feature list. */}
-        <blockquote className="mt-10 max-w-3xl">
-          <p className="text-2xl md:text-4xl font-medium tracking-tight text-ink leading-[1.15] italic">
+        <blockquote className="mt-8 md:mt-10 max-w-3xl">
+          <p className="text-xl sm:text-2xl md:text-4xl font-medium tracking-tight text-ink leading-snug md:leading-[1.15] italic">
             <span aria-hidden className="text-accent">“</span>
             The first AI that&apos;s actually seen what your car has seen.
             <span aria-hidden className="text-accent">”</span>
           </p>
         </blockquote>
 
-        <p className="mt-8 text-lg md:text-xl text-slate2 max-w-prose leading-relaxed">
+        <p className="mt-6 md:mt-8 text-base sm:text-lg md:text-xl text-slate2 max-w-prose leading-relaxed">
           Receipts, OBD2 codes, repair history, documents. CarFai reads
           them all — then answers questions a search engine never could.
         </p>
