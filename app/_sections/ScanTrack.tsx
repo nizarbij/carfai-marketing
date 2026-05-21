@@ -99,7 +99,7 @@ export function ScanTrack() {
               }}
               className="absolute inset-0 flex flex-col justify-center"
             >
-              <p className="font-mono text-sm uppercase tracking-widest text-accent mb-4">
+              <p className="font-mono text-base uppercase tracking-widest text-accent mb-4">
                 {s.eyebrow}
               </p>
               <h3 className="text-3xl md:text-4xl font-medium tracking-tight text-ink leading-[1.1] mb-4">

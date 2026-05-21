@@ -74,7 +74,7 @@ export function Fleet() {
   return (
     <section ref={sectionRef} className="relative h-screen overflow-hidden bg-paperDeep">
       <div className="mx-auto max-w-6xl px-6 pt-16 pb-8 md:pt-20">
-        <p className="font-mono text-sm uppercase tracking-widest text-slate2 mb-4">
+        <p className="font-mono text-base uppercase tracking-widest text-slate2 mb-4">
           For fleets
         </p>
         <h2 className="text-3xl md:text-5xl font-medium tracking-tight text-ink max-w-2xl leading-[1.1]">
@@ -105,7 +105,7 @@ export function Fleet() {
 
               {/* Caption */}
               <div>
-                <p className="font-mono text-sm uppercase tracking-widest text-accent mb-3">
+                <p className="font-mono text-base uppercase tracking-widest text-accent mb-3">
                   {String(i + 1).padStart(2, '0')} · {c.eyebrow}
                 </p>
                 <h3 className="text-2xl md:text-3xl font-medium tracking-tight text-ink leading-tight mb-3">

@@ -159,7 +159,7 @@ export default function PricingPage() {
     <>
       {/* ── Hero ── */}
       <section className="mx-auto max-w-6xl px-6 pt-20 pb-12 md:pt-28">
-        <p className="font-mono text-sm uppercase tracking-widest text-slate2 mb-6">
+        <p className="font-mono text-base uppercase tracking-widest text-slate2 mb-6">
           Pricing
         </p>
         <h1 className="text-4xl md:text-6xl font-medium tracking-tight text-ink leading-[1.05] max-w-3xl">
@@ -229,7 +229,7 @@ export default function PricingPage() {
 
           {sections.map((section) => (
             <div key={section.heading} className="mb-12">
-              <h3 className="font-mono text-sm uppercase tracking-widest text-accent mb-4">
+              <h3 className="font-mono text-base uppercase tracking-widest text-accent mb-4">
                 {section.heading}
               </h3>
               <div className="overflow-x-auto rounded-2xl border border-rule bg-paper">

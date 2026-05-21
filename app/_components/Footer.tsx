@@ -13,9 +13,9 @@ export function Footer() {
               <Image
                 src="/logo.png"
                 alt="CarFai"
-                width={320}
-                height={72}
-                className="h-16 md:h-20 w-auto"
+                width={420}
+                height={96}
+                className="h-20 md:h-28 w-auto"
               />
             </Link>
             <p className="mt-5 text-sm text-slate2 max-w-prose">

@@ -56,7 +56,7 @@ export function ClosingCTA() {
   return (
     <section ref={sectionRef} className="border-t border-rule bg-ink text-paper">
       <div className="mx-auto max-w-6xl px-6 py-32 md:py-48 text-center">
-        <p className="font-mono text-sm uppercase tracking-widest text-paper/50 mb-8">
+        <p className="font-mono text-base uppercase tracking-widest text-paper/50 mb-8">
           One more thing
         </p>
 

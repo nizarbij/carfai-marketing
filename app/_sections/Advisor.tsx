@@ -14,7 +14,7 @@ export function Advisor() {
   return (
     <section className="border-t border-rule">
       <div className="mx-auto max-w-6xl px-6 py-28 md:py-40">
-        <p className="font-mono text-sm uppercase tracking-widest text-slate2 mb-8">
+        <p className="font-mono text-base uppercase tracking-widest text-slate2 mb-8">
           The advisor
         </p>
 
@@ -35,7 +35,7 @@ export function Advisor() {
           {/* Quote-style sample exchanges */}
           <ul className="space-y-8 text-base md:text-lg">
             <li>
-              <p className="font-mono text-sm uppercase tracking-widest text-slate2 mb-2">
+              <p className="font-mono text-base uppercase tracking-widest text-slate2 mb-2">
                 You
               </p>
               <p className="text-ink leading-relaxed">
@@ -43,7 +43,7 @@ export function Advisor() {
               </p>
             </li>
             <li>
-              <p className="font-mono text-sm uppercase tracking-widest text-accent mb-2">
+              <p className="font-mono text-base uppercase tracking-widest text-accent mb-2">
                 CarFai
               </p>
               <p className="text-slate2 leading-relaxed">
@@ -70,7 +70,7 @@ export function Advisor() {
               />
             ) : (
               <div className="absolute inset-0 flex items-center justify-center text-center px-6 bg-paperDeep">
-                <p className="font-mono text-sm uppercase tracking-widest text-slate2">
+                <p className="font-mono text-base uppercase tracking-widest text-slate2">
                   drop AIAdvisorScreen<br />
                   screenshot at<br />
                   /public/app-aiadvisor.jpg

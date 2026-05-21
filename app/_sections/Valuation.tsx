@@ -26,7 +26,7 @@ export function Valuation() {
       <div className="mx-auto max-w-6xl px-6 py-28 md:py-40 grid md:grid-cols-[1.1fr_1fr] gap-12 md:gap-16 items-center">
         {/* Left: the pitch */}
         <div>
-          <p className="font-mono text-sm uppercase tracking-widest text-paper/50 mb-6">
+          <p className="font-mono text-base uppercase tracking-widest text-paper/50 mb-6">
             Vehicle valuation
           </p>
 
@@ -46,7 +46,7 @@ export function Valuation() {
 
           {/* Stat callout */}
           <div className="mt-12 inline-flex items-baseline gap-4 px-6 py-5 border border-paper/15 rounded-2xl bg-paper/[0.03]">
-            <span className="font-mono text-sm uppercase tracking-widest text-paper/50">
+            <span className="font-mono text-base uppercase tracking-widest text-paper/50">
               Estimated value
             </span>
             <span className="font-mono text-3xl md:text-4xl font-medium text-accent">
@@ -83,7 +83,7 @@ export function Valuation() {
             />
           ) : (
             <div className="absolute inset-0 flex items-center justify-center text-center px-6">
-              <p className="font-mono text-sm uppercase tracking-widest text-paper/40">
+              <p className="font-mono text-base uppercase tracking-widest text-paper/40">
                 drop the Valuation<br />screen at<br />
                 /public/app-valuation.jpg
               </p>

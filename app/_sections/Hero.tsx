@@ -22,7 +22,7 @@ export function Hero() {
   return (
     <section className="relative overflow-hidden">
       <div className="mx-auto max-w-6xl px-6 pt-20 pb-28 md:pt-32 md:pb-40">
-        <p className="font-mono text-sm uppercase tracking-widest text-slate2 mb-8">
+        <p className="font-mono text-base uppercase tracking-widest text-slate2 mb-8">
           For drivers · for fleets
         </p>
 
@@ -90,7 +90,7 @@ export function Hero() {
             />
           ) : (
             <div className="absolute inset-0 flex items-center justify-center">
-              <p className="font-mono text-sm uppercase tracking-widest text-slate2">
+              <p className="font-mono text-base uppercase tracking-widest text-slate2">
                 hero image slot — run `npm run gen:hero`
               </p>
             </div>

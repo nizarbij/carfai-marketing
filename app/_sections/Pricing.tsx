@@ -55,7 +55,7 @@ export function Pricing() {
   return (
     <section id="start" className="bg-paper">
       <div className="mx-auto max-w-6xl px-6 py-24 md:py-32">
-        <p className="font-mono text-sm uppercase tracking-widest text-slate2 mb-8">
+        <p className="font-mono text-base uppercase tracking-widest text-slate2 mb-8">
           Pricing
         </p>
         <h2 className="text-3xl md:text-5xl font-medium tracking-tight text-ink max-w-3xl leading-[1.1]">
