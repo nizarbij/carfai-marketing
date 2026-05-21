@@ -11,7 +11,8 @@
     "gen:hero": "node scripts/generate-hero.mjs",
     "gen:qr": "node scripts/generate-qr.mjs",
     "gen:logo": "node scripts/trim-logo.mjs",
-    "gen:translations": "node scripts/translate-ui.mjs"
+    "gen:translations": "node scripts/translate-ui.mjs",
+    "gen:legal-translations": "node scripts/translate-legal.mjs"
   },
   "dependencies": {
     "@google/genai": "^2.5.0",

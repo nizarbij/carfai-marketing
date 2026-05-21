@@ -1,7 +1,11 @@
 import { renderLegalPage, legalMetadata } from '../legal/_lib/render';
 
-export const metadata = legalMetadata('privacy');
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  return legalMetadata('privacy', locale);
+}
 
-export default function Page() {
-  return renderLegalPage('privacy');
+export default async function Page({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  return renderLegalPage('privacy', locale);
 }

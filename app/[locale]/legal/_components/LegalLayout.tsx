@@ -1,6 +1,7 @@
-import Link from 'next/link';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
+import { useTranslations } from 'next-intl';
+import { Link } from '@/i18n/navigation';
 import { LEGAL_PAGES } from '../_data/pages';
 
 interface Props {
@@ -9,16 +10,10 @@ interface Props {
   markdown: string;
 }
 
-/**
- * Long-form legal page shell. Sidebar lists the other 6 legal pages so
- * the cross-references in the copy (e.g. "see our DPA for...") all
- * remain one click away.
- *
- * `prose-legal` is defined in app/globals.css — keeps typography rules in
- * one place rather than spraying Tailwind classes across react-markdown's
- * components map.
- */
 export function LegalLayout({ slug, title, markdown }: Props) {
+  const tl = useTranslations('LegalPages');
+  const t  = useTranslations('Footer'); // reuse legalHeading
+
   return (
     <div className="mx-auto max-w-6xl px-6 py-12 md:py-16">
       <nav className="mb-8 text-sm">
@@ -32,10 +27,10 @@ export function LegalLayout({ slug, title, markdown }: Props) {
       <div className="grid gap-12 md:grid-cols-[200px_1fr]">
         <aside className="md:sticky md:top-12 md:self-start">
           <h2 className="text-xs uppercase tracking-wider text-slate2 mb-3">
-            Legal
+            {t('legalHeading')}
           </h2>
           <ul className="space-y-1.5 text-sm">
-            {LEGAL_PAGES.map(p => (
+            {LEGAL_PAGES.map((p) => (
               <li key={p.slug}>
                 <Link
                   href={`/${p.slug}`}
@@ -45,7 +40,7 @@ export function LegalLayout({ slug, title, markdown }: Props) {
                       : 'text-slate2 hover:text-accent'
                   }
                 >
-                  {p.title}
+                  {tl(p.slug as 'privacy' | 'terms' | 'eula' | 'ai-disclosure' | 'cookies' | 'dpa' | 'aup')}
                 </Link>
               </li>
             ))}

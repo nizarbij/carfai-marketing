@@ -63,7 +63,7 @@ export function SiteHeader() {
           aria-label={open ? t('menuClose') : t('menuOpen')}
           aria-expanded={open}
           aria-controls="mobile-menu"
-          className="md:hidden inline-flex items-center justify-center w-11 h-11 -mr-2 rounded-full hover:bg-paperDeep transition-colors"
+          className="md:hidden inline-flex items-center justify-center w-11 h-11 -me-2 rounded-full hover:bg-paperDeep transition-colors"
           onClick={() => setOpen((v) => !v)}
         >
           <Hamburger open={open} />

@@ -32,7 +32,7 @@ export function LocaleSwitcher() {
       <select
         value={locale}
         onChange={onChange}
-        className="appearance-none bg-transparent border border-rule rounded-full pl-3 pr-7 py-1 text-ink hover:bg-paperDeep transition-colors cursor-pointer font-mono text-xs uppercase tracking-wider"
+        className="appearance-none bg-transparent border border-rule rounded-full ps-3 pe-7 py-1 text-ink hover:bg-paperDeep transition-colors cursor-pointer font-mono text-xs uppercase tracking-wider"
         aria-label="Language"
       >
         {routing.locales.map((l) => (
@@ -43,7 +43,7 @@ export function LocaleSwitcher() {
       </select>
       <span
         aria-hidden
-        className="pointer-events-none absolute right-2 top-1/2 -translate-y-1/2 text-slate2 text-[10px]"
+        className="pointer-events-none absolute end-2 top-1/2 -translate-y-1/2 text-slate2 text-[10px]"
       >
         ▾
       </span>

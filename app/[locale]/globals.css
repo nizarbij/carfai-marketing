@@ -51,17 +51,20 @@
   .prose-legal p {
     @apply my-4;
   }
+  /* Logical-property versions of pl/pr → ps/pe + border-l → border-s.
+     These honour the document's writing direction, so Arabic
+     (dir="rtl") gets the indent / border on the right edge automatically. */
   .prose-legal ul {
-    @apply list-disc pl-6 my-4 space-y-1;
+    @apply list-disc ps-6 my-4 space-y-1;
   }
   .prose-legal ol {
-    @apply list-decimal pl-6 my-4 space-y-1;
+    @apply list-decimal ps-6 my-4 space-y-1;
   }
   .prose-legal a {
     @apply text-accent underline decoration-1 underline-offset-2 hover:no-underline;
   }
   .prose-legal blockquote {
-    @apply border-l-2 border-rule pl-4 italic text-slate2 my-6;
+    @apply border-s-2 border-rule ps-4 italic text-slate2 my-6;
   }
   .prose-legal code {
     @apply font-mono text-sm bg-rule/40 rounded px-1 py-0.5;
@@ -77,9 +80,18 @@
   }
   .prose-legal th,
   .prose-legal td {
-    @apply border border-rule px-3 py-2 text-left align-top;
+    @apply border border-rule px-3 py-2 text-start align-top;
   }
   .prose-legal th {
     @apply bg-rule/30 font-semibold;
+  }
+}
+
+@layer utilities {
+  /* Arrow icons (→, ↓ used in CTAs) need to flip horizontally on
+     RTL so they keep pointing "forward" in reading order. Wrap any
+     directional arrow span in this class. */
+  [dir='rtl'] .arrow-rtl-flip {
+    transform: scaleX(-1);
   }
 }
