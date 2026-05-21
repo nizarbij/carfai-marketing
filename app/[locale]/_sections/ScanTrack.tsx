@@ -74,7 +74,7 @@ export function ScanTrack() {
         <div className="px-6 mb-8">
           <SectionIndex number={3} label={t('mobileEyebrow')} />
         </div>
-        <div className="flex gap-4 overflow-x-auto snap-x snap-mandatory scroll-pl-6 px-6 pb-6 [-webkit-overflow-scrolling:touch] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+        <div className="flex gap-4 overflow-x-auto snap-x snap-mandatory scroll-ps-6 px-6 pb-6 [-webkit-overflow-scrolling:touch] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
           {steps.map((s, i) => (
             <article key={i} className="shrink-0 w-[82vw] snap-start space-y-6">
               <PhoneFrame src={s.image} alt={s.alt} sizes="280px" className="w-full max-w-[280px] mx-auto" />

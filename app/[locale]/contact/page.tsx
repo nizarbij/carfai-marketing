@@ -63,7 +63,8 @@ function ContactPageContent() {
             <h2 className="text-xl md:text-2xl font-medium tracking-tight text-ink leading-snug mb-3">{r.title}</h2>
             <p className="text-base md:text-lg text-slate2 leading-relaxed max-w-prose mb-6">{r.body}</p>
             <a href={r.href} className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-ink text-paper hover:bg-accentDeep transition-colors font-medium text-sm">
-              {r.cta} →
+              {r.cta}
+              <span aria-hidden className="arrow-rtl-flip">→</span>
             </a>
           </article>
         ))}

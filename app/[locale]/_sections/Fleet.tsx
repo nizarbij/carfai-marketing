@@ -74,7 +74,7 @@ export function Fleet() {
       </div>
 
       {/* Mobile: native swipe carousel */}
-      <div className="md:hidden flex gap-4 overflow-x-auto snap-x snap-mandatory scroll-pl-6 px-6 pb-12 [-webkit-overflow-scrolling:touch] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+      <div className="md:hidden flex gap-4 overflow-x-auto snap-x snap-mandatory scroll-ps-6 px-6 pb-12 [-webkit-overflow-scrolling:touch] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
         {cards.map((c, i) => (
           <article key={i} className="shrink-0 w-[85vw] snap-start rounded-3xl border border-rule bg-paper p-6 flex flex-col gap-5">
             <PhoneFrame size="sm" src={c.image} alt={c.alt} sizes="200px" className="w-full max-w-[200px] mx-auto" />
