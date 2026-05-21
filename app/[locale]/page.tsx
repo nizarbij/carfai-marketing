@@ -1,3 +1,4 @@
+import { setRequestLocale } from 'next-intl/server';
 import { Hero }        from './_sections/Hero';
 import { Problem }     from './_sections/Problem';
 import { ScanTrack }   from './_sections/ScanTrack';
@@ -25,7 +26,9 @@ import { ClosingCTA }  from './_sections/ClosingCTA';
  *   8. Pricing     — sticky-stack
  *   9. ClosingCTA  — magnetic-cursor + splittext-reveal
  */
-export default function Home() {
+export default async function Home({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  setRequestLocale(locale);
   return (
     <>
       <Hero />

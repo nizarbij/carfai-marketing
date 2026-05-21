@@ -2,6 +2,7 @@
 
 import { useRef } from 'react';
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
@@ -10,30 +11,17 @@ if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger);
 }
 
-/**
- * Section 3 — Scan → Track. Named pattern: pinned-scrub.
- *
- * The section pins for ~1.5 viewport-heights while three "step cards"
- * crossfade through inside it. This is the Apple Vision Pro hero
- * pattern — page locks, internal content scrubs.
- *
- * Steps:
- *   1. snap (point the camera at a receipt)
- *   2. extract (Claude pulls amount + vendor + category)
- *   3. trend (cost lands in the monthly rollup chart)
- */
+const IMAGES = ['/app-scan-extract.jpg', '/app-documents.jpg', '/app-analytics-spending.jpg'];
+
 export function ScanTrack() {
+  const t          = useTranslations('ScanTrack');
   const sectionRef = useRef<HTMLDivElement>(null);
-  const stepRefs = useRef<HTMLDivElement[]>([]);
+  const stepRefs   = useRef<HTMLDivElement[]>([]);
   const screenRefs = useRef<HTMLDivElement[]>([]);
 
   useGSAP(
     () => {
-      // ScrollTrigger matchMedia: pin-and-scrub ONLY at md+ widths.
-      // On mobile the section flows naturally as a stacked block —
-      // all three steps render visibly and the user just scrolls.
       const mm = gsap.matchMedia();
-
       mm.add('(min-width: 768px)', () => {
         const steps = stepRefs.current;
         const screens = screenRefs.current;
@@ -68,117 +56,61 @@ export function ScanTrack() {
   );
 
   const steps = [
-    {
-      eyebrow: '01 · scan',
-      title:   'Point. Don’t type.',
-      body:    'Snap any receipt, repair order, registration, or quote. The model pulls amount, vendor, date, and category before you put the phone down.',
-      image:   '/app-scan-extract.jpg',
-      alt:     'CarFai Review & Refine screen showing date, vendor and amount auto-extracted from a maintenance receipt, plus AI-inferred type, category, and line items.',
-    },
-    {
-      eyebrow: '02 · categorize',
-      title:   'Goes in the right bucket.',
-      body:    'Fuel, insurance, maintenance, parts, parking, tickets — categorised at the line-item level. Tax-deductible flags stay flagged.',
-      image:   '/app-documents.jpg',
-      alt:     'Documents screen grouping receipts into Contravention, Fuel, Insurance, Maintenance, Parking, and Toll folders.',
-    },
-    {
-      eyebrow: '03 · trend',
-      title:   'See what it actually costs you.',
-      body:    'Per month. Per category. Per vehicle. Per year-over-year. Without a single manual entry.',
-      image:   '/app-analytics-spending.jpg',
-      alt:     'Analytics screen with monthly spending totals, average per month, document counts, and trend chart.',
-    },
+    { eyebrow: t('step1Eyebrow'), title: t('step1Title'), body: t('step1Body'), image: IMAGES[0], alt: t('step1Alt') },
+    { eyebrow: t('step2Eyebrow'), title: t('step2Title'), body: t('step2Body'), image: IMAGES[1], alt: t('step2Alt') },
+    { eyebrow: t('step3Eyebrow'), title: t('step3Title'), body: t('step3Body'), image: IMAGES[2], alt: t('step3Alt') },
   ];
 
   return (
     <section ref={sectionRef} className="relative md:h-screen md:overflow-hidden">
-      {/* ── Mobile: native swipe carousel (no GSAP). Native CSS
-            scroll-snap, edge-bled. Each step is a full-viewport
-            card; user swipes left/right to advance. Snap indicators
-            below the carousel tell the user where they are. ── */}
+      {/* Mobile: native swipe carousel */}
       <div className="md:hidden py-16">
         <div className="px-6 mb-8">
           <p className="font-mono text-sm uppercase tracking-widest text-slate2">
-            Scan · Categorize · Trend
+            {t('mobileEyebrow')}
           </p>
         </div>
         <div className="flex gap-4 overflow-x-auto snap-x snap-mandatory scroll-pl-6 px-6 pb-6 [-webkit-overflow-scrolling:touch] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
           {steps.map((s, i) => (
-            <article
-              key={i}
-              className="shrink-0 w-[82vw] snap-start space-y-6"
-            >
+            <article key={i} className="shrink-0 w-[82vw] snap-start space-y-6">
               <div className="relative aspect-[9/19] w-full max-w-[280px] mx-auto rounded-[2.5rem] border-[10px] border-ink bg-ink overflow-hidden shadow-[0_30px_60px_-20px_rgba(11,14,19,0.35)]">
-                <Image
-                  src={s.image}
-                  alt={s.alt}
-                  fill
-                  sizes="280px"
-                  className="phone-screen-img"
-                />
+                <Image src={s.image} alt={s.alt} fill sizes="280px" className="phone-screen-img" />
               </div>
               <div>
-                <p className="font-mono text-sm uppercase tracking-widest text-accent mb-2">
-                  {s.eyebrow}
-                </p>
-                <h3 className="text-2xl font-medium tracking-tight text-ink leading-[1.15] mb-3">
-                  {s.title}
-                </h3>
-                <p className="text-base text-slate2 leading-relaxed">
-                  {s.body}
-                </p>
+                <p className="font-mono text-sm uppercase tracking-widest text-accent mb-2">{s.eyebrow}</p>
+                <h3 className="text-2xl font-medium tracking-tight text-ink leading-[1.15] mb-3">{s.title}</h3>
+                <p className="text-base text-slate2 leading-relaxed">{s.body}</p>
               </div>
             </article>
           ))}
         </div>
-        <p className="px-6 mt-4 text-xs text-slate2 font-mono">
-          ← swipe →
-        </p>
+        <p className="px-6 mt-4 text-xs text-slate2 font-mono">{t('swipeHint')}</p>
       </div>
 
-      {/* ── Desktop (md+): pinned-scrub with crossfade ── */}
+      {/* Desktop: pinned-scrub */}
       <div className="hidden md:grid mx-auto max-w-6xl px-6 h-full md:grid-cols-[1fr_1.1fr] gap-16 items-center">
-        {/* Left: the three step cards stack on top of each other */}
         <div className="relative h-80">
           {steps.map((s, i) => (
             <div
               key={i}
-              ref={(el) => {
-                if (el) stepRefs.current[i] = el;
-              }}
+              ref={(el) => { if (el) stepRefs.current[i] = el; }}
               className="absolute inset-0 flex flex-col justify-center"
             >
-              <p className="font-mono text-base uppercase tracking-widest text-accent mb-4">
-                {s.eyebrow}
-              </p>
-              <h3 className="text-3xl md:text-4xl font-medium tracking-tight text-ink leading-[1.1] mb-4">
-                {s.title}
-              </h3>
-              <p className="text-lg md:text-xl text-slate2 leading-relaxed max-w-prose">
-                {s.body}
-              </p>
+              <p className="font-mono text-base uppercase tracking-widest text-accent mb-4">{s.eyebrow}</p>
+              <h3 className="text-3xl md:text-4xl font-medium tracking-tight text-ink leading-[1.1] mb-4">{s.title}</h3>
+              <p className="text-lg md:text-xl text-slate2 leading-relaxed max-w-prose">{s.body}</p>
             </div>
           ))}
         </div>
 
-        {/* Right: phone-shaped frame holding the 3 crossfading screenshots */}
         <div className="relative aspect-[9/19] max-h-[78vh] mx-auto w-full max-w-xs rounded-[2.5rem] border-[10px] border-ink bg-ink overflow-hidden shadow-[0_30px_60px_-20px_rgba(11,14,19,0.35)]">
           {steps.map((s, i) => (
             <div
               key={i}
-              ref={(el) => {
-                if (el) screenRefs.current[i] = el;
-              }}
+              ref={(el) => { if (el) screenRefs.current[i] = el; }}
               className="absolute inset-0"
             >
-              <Image
-                src={s.image}
-                alt={s.alt}
-                fill
-                sizes="320px"
-                className="phone-screen-img"
-              />
+              <Image src={s.image} alt={s.alt} fill sizes="320px" className="phone-screen-img" />
             </div>
           ))}
         </div>
