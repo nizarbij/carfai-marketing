@@ -53,14 +53,58 @@ mkdirSync(OUT, { recursive: true });
 /* ─── Glyph extraction ───────────────────────────────────────────────────── */
 
 // The wordmark is 878×254 — glyph on the left, "CARFAI" text on the right.
-// Eye-test puts the glyph in the leftmost ~200px; a generous crop of 220px
-// followed by sharp.trim() pulls the glyph cleanly regardless of pixel-exact
-// bounds. Background of the source is paper, so trim() picks that up via
-// background-threshold detection.
+// Column-scan the source to find:
+//   - the first non-paper column (left edge of the glyph)
+//   - the first all-paper column after that (right edge of the glyph,
+//     before the gap to the "C")
+// A naive width-220 crop pulls in the left of the "C", so we have to be
+// precise. The detected gap on the current logo is ~44px wide; the
+// `minGap` parameter rejects short paper streaks inside the glyph itself.
+async function detectGlyphBounds() {
+  const { data, info } = await sharp(join(PUBLIC, 'logo.png'))
+    .raw()
+    .toBuffer({ resolveWithObject: true });
+  const W = info.width, H = info.height, C = info.channels;
+  const PAPER = [0xFA, 0xFA, 0xF7];
+  const THRESH = 30;
+  const MIN_GAP = 8;
+
+  const isPaperColumn = (x) => {
+    for (let y = 0; y < H; y++) {
+      const i = (y * W + x) * C;
+      const a = C === 4 ? data[i + 3] : 255;
+      if (a < 80) continue;
+      const r = data[i], g = data[i + 1], b = data[i + 2];
+      if (Math.abs(r - PAPER[0]) > THRESH ||
+          Math.abs(g - PAPER[1]) > THRESH ||
+          Math.abs(b - PAPER[2]) > THRESH) return false;
+    }
+    return true;
+  };
+
+  let left = 0;
+  while (left < W && isPaperColumn(left)) left++;
+
+  let right = left;
+  let gapStart = -1;
+  for (let x = left; x < W; x++) {
+    const paper = isPaperColumn(x);
+    if (paper && gapStart < 0) gapStart = x;
+    if (!paper && gapStart >= 0) {
+      if (x - gapStart >= MIN_GAP) { right = gapStart; break; }
+      gapStart = -1;
+    }
+  }
+  if (right === left) right = gapStart >= 0 ? gapStart : W;
+
+  return { left, top: 0, width: right - left, height: H };
+}
+
 async function extractGlyph() {
+  const bounds = await detectGlyphBounds();
+  console.log(`Glyph bounds: x=${bounds.left}..${bounds.left + bounds.width}  (${bounds.width}×${bounds.height})`);
   return sharp(join(PUBLIC, 'logo.png'))
-    .extract({ left: 0, top: 0, width: 220, height: 254 })
-    .trim({ background: T.paper, threshold: 20 })
+    .extract(bounds)
     .png()
     .toBuffer();
 }
@@ -216,8 +260,7 @@ async function genPlayIcon() {
 /* ─── Main ───────────────────────────────────────────────────────────────── */
 
 const glyph = await extractGlyph();
-const glyphMeta = await sharp(glyph).metadata();
-console.log(`Extracted glyph from logo.png: ${glyphMeta.width}×${glyphMeta.height}\n`);
+console.log('');
 
 await genFeatureGraphic();
 await genIconMaster(glyph);
