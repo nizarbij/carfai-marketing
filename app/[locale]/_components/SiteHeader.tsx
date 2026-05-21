@@ -48,6 +48,9 @@ export function SiteHeader() {
           <Link href="/support" className="text-slate2 hover:text-ink transition-colors">
             {t('support')}
           </Link>
+          <Link href="/press" className="text-slate2 hover:text-ink transition-colors">
+            {t('press')}
+          </Link>
           <LocaleSwitcher />
           <a
             href="#start"
@@ -92,6 +95,13 @@ export function SiteHeader() {
             className="text-lg text-ink hover:text-accentDeep transition-colors"
           >
             {t('support')}
+          </Link>
+          <Link
+            href="/press"
+            onClick={() => setOpen(false)}
+            className="text-lg text-ink hover:text-accentDeep transition-colors"
+          >
+            {t('press')}
           </Link>
           <a
             href="#start"

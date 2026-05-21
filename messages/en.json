@@ -3,6 +3,7 @@
     "ariaHome": "CarFai home",
     "pricing": "Pricing",
     "support": "Support",
+    "press": "Press",
     "startFree": "Start free",
     "menuOpen": "Open menu",
     "menuClose": "Close menu",
@@ -16,6 +17,7 @@
     "navPricing": "Pricing",
     "navSupport": "Support",
     "navContact": "Contact",
+    "navPress": "Press kit",
     "copyright": "© {year} CarFai"
   },
   "LegalPages": {
@@ -214,6 +216,22 @@
     "faq5A": "No — prices are localized by Apple and Google to your region. The figures above are USD references; you will see your currency in-app.",
     "faq6Q": "How do I cancel?",
     "faq6A": "Manage your subscription directly in the App Store (iOS) or Google Play (Android) — the same place you manage every other subscription on your device."
+  },
+  "PressPage": {
+    "metaTitle": "Press kit",
+    "metaDescription": "CarFai press assets — Play Store preview screenshots in their shipped form. Free to use for press, reviews, and write-ups. Attribution appreciated, not required.",
+    "eyebrow": "Press kit",
+    "h1": "What we ship to the store.",
+    "intro": "Snap a receipt — CarFai pulls the amount, vendor, and category before you set the phone down. Plug in any OBD2 dongle — engine codes come back in plain English, not P-numbers you Google. Ask the advisor anything about your car — it answers from your service history first, generic web second. Six features, one app, lined up below in the exact frames you'll see in the Play Store.",
+    "sectionTitle": "Play Store previews",
+    "sectionIntro": "Six shots that walk through the product the same way the Play Store listing does — home, capture, advisor, fleet, OBD2, spending.",
+    "contactCta": "Need something else? carfai.info@gmail.com",
+    "captionHero":     "Home — Your Car's Memory, Reinvented",
+    "captionCapture":  "Capture — Snap. Extract. Done.",
+    "captionAdvisor":  "Advisor — Ask Anything About Your Car",
+    "captionFleet":    "Fleet — Run Your Fleet With Confidence",
+    "captionObd2":     "OBD2 — Connect. Diagnose. Drive Smarter.",
+    "captionSpending": "Spending — Every Vehicle. Every Receipt. One App."
   },
   "ContactPage": {
     "metaTitle": "Contact",

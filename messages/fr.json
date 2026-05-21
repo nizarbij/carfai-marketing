@@ -3,6 +3,7 @@
     "ariaHome": "Accueil CarFai",
     "pricing": "Tarifs",
     "support": "Support",
+    "press": "Presse",
     "startFree": "Démarrer gratuitement",
     "menuOpen": "Ouvrir le menu",
     "menuClose": "Fermer le menu",
@@ -16,6 +17,7 @@
     "navPricing": "Tarifs",
     "navSupport": "Support",
     "navContact": "Contact",
+    "navPress": "Kit presse",
     "copyright": "© {year} CarFai"
   },
   "LegalPages": {
@@ -214,6 +216,22 @@
     "faq5A": "Non — les prix sont localisés par Apple et Google pour votre région. Les chiffres ci-dessus sont des références en USD; vous verrez votre devise dans l'application.",
     "faq6Q": "Comment puis-je annuler?",
     "faq6A": "Gérez votre abonnement directement dans l'App Store (iOS) ou Google Play (Android) — au même endroit où vous gérez tous les autres abonnements sur votre appareil."
+  },
+  "PressPage": {
+    "metaTitle": "Kit presse",
+    "metaDescription": "Ressources presse CarFai — captures d'écran d'aperçu du Play Store telles qu'elles sont livrées. Libres d'usage pour la presse, les revues et les articles. Attribution appréciée, pas obligatoire.",
+    "eyebrow": "Kit presse",
+    "h1": "Ce que nous livrons à la boutique.",
+    "intro": "Photographiez un reçu, et CarFai en extrait le montant, le marchand et la catégorie avant même que vous ne reposiez le téléphone. Branchez n'importe quel adaptateur OBD2 : les codes moteur reviennent en langage clair, pas en codes P à chercher sur Google. Posez n'importe quelle question au conseiller — il répond d'abord depuis votre historique d'entretien, le web générique ensuite. Six fonctionnalités, une seule app, alignées ci-dessous dans les images exactes que vous verrez sur le Play Store.",
+    "sectionTitle": "Aperçus du Play Store",
+    "sectionIntro": "Six images qui parcourent le produit dans le même ordre que la fiche Play Store — accueil, capture, conseiller, flotte, OBD2, dépenses.",
+    "contactCta": "Besoin d'autre chose ? carfai.info@gmail.com",
+    "captionHero":     "Accueil — La mémoire de votre voiture, réinventée",
+    "captionCapture":  "Capture — Photographier. Extraire. C'est fait.",
+    "captionAdvisor":  "Conseiller — Posez n'importe quelle question à votre voiture",
+    "captionFleet":    "Flotte — Gérez votre flotte en confiance",
+    "captionObd2":     "OBD2 — Connectez. Diagnostiquez. Roulez plus intelligent.",
+    "captionSpending": "Dépenses — Chaque véhicule. Chaque reçu. Une seule application."
   },
   "ContactPage": {
     "metaTitle": "Contact",

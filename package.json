@@ -9,6 +9,7 @@
     "lint": "next lint",
     "typecheck": "tsc --noEmit",
     "gen:hero": "node scripts/generate-hero.mjs",
+    "gen:store": "node scripts/gen-store-screenshots.mjs",
     "gen:qr": "node scripts/generate-qr.mjs",
     "gen:logo": "node scripts/trim-logo.mjs",
     "gen:translations": "node scripts/translate-ui.mjs",

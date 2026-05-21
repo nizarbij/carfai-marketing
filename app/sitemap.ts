@@ -26,6 +26,7 @@ const ROUTES: Array<{ path: string; changeFrequency: MetadataRoute.Sitemap[numbe
   { path: '/pricing', changeFrequency: 'monthly', priority: 0.8 },
   { path: '/support', changeFrequency: 'monthly', priority: 0.7 },
   { path: '/contact', changeFrequency: 'yearly',  priority: 0.6 },
+  { path: '/press',   changeFrequency: 'monthly', priority: 0.5 },
   ...LEGAL_PAGES.map((p) => ({
     path:            `/${p.slug}`,
     changeFrequency: 'monthly' as const,

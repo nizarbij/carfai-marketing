@@ -3,6 +3,7 @@
     "ariaHome": "Inicio de CarFai",
     "pricing": "Precios",
     "support": "Soporte",
+    "press": "Prensa",
     "startFree": "Empezar gratis",
     "menuOpen": "Abrir menú",
     "menuClose": "Cerrar menú",
@@ -16,6 +17,7 @@
     "navPricing": "Precios",
     "navSupport": "Soporte",
     "navContact": "Contacto",
+    "navPress": "Kit de prensa",
     "copyright": "© {year} CarFai"
   },
   "LegalPages": {
@@ -214,6 +216,22 @@
     "faq5A": "No. Apple y Google localizan los precios para tu región. Las cifras anteriores son referencias en USD; verás tu moneda en la app.",
     "faq6Q": "¿Cómo cancelo?",
     "faq6A": "Gestiona tu suscripción directamente en la App Store (iOS) o en Google Play (Android), el mismo lugar donde gestionas todas las demás suscripciones de tu dispositivo."
+  },
+  "PressPage": {
+    "metaTitle": "Kit de prensa",
+    "metaDescription": "Recursos de prensa de CarFai — capturas de vista previa de Play Store tal como se publican. Libres para uso en prensa, reseñas y artículos. Atribución agradecida, no obligatoria.",
+    "eyebrow": "Kit de prensa",
+    "h1": "Lo que enviamos a la tienda.",
+    "intro": "Fotografía un recibo y CarFai extrae el monto, el comercio y la categoría antes de que dejes el teléfono. Conecta cualquier adaptador OBD2: los códigos del motor vuelven en lenguaje claro, no en códigos P que tengas que buscar en Google. Pregúntale al asesor lo que sea sobre tu auto — responde primero desde tu historial de servicio, lo genérico de la web después. Seis funciones, una sola app, presentadas abajo en las mismas tomas que verás en la Play Store.",
+    "sectionTitle": "Vistas previas de Play Store",
+    "sectionIntro": "Seis tomas que recorren el producto en el mismo orden que la ficha de Play Store — inicio, captura, asesor, flota, OBD2, gastos.",
+    "contactCta": "¿Necesitas otra cosa? carfai.info@gmail.com",
+    "captionHero":     "Inicio — La memoria de tu auto, reinventada",
+    "captionCapture":  "Captura — Foto. Extrae. Listo.",
+    "captionAdvisor":  "Asesor — Pregúntale a tu auto lo que sea",
+    "captionFleet":    "Flota — Gestiona tu flota con confianza",
+    "captionObd2":     "OBD2 — Conecta. Diagnostica. Conduce mejor.",
+    "captionSpending": "Gastos — Cada vehículo. Cada recibo. Una sola app."
   },
   "ContactPage": {
     "metaTitle": "Contacto",
