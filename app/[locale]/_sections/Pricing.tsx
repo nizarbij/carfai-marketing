@@ -48,7 +48,11 @@ export function Pricing() {
             className={
               'sticky rounded-3xl border grid md:grid-cols-[1fr_auto] gap-8 items-start shadow-[0_1px_0_rgba(11,14,19,0.04)] ' +
               (tier.accent
-                ? 'p-10 md:p-16 border-accent/30 bg-accentMist/40'
+                // bg-accentMist must be solid (not /40) — sticky-stack
+                // depends on each card fully covering the one below it.
+                // A semi-transparent Max card showed the Pro card sliding
+                // up beneath it as the user scrolled into section 9.
+                ? 'p-10 md:p-16 border-accent/30 bg-accentMist'
                 : 'p-8 md:p-14 border-rule bg-paper')
             }
             style={{ top: `${72 + i * 16}px` }}
