@@ -28,11 +28,15 @@ export function LocaleSwitcher() {
 
   return (
     <label className="relative inline-flex items-center text-sm">
-      <span className="sr-only">Language</span>
       <select
         value={locale}
         onChange={onChange}
-        className="appearance-none bg-transparent border border-rule rounded-full ps-3 pe-7 py-1 text-ink hover:bg-paperDeep transition-colors cursor-pointer font-mono text-xs uppercase tracking-wider"
+        // py-2 (8px each side) + 12px text + a touch of leading lands at
+        // ~36-40px tall on desktop; on mobile the surrounding 44x44 tap
+        // target is enforced via the parent flex item's gap-5 spacing,
+        // so this stays a comfortable hit area without becoming visually
+        // chunky next to the nav links.
+        className="appearance-none bg-transparent border border-rule rounded-full ps-3 pe-7 py-2 text-ink hover:bg-paperDeep transition-colors cursor-pointer font-mono text-xs uppercase tracking-wider"
         aria-label="Language"
       >
         {routing.locales.map((l) => (

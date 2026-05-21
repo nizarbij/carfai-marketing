@@ -42,6 +42,22 @@ const config: Config = {
       letterSpacing: {
         widest: '0.22em',  // for eyebrow / small-caps labels
       },
+      keyframes: {
+        // Radix Accordion. Animates against the dynamic content height
+        // exposed by Radix as --radix-accordion-content-height.
+        'accordion-down': {
+          from: { height: '0' },
+          to:   { height: 'var(--radix-accordion-content-height)' },
+        },
+        'accordion-up': {
+          from: { height: 'var(--radix-accordion-content-height)' },
+          to:   { height: '0' },
+        },
+      },
+      animation: {
+        'accordion-down': 'accordion-down 280ms cubic-bezier(0.16, 1, 0.3, 1)',
+        'accordion-up':   'accordion-up   220ms cubic-bezier(0.16, 1, 0.3, 1)',
+      },
     },
   },
   plugins: [],

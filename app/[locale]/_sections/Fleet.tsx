@@ -1,11 +1,14 @@
 'use client';
 
 import { useRef } from 'react';
-import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
+import { PhoneFrame } from '../_components/PhoneFrame';
+import { Eyebrow } from '../_components/Eyebrow';
+import { SectionIndex } from '../_components/SectionIndex';
+import { useReducedMotion } from '../_components/useReducedMotion';
 
 if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger);
@@ -13,15 +16,25 @@ if (typeof window !== 'undefined') {
 
 const IMAGES = ['/app-fleet-home.jpg', '/app-fleet-overview.jpg', '/app-fleet-analytics.jpg'];
 
+/**
+ * Section 7 — Fleet B2B band.
+ *
+ * Top-of-section eyebrow intentionally omitted (paired with Maintenance) —
+ * see comment in Maintenance.tsx for the brand-register rationale.
+ * The per-card "01 · LABEL" prefixes stay: they're enumerated steps, not
+ * section grammar, so they don't trip the repeated-kicker pattern.
+ */
 export function Fleet() {
   const t          = useTranslations('Fleet');
   const sectionRef = useRef<HTMLDivElement>(null);
   const trackRef   = useRef<HTMLDivElement>(null);
+  const reduced    = useReducedMotion();
 
   useGSAP(
     () => {
+      if (reduced) return;
       const mm = gsap.matchMedia();
-      mm.add('(min-width: 768px)', () => {
+      mm.add('(min-width: 768px) and (prefers-reduced-motion: no-preference)', () => {
         const track = trackRef.current;
         if (!track) return;
         const distance = track.scrollWidth - track.clientWidth;
@@ -54,9 +67,7 @@ export function Fleet() {
   return (
     <section ref={sectionRef} className="relative bg-paperDeep md:h-screen md:overflow-hidden">
       <div className="mx-auto max-w-6xl px-6 pt-16 pb-8 md:pt-20">
-        <p className="font-mono text-sm md:text-base uppercase tracking-widest text-slate2 mb-4">
-          {t('eyebrow')}
-        </p>
+        <SectionIndex number={7} label={t('eyebrow')} className="mb-8 md:mb-10" />
         <h2 className="text-3xl md:text-5xl font-medium tracking-tight text-ink max-w-2xl leading-[1.1]">
           {t('h2')}
         </h2>
@@ -66,13 +77,11 @@ export function Fleet() {
       <div className="md:hidden flex gap-4 overflow-x-auto snap-x snap-mandatory scroll-pl-6 px-6 pb-12 [-webkit-overflow-scrolling:touch] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
         {cards.map((c, i) => (
           <article key={i} className="shrink-0 w-[85vw] snap-start rounded-3xl border border-rule bg-paper p-6 flex flex-col gap-5">
-            <div className="relative aspect-[9/19] w-full max-w-[200px] mx-auto rounded-[1.75rem] border-[8px] border-ink bg-ink overflow-hidden shadow-[0_20px_40px_-15px_rgba(11,14,19,0.35)]">
-              <Image src={c.image} alt={c.alt} fill sizes="200px" className="phone-screen-img" />
-            </div>
+            <PhoneFrame size="sm" src={c.image} alt={c.alt} sizes="200px" className="w-full max-w-[200px] mx-auto" />
             <div>
-              <p className="font-mono text-sm uppercase tracking-widest text-accent mb-2">
+              <Eyebrow tone="accent" size="sm" className="mb-2">
                 {String(i + 1).padStart(2, '0')} · {c.eyebrow}
-              </p>
+              </Eyebrow>
               <h3 className="text-xl font-medium tracking-tight text-ink leading-tight mb-2">{c.title}</h3>
               <p className="text-base text-slate2 leading-relaxed">{c.body}</p>
             </div>
@@ -86,13 +95,11 @@ export function Fleet() {
         <div ref={trackRef} className="flex gap-8 px-[max(1.5rem,calc((100vw-72rem)/2))] will-change-transform items-stretch">
           {cards.map((c, i) => (
             <article key={i} className="shrink-0 w-[42rem] rounded-3xl border border-rule bg-paper p-10 grid grid-cols-[auto_1fr] gap-8 items-center">
-              <div className="relative aspect-[9/19] w-[200px] rounded-[2rem] border-[8px] border-ink bg-ink overflow-hidden shadow-[0_20px_40px_-15px_rgba(11,14,19,0.35)] mx-auto">
-                <Image src={c.image} alt={c.alt} fill sizes="200px" className="phone-screen-img" />
-              </div>
+              <PhoneFrame size="sm" src={c.image} alt={c.alt} sizes="200px" className="w-[200px] mx-auto" />
               <div>
-                <p className="font-mono text-base uppercase tracking-widest text-accent mb-3">
+                <Eyebrow tone="accent" className="mb-3">
                   {String(i + 1).padStart(2, '0')} · {c.eyebrow}
-                </p>
+                </Eyebrow>
                 <h3 className="text-2xl md:text-3xl font-medium tracking-tight text-ink leading-tight mb-3">{c.title}</h3>
                 <p className="text-lg text-slate2 leading-relaxed">{c.body}</p>
               </div>

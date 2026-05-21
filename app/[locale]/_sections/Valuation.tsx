@@ -1,8 +1,10 @@
 import { existsSync } from 'fs';
 import { join } from 'path';
-import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import { SplitTextReveal } from '../_components/SplitTextReveal';
+import { PhoneFrame } from '../_components/PhoneFrame';
+import { Eyebrow } from '../_components/Eyebrow';
+import { SectionIndex } from '../_components/SectionIndex';
 
 const VALUATION_IMAGE_EXISTS = existsSync(
   join(process.cwd(), 'public', 'app-valuation.jpg'),
@@ -20,11 +22,10 @@ export function Valuation() {
 
   return (
     <section className="bg-ink text-paper">
-      <div className="mx-auto max-w-6xl px-6 py-20 md:py-40 grid md:grid-cols-[1.1fr_1fr] gap-12 md:gap-16 items-center">
+      <div className="mx-auto max-w-6xl px-6 py-20 md:py-40">
+        <SectionIndex number={5} label={t('eyebrow')} surface="dark" className="mb-10 md:mb-16" />
+      <div className="grid md:grid-cols-[1.1fr_1fr] gap-12 md:gap-16 items-center">
         <div>
-          <p className="font-mono text-sm md:text-base uppercase tracking-widest text-paper/50 mb-6">
-            {t('eyebrow')}
-          </p>
 
           <SplitTextReveal
             as="h2"
@@ -62,23 +63,18 @@ export function Valuation() {
           </ul>
         </div>
 
-        <div className="relative aspect-[9/19] max-h-[70vh] md:max-h-[78vh] mx-auto w-full max-w-[260px] md:max-w-xs rounded-[2.5rem] border-[10px] border-paper/15 bg-paper/[0.04] overflow-hidden shadow-[0_30px_60px_-20px_rgba(0,0,0,0.5)]">
-          {VALUATION_IMAGE_EXISTS ? (
-            <Image
-              src="/app-valuation.jpg"
-              alt={t('imageAlt')}
-              fill
-              sizes="(min-width: 768px) 320px, 80vw"
-              className="phone-screen-img"
-            />
-          ) : (
-            <div className="absolute inset-0 flex items-center justify-center text-center px-6">
-              <p className="font-mono text-base uppercase tracking-widest text-paper/40">
-                {t.rich('missing', { br: () => <br /> })}
-              </p>
-            </div>
-          )}
-        </div>
+        <PhoneFrame
+          surface="dark"
+          src={VALUATION_IMAGE_EXISTS ? '/app-valuation.jpg' : undefined}
+          alt={t('imageAlt')}
+          fallback={
+            <p className="font-mono text-base uppercase tracking-widest text-paper/40">
+              {t.rich('missing', { br: () => <br /> })}
+            </p>
+          }
+          className="max-h-[70vh] md:max-h-[78vh] mx-auto w-full max-w-[260px] md:max-w-xs"
+        />
+      </div>
       </div>
     </section>
   );

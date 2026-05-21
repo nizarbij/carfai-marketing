@@ -44,15 +44,30 @@ const MD_LINK_REWRITE = {
 function scrub(src) {
   let s = src;
 
-  // 1. Remove the v0 DRAFT banner block. Spans two blockquote lines + the
-  //    trailing blank line. Use a non-greedy multi-line match.
+  // 1. Remove the v0 DRAFT banner block. Three known variants:
+  //    a) two-line: `> v0 DRAFT...` + `> See README...`
+  //    b) single-line: `> ⚠️ **v0 DRAFT...** For lawyer review only.`
+  //    c) translated variants (Arabic `مسودة الإصدار 0`, etc.)
+  // Order matters: try the two-line variants first (they're more
+  // specific), then fall through to single-line cleanups.
   s = s.replace(
     /^> .*v0 DRAFT.*NOT FOR PUBLICATION.*\n> .*For status \+ placeholders\.\n\n/m,
     '',
   );
-  // Defensive: a few variants used "lawyer review only" wording.
   s = s.replace(
     /^> .*v0 DRAFT.*\n> .*\n\n/m,
+    '',
+  );
+  // Single-line English variant (most common after first scrub left
+  // it because regex required a second blockquote line).
+  s = s.replace(
+    /^> .*v0 DRAFT.*NOT FOR PUBLICATION.*lawyer review.*\n\n/gm,
+    '',
+  );
+  // Single-line Arabic variants (the translator produced these from
+  // the EN source).
+  s = s.replace(
+    /^> .*مسودة الإصدار 0.*\n\n/gm,
     '',
   );
 

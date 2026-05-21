@@ -45,6 +45,7 @@
     "imageAlt": "Editorial still-life: open glove box with documents on the right, phone with the CarFai score 87 in the centre, analog gauges on the left, all bathed in golden-hour light."
   },
   "Problem": {
+    "eyebrow": "The problem",
     "h2Line1": "Owning a car is expensive and confusing.",
     "h2Line2": "We didn't fix the cost. We made it less confusing.",
     "body": "Most car apps are a glorified spreadsheet, or a service-shop upsell, or a chatbot that hasn't seen your specific vehicle. CarFai reads your maintenance records, your OBD2 scans, your country-specific costs — and answers questions about <em>your</em> car."
@@ -165,7 +166,8 @@
     "metaDescription": "CarFai pricing — five tiers, from free for one car to fleet management at scale. Token rollover on every paid plan; no card required for the free tier.",
     "eyebrow": "Pricing",
     "h1": "One ladder. Pick the rung you actually need.",
-    "intro": "Free is genuinely free — no trial timer. Every paid plan rolls leftover tokens to the next month so a slow month is not wasted. Prices below in USD; in-app prices are localized.",
+    "intro": "Free is genuinely free — no trial timer. Every paid plan rolls leftover tokens to the next month so a slow month is not wasted.",
+    "priceNote": "Prices below in USD; in-app prices are localized.",
     "comparisonHeading": "Every feature, side by side.",
     "comparisonIntro": "What you get on each plan. Everything in a lower tier is included in the tier above it.",
     "recommended": "Recommended",

@@ -38,13 +38,14 @@
     "eyebrow": "Pour conducteurs · pour flottes",
     "h1": "Un deuxième avis pour votre voiture.",
     "quote": "La première IA qui a vraiment vu ce que votre voiture a vu.",
-    "body": "Reçus, codes OBD2, historique de réparations, documents. CarFai les lit tous — puis répond à des questions qu'un moteur de recherche ne pourrait jamais.",
+    "body": "Reçus, codes OBD2, historique de réparation, documents. CarFai lit tout, puis répond à des questions qu'aucun moteur de recherche ne saurait traiter.",
     "ctaStart": "Démarrer gratuitement",
     "ctaPricing": "Voir les tarifs",
     "imagePlaceholder": "hero image slot — run `npm run gen:hero`",
     "imageAlt": "Nature morte éditoriale : boîte à gants ouverte avec des documents à droite, téléphone affichant le score CarFai de 87 au centre, cadrans analogiques à gauche, le tout baigné dans la lumière du crépuscule."
   },
   "Problem": {
+    "eyebrow": "Le problème",
     "h2Line1": "Posséder une voiture, c'est cher et compliqué.",
     "h2Line2": "Nous n'avons pas réglé le coût. Nous avons simplifié le reste.",
     "body": "La plupart des applications automobiles sont des feuilles de calcul glorifiées, des outils de vente pour ateliers ou des agents conversationnels qui n'ont jamais vu votre véhicule. CarFai lit vos dossiers d'entretien, vos scans OBD2, vos coûts locaux — et répond à des questions sur <em>votre</em> voiture."
@@ -67,7 +68,7 @@
   },
   "Maintenance": {
     "eyebrow": "Entretien · OBD2 · Renouvellements",
-    "h2": "Tout ce qui peut briser — prédit, sans surprise.",
+    "h2": "Chaque panne possible, anticipée plutôt que subie.",
     "obd2Alt": "Tableau de bord OBD2 CarFai : 2 codes d'erreur (P0000 info, P0043 avertissement), lectures clés (batterie 13,1 V, liquide de refroidissement 63 °C, odomètre 65 415 km) et un résumé de conduite sur 30 jours.",
     "missing": "missing<br />/public/app-obd2.jpg",
     "bullet1Eyebrow": "Calendrier d'entretien par IA",
@@ -75,7 +76,7 @@
     "bullet2Eyebrow": "Diagnostics OBD2",
     "bullet2Body": "Branchez n'importe quel adaptateur OBD2. Données en direct du moteur, de la transmission, de la batterie et du système d'alimentation — interprétées en langage clair, pas en codes P à chercher sur Google.",
     "bullet3Eyebrow": "Suivi d'expiration des documents",
-    "bullet3Body": "Renouvellement d'assurance, immatriculation, inspection. Scannés une fois à partir de vos reçus, affichés au calendrier pour toujours. Fini les frais de retard pour renouvellement oublié."
+    "bullet3Body": "Renouvellement d'assurance, immatriculation, inspection. Scannés une fois depuis vos reçus, inscrits au calendrier pour de bon. Fini les frais de retard pour un renouvellement oublié."
   },
   "Valuation": {
     "eyebrow": "Évaluation du véhicule",
@@ -98,11 +99,11 @@
   "Advisor": {
     "eyebrow": "Le conseiller",
     "h2": "Demandez n'importe quoi à votre voiture.",
-    "body": "Le conseiller lit votre historique d'entretien, vos scans OBD2, votre pays, votre modèle, vos habitudes de conduite — et répond d'abord à partir de vos données. Les réponses génériques du web viennent ensuite.",
+    "body": "Le conseiller lit votre historique d'entretien, vos scans OBD2, votre pays, votre modèle, vos habitudes de conduite, puis répond d'abord à partir de vos données. Le web générique ne vient qu'ensuite.",
     "youLabel": "Vous",
     "question": "« Pourquoi mon assurance est-elle plus chère que l'an dernier? »",
     "answerLabel": "CarFai",
-    "answer": "Deux raisons : votre cycle de renouvellement a atteint la réinitialisation de la prime après 3 ans, et vous avez ajouté une réclamation avec responsabilité en mars. La référence pour votre modèle + âge au Québec est de <strong>1 840 $/an</strong>; vous êtes à 2 210 $. Magasinez maintenant ou attendez six mois que la réclamation passe dans une tranche inférieure.",
+    "answer": "Deux raisons : votre prime a été réinitialisée à votre échéance triennale, et vous avez ajouté un sinistre responsable en mars. La référence pour votre modèle et votre âge au Québec est de <strong>1 840 $/an</strong> ; vous êtes à 2 210 $. Magasinez tout de suite, ou attendez six mois que le sinistre glisse dans une tranche inférieure.",
     "imageAlt": "Écran du AI Advisor de CarFai montrant une question et une réponse.",
     "missing": "drop AIAdvisorScreen<br />screenshot at<br />/public/app-aiadvisor.jpg"
   },
@@ -125,8 +126,8 @@
   },
   "PricingSection": {
     "eyebrow": "Tarifs",
-    "h2": "Une seule grille tarifaire. Choisissez le niveau dont vous avez vraiment besoin.",
-    "body": "Le forfait gratuit est vraiment gratuit — sans période d'essai. Chaque forfait payant reporte les jetons restants au mois suivant, pour ne pas gaspiller un mois tranquille.",
+    "h2": "Une gamme, cinq paliers. Prenez celui dont vous avez vraiment l'usage.",
+    "body": "L'offre gratuite l'est pour de bon, sans compte à rebours d'essai. Sur chaque forfait payant, les jetons inutilisés sont reportés au mois suivant : un mois plus calme ne se perd jamais.",
     "tier1Name": "Gratuit",
     "tier1Price": "$0",
     "tier1Cadence": "pour toujours",
@@ -164,8 +165,9 @@
     "metaTitle": "Tarifs",
     "metaDescription": "Tarifs CarFai — cinq forfaits, du gratuit pour une voiture à la gestion de flotte à grande échelle. Report de jetons sur chaque forfait payant; aucune carte requise pour le forfait gratuit.",
     "eyebrow": "Tarifs",
-    "h1": "Une seule grille. Choisissez le niveau dont vous avez vraiment besoin.",
-    "intro": "Le forfait gratuit est vraiment gratuit — sans période d'essai. Chaque forfait payant reporte les jetons restants au mois suivant, pour ne pas gaspiller un mois tranquille. Les prix ci-dessous sont en USD; les prix dans l'application sont localisés.",
+    "h1": "Une gamme, cinq paliers. Prenez celui dont vous avez vraiment l'usage.",
+    "intro": "L'offre gratuite l'est pour de bon, sans compte à rebours d'essai. Sur chaque forfait payant, les jetons inutilisés sont reportés au mois suivant : un mois plus calme ne se perd jamais.",
+    "priceNote": "Tarifs affichés en USD ; les prix sont localisés dans l'application.",
     "comparisonHeading": "Chaque fonctionnalité, côte à côte.",
     "comparisonIntro": "Ce que vous obtenez avec chaque forfait. Tout ce qui est inclus dans un forfait inférieur l'est aussi dans le forfait supérieur.",
     "recommended": "Recommandé",

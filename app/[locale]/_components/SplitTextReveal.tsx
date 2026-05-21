@@ -5,6 +5,9 @@ import SplitType from 'split-type';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
+import { useLocale } from 'next-intl';
+import { useReducedMotion } from './useReducedMotion';
+import { RTL_LOCALES, type Locale } from '@/i18n/routing';
 
 if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger);
@@ -38,10 +41,34 @@ export function SplitTextReveal({
   as: Tag = 'h2',
 }: Props) {
   const ref = useRef<HTMLElement>(null);
+  const reduced = useReducedMotion();
+  const locale  = useLocale() as Locale;
+  const isRtl   = RTL_LOCALES.includes(locale);
 
   useGSAP(
     () => {
-      if (!ref.current) return;
+      if (!ref.current || reduced) return;
+
+      // RTL fallback: SplitType wraps each character in its own <span>,
+      // which forces Arabic letters to render in their isolated form and
+      // destroys ligatures (visible as ugly gaps between joined letters).
+      // For RTL locales, animate the whole heading instead of per-char.
+      // The motion shape (opacity + small y) is the same — just one tween
+      // on the wrapper, not 30 staggered tweens on each glyph.
+      if (isRtl) {
+        gsap.set(ref.current, { y: 8, opacity: 0 });
+        gsap.to(ref.current, {
+          y: 0,
+          opacity: 1,
+          duration: 0.7,
+          ease: 'power3.out',
+          scrollTrigger: onScroll
+            ? { trigger: ref.current, start: 'top 80%', once: true }
+            : undefined,
+        });
+        return;
+      }
+
       const split = new SplitType(ref.current, { types: 'chars,words' });
       const targets = split.chars ?? [];
 
@@ -62,7 +89,7 @@ export function SplitTextReveal({
       // revert is registered as a manual cleanup.
       return () => split.revert();
     },
-    { scope: ref, dependencies: [onScroll] },
+    { scope: ref, dependencies: [onScroll, reduced, isRtl] },
   );
 
   return (

@@ -1,12 +1,23 @@
 import { existsSync } from 'fs';
 import { join } from 'path';
-import Image from 'next/image';
 import { useTranslations } from 'next-intl';
+import { PhoneFrame } from '../_components/PhoneFrame';
+import { Eyebrow } from '../_components/Eyebrow';
+import { SectionIndex } from '../_components/SectionIndex';
 
 const OBD2_IMAGE_EXISTS = existsSync(
   join(process.cwd(), 'public', 'app-obd2.jpg'),
 );
 
+/**
+ * Section 4 — Maintenance & OBD2.
+ *
+ * Top-of-section eyebrow replaced by the numbered <SectionIndex>
+ * system. The original tiny-uppercase-tracked label was risking the
+ * "recurring kicker as section grammar" warning; the numbered system
+ * earns the repetition by carrying variety (01 → 09) plus the scrub-in
+ * hairline rule.
+ */
 export function Maintenance() {
   const t = useTranslations('Maintenance');
 
@@ -18,29 +29,21 @@ export function Maintenance() {
 
   return (
     <section className="border-t border-rule bg-paper">
-      <div className="mx-auto max-w-6xl px-6 py-28 md:py-40 grid md:grid-cols-[1fr_1fr] gap-12 md:gap-16 items-center">
-        <div className="relative aspect-[9/19] max-h-[78vh] mx-auto w-full max-w-xs rounded-[2.5rem] border-[10px] border-ink bg-ink overflow-hidden shadow-[0_30px_60px_-20px_rgba(11,14,19,0.35)] order-2 md:order-1">
-          {OBD2_IMAGE_EXISTS ? (
-            <Image
-              src="/app-obd2.jpg"
-              alt={t('obd2Alt')}
-              fill
-              sizes="(min-width: 768px) 320px, 80vw"
-              className="phone-screen-img"
-            />
-          ) : (
-            <div className="absolute inset-0 flex items-center justify-center text-center px-6 bg-paperDeep">
-              <p className="font-mono text-base uppercase tracking-widest text-slate2">
-                {t.rich('missing', { br: () => <br /> })}
-              </p>
-            </div>
-          )}
-        </div>
+      <div className="mx-auto max-w-6xl px-6 py-28 md:py-40">
+        <SectionIndex number={4} label={t('eyebrow')} className="mb-12 md:mb-20" />
+      <div className="grid md:grid-cols-[1fr_1fr] gap-12 md:gap-16 items-center">
+        <PhoneFrame
+          src={OBD2_IMAGE_EXISTS ? '/app-obd2.jpg' : undefined}
+          alt={t('obd2Alt')}
+          fallback={
+            <p className="font-mono text-base uppercase tracking-widest text-slate2">
+              {t.rich('missing', { br: () => <br /> })}
+            </p>
+          }
+          className="max-h-[78vh] mx-auto w-full max-w-xs order-2 md:order-1"
+        />
 
         <div className="order-1 md:order-2">
-          <p className="font-mono text-base uppercase tracking-widest text-slate2 mb-6">
-            {t('eyebrow')}
-          </p>
           <h2 className="text-3xl md:text-5xl font-medium tracking-tight text-ink leading-[1.1] max-w-xl">
             {t('h2')}
           </h2>
@@ -48,9 +51,7 @@ export function Maintenance() {
           <ul className="mt-10 space-y-8">
             {bullets.map((b) => (
               <li key={b.eyebrow}>
-                <p className="font-mono text-base uppercase tracking-widest text-accent mb-2">
-                  {b.eyebrow}
-                </p>
+                <Eyebrow tone="accent" className="mb-2">{b.eyebrow}</Eyebrow>
                 <p className="text-lg md:text-xl text-slate2 leading-relaxed max-w-prose">
                   {b.body}
                 </p>
@@ -58,6 +59,7 @@ export function Maintenance() {
             ))}
           </ul>
         </div>
+      </div>
       </div>
     </section>
   );

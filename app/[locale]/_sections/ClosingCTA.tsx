@@ -6,18 +6,28 @@ import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { SplitTextReveal } from '../_components/SplitTextReveal';
 import { StoreBadges } from '../_components/StoreBadges';
+import { Eyebrow } from '../_components/Eyebrow';
+import { SectionIndex } from '../_components/SectionIndex';
+import { useReducedMotion } from '../_components/useReducedMotion';
 
 /**
  * Section 9 — Closing CTA. Patterns: splittext-reveal heading +
  * magnetic-cursor on the primary button. Store-badge cards below.
+ *
+ * Magnetic effect is suppressed when the user prefers reduced motion;
+ * the button stays anchored and still reaches "click" / "tap" states
+ * normally. Return-to-rest uses ease-out-expo rather than elastic —
+ * elastic reads dated per the polish reference.
  */
 export function ClosingCTA() {
   const t = useTranslations('ClosingCTA');
   const sectionRef = useRef<HTMLElement>(null);
   const btnRef = useRef<HTMLAnchorElement>(null);
+  const reduced = useReducedMotion();
 
   useGSAP(
     (context) => {
+      if (reduced) return;
       const btn = btnRef.current;
       if (!btn) return;
 
@@ -35,22 +45,20 @@ export function ClosingCTA() {
           const pull = (1 - dist / radius) * 0.4;
           gsap.to(btn, { x: dx * pull, y: dy * pull, duration: 0.35, ease: 'power3.out' });
         } else {
-          gsap.to(btn, { x: 0, y: 0, duration: 0.5, ease: 'elastic.out(1, 0.5)' });
+          gsap.to(btn, { x: 0, y: 0, duration: 0.55, ease: 'expo.out' });
         }
       }
 
       window.addEventListener('mousemove', onMove);
       context.add(() => window.removeEventListener('mousemove', onMove));
     },
-    { scope: sectionRef },
+    { scope: sectionRef, dependencies: [reduced] },
   );
 
   return (
     <section ref={sectionRef} className="border-t border-rule bg-ink text-paper">
       <div className="mx-auto max-w-6xl px-6 py-32 md:py-48 text-center">
-        <p className="font-mono text-base uppercase tracking-widest text-paper/50 mb-8">
-          {t('eyebrow')}
-        </p>
+        <SectionIndex number={9} label={t('eyebrow')} surface="dark" align="center" className="mb-10 md:mb-14" />
 
         <SplitTextReveal
           as="h2"
@@ -67,10 +75,10 @@ export function ClosingCTA() {
           <a
             ref={btnRef}
             href="#"
-            className="inline-flex items-center gap-2 px-7 py-4 rounded-full bg-accent text-white hover:bg-accentDeep transition-colors font-medium text-base md:text-lg will-change-transform"
+            className="inline-flex items-center gap-2 px-7 py-4 rounded-full bg-accent text-paper hover:bg-accentDeep transition-colors font-medium text-base md:text-lg will-change-transform"
           >
             {t('ctaButton')}
-            <span aria-hidden>→</span>
+            <span aria-hidden className="arrow-rtl-flip">→</span>
           </a>
         </div>
 

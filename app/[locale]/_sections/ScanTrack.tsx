@@ -6,6 +6,10 @@ import { useTranslations } from 'next-intl';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
+import { PhoneFrame } from '../_components/PhoneFrame';
+import { Eyebrow } from '../_components/Eyebrow';
+import { SectionIndex } from '../_components/SectionIndex';
+import { useReducedMotion } from '../_components/useReducedMotion';
 
 if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger);
@@ -18,11 +22,13 @@ export function ScanTrack() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const stepRefs   = useRef<HTMLDivElement[]>([]);
   const screenRefs = useRef<HTMLDivElement[]>([]);
+  const reduced    = useReducedMotion();
 
   useGSAP(
     () => {
+      if (reduced) return;
       const mm = gsap.matchMedia();
-      mm.add('(min-width: 768px)', () => {
+      mm.add('(min-width: 768px) and (prefers-reduced-motion: no-preference)', () => {
         const steps = stepRefs.current;
         const screens = screenRefs.current;
         if (steps.length === 0 || screens.length === 0) return;
@@ -66,18 +72,14 @@ export function ScanTrack() {
       {/* Mobile: native swipe carousel */}
       <div className="md:hidden py-16">
         <div className="px-6 mb-8">
-          <p className="font-mono text-sm uppercase tracking-widest text-slate2">
-            {t('mobileEyebrow')}
-          </p>
+          <SectionIndex number={3} label={t('mobileEyebrow')} />
         </div>
         <div className="flex gap-4 overflow-x-auto snap-x snap-mandatory scroll-pl-6 px-6 pb-6 [-webkit-overflow-scrolling:touch] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
           {steps.map((s, i) => (
             <article key={i} className="shrink-0 w-[82vw] snap-start space-y-6">
-              <div className="relative aspect-[9/19] w-full max-w-[280px] mx-auto rounded-[2.5rem] border-[10px] border-ink bg-ink overflow-hidden shadow-[0_30px_60px_-20px_rgba(11,14,19,0.35)]">
-                <Image src={s.image} alt={s.alt} fill sizes="280px" className="phone-screen-img" />
-              </div>
+              <PhoneFrame src={s.image} alt={s.alt} sizes="280px" className="w-full max-w-[280px] mx-auto" />
               <div>
-                <p className="font-mono text-sm uppercase tracking-widest text-accent mb-2">{s.eyebrow}</p>
+                <Eyebrow tone="accent" size="sm" className="mb-2">{s.eyebrow}</Eyebrow>
                 <h3 className="text-2xl font-medium tracking-tight text-ink leading-[1.15] mb-3">{s.title}</h3>
                 <p className="text-base text-slate2 leading-relaxed">{s.body}</p>
               </div>
@@ -96,14 +98,14 @@ export function ScanTrack() {
               ref={(el) => { if (el) stepRefs.current[i] = el; }}
               className="absolute inset-0 flex flex-col justify-center"
             >
-              <p className="font-mono text-base uppercase tracking-widest text-accent mb-4">{s.eyebrow}</p>
+              <Eyebrow tone="accent" className="mb-4">{s.eyebrow}</Eyebrow>
               <h3 className="text-3xl md:text-4xl font-medium tracking-tight text-ink leading-[1.1] mb-4">{s.title}</h3>
               <p className="text-lg md:text-xl text-slate2 leading-relaxed max-w-prose">{s.body}</p>
             </div>
           ))}
         </div>
 
-        <div className="relative aspect-[9/19] max-h-[78vh] mx-auto w-full max-w-xs rounded-[2.5rem] border-[10px] border-ink bg-ink overflow-hidden shadow-[0_30px_60px_-20px_rgba(11,14,19,0.35)]">
+        <PhoneFrame className="max-h-[78vh] mx-auto w-full max-w-xs">
           {steps.map((s, i) => (
             <div
               key={i}
@@ -113,7 +115,7 @@ export function ScanTrack() {
               <Image src={s.image} alt={s.alt} fill sizes="320px" className="phone-screen-img" />
             </div>
           ))}
-        </div>
+        </PhoneFrame>
       </div>
     </section>
   );

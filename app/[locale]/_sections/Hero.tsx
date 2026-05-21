@@ -4,21 +4,26 @@ import { existsSync } from 'fs';
 import { join } from 'path';
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
-import { Link } from '@/i18n/navigation';
 import { SplitTextReveal } from '../_components/SplitTextReveal';
 import { StoreBadges } from '../_components/StoreBadges';
+import { Button } from '../_components/Button';
+import { SectionIndex } from '../_components/SectionIndex';
 
 const HERO_IMAGE_EXISTS = existsSync(join(process.cwd(), 'public', 'hero.png'));
 
+/**
+ * Hero — stacked layout with the image as a full-bleed band below the
+ * text. h1 sits at the original size scale (4xl → 7xl) rather than the
+ * larger oversize we tried; the larger scale read as "design ambition"
+ * over "easy to read." Founder direction: keep it the way it was.
+ */
 export function Hero() {
   const t = useTranslations('Hero');
 
   return (
     <section className="relative overflow-hidden">
-      <div className="mx-auto max-w-6xl px-6 pt-12 pb-20 md:pt-32 md:pb-40">
-        <p className="font-mono text-xs sm:text-sm md:text-base uppercase tracking-widest text-slate2 mb-6 md:mb-8">
-          {t('eyebrow')}
-        </p>
+      <div className="mx-auto max-w-6xl px-6 pt-12 pb-20 md:pt-20 md:pb-32">
+        <SectionIndex number={1} label={t('eyebrow')} className="mb-8 md:mb-12" />
 
         <SplitTextReveal
           as="h1"
@@ -30,9 +35,9 @@ export function Hero() {
 
         <blockquote className="mt-8 md:mt-10 max-w-3xl">
           <p className="text-xl sm:text-2xl md:text-4xl font-medium tracking-tight text-ink leading-snug md:leading-[1.15] italic">
-            <span aria-hidden className="text-accent">“</span>
+            <span aria-hidden className="text-accent not-italic">“</span>
             {t('quote')}
-            <span aria-hidden className="text-accent">”</span>
+            <span aria-hidden className="text-accent not-italic">”</span>
           </p>
         </blockquote>
 
@@ -41,25 +46,17 @@ export function Hero() {
         </p>
 
         <div className="mt-10 flex flex-wrap items-center gap-4">
-          <a
-            href="#start"
-            className="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-accent text-white hover:bg-accentDeep transition-colors font-medium"
-          >
-            {t('ctaStart')}
-            <span aria-hidden>→</span>
-          </a>
-          <Link
-            href="/pricing"
-            className="inline-flex items-center gap-2 px-5 py-3 text-ink hover:text-accentDeep transition-colors font-medium"
-          >
-            {t('ctaPricing')}
-          </Link>
+          <Button href="#start" variant="accent">{t('ctaStart')}</Button>
+          <Button to="/pricing" variant="ghost" showArrow={false}>{t('ctaPricing')}</Button>
         </div>
 
         <div className="mt-8">
           <StoreBadges variant="pill" surface="light" />
         </div>
 
+        {/* Image band — full width, sits below the text + CTAs. Mobile
+            edge-to-edge (`-mx-6`) so the photo bleeds against the viewport
+            on small screens; md+ gets a rounded corner inset. */}
         <div className="-mx-6 md:mx-0 mt-10 md:mt-20 relative aspect-[4/3] md:aspect-[16/9] md:rounded-2xl border border-rule bg-paperDeep overflow-hidden">
           {HERO_IMAGE_EXISTS ? (
             <Image

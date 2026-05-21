@@ -1,7 +1,5 @@
 # CarFai AI Disclosure
 
-> ⚠️ **v0 DRAFT — NOT FOR PUBLICATION.** For lawyer review only.
-
 **Effective date**: 2026-05-20
 
 This AI Disclosure supplements the CarFai Privacy Policy and Terms of Service. It explains how CarFai uses artificial intelligence and the limits you should keep in mind.

@@ -2,6 +2,9 @@ import type { Metadata } from 'next';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/navigation';
+import { Button } from '../_components/Button';
+import { Eyebrow } from '../_components/Eyebrow';
+import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from '../_components/Accordion';
 
 const CONTACT_EMAIL = 'carfai.info@gmail.com';
 
@@ -102,50 +105,73 @@ function PricingPageContent() {
   return (
     <>
       <section className="mx-auto max-w-6xl px-6 pt-20 pb-12 md:pt-28">
-        <p className="font-mono text-sm uppercase tracking-widest text-slate2 mb-6">{t('eyebrow')}</p>
+        <Eyebrow className="mb-6">{t('eyebrow')}</Eyebrow>
         <h1 className="text-4xl md:text-6xl font-medium tracking-tight text-ink leading-[1.05] max-w-3xl">{t('h1')}</h1>
         <p className="mt-6 text-lg md:text-xl text-slate2 max-w-prose leading-relaxed">{t('intro')}</p>
+        {/* Footnote: USD / localization disclosure. Set apart from
+            marketing copy as an informational aside — small italic,
+            asterisk in accent teal as the marker. */}
+        <p className="mt-4 text-sm text-slate2/80 italic max-w-prose">
+          <span aria-hidden className="text-accent not-italic me-1">*</span>
+          {t('priceNote')}
+        </p>
       </section>
 
       <section className="mx-auto max-w-6xl px-6 pb-20">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
-          {tiers.map((tier) => (
-            <article
-              key={tier.key}
-              className={
-                'rounded-3xl border p-6 flex flex-col bg-paper ' +
-                (tier.accent
-                  ? 'border-accent/40 shadow-[0_8px_30px_-15px_rgba(8,155,195,0.4)]'
-                  : 'border-rule')
-              }
-            >
-              <div className="flex items-baseline justify-between mb-3">
-                <h2 className="text-xl font-semibold text-ink">{tier.name}</h2>
-                {tier.accent && tier.note && (
-                  <span className="text-[10px] uppercase tracking-widest font-mono text-accent">
-                    {tier.note}
-                  </span>
-                )}
+        {/* Polish pass H2: break the 5-identical-card grid by giving the
+            recommended tier its own row. Featured tier full-width with
+            accentMist wash, taller padding, larger typography. The other
+            4 tiers split into a 4-column row underneath. Reads as
+            two layouts deliberately composed, not five identical bricks. */}
+        {(() => {
+          const featured = tiers.find((tier) => tier.accent);
+          const rest = tiers.filter((tier) => !tier.accent);
+          return (
+            <>
+              {featured && (
+                <article className="rounded-3xl border border-accent/30 bg-accentMist/40 p-8 md:p-12 mb-4 grid md:grid-cols-[2fr_3fr_auto] gap-6 md:gap-10 items-center">
+                  <div>
+                    {featured.note && (
+                      <p className="font-mono text-xs md:text-sm uppercase tracking-widest text-accentDeep mb-3">
+                        {featured.note}
+                      </p>
+                    )}
+                    <h2 className="text-3xl md:text-4xl font-semibold text-ink mb-3">{featured.name}</h2>
+                    <div className="flex items-baseline gap-2">
+                      <span className="text-5xl md:text-6xl font-medium text-ink">{featured.price}</span>
+                      <span className="text-base text-slate2">{featured.cadence}</span>
+                    </div>
+                  </div>
+                  <p className="text-base md:text-lg text-slate2 leading-relaxed">{featured.summary}</p>
+                  <Button href="#" variant="accent" size="lg" className="shrink-0">{featured.cta}</Button>
+                </article>
+              )}
+
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                {rest.map((tier) => (
+                  <article
+                    key={tier.key}
+                    className="rounded-3xl border border-rule bg-paper p-6 flex flex-col"
+                  >
+                    <h2 className="text-xl font-semibold text-ink mb-3">{tier.name}</h2>
+                    <div className="flex items-baseline gap-1 mb-4">
+                      <span className="text-3xl font-medium text-ink">{tier.price}</span>
+                      <span className="text-sm text-slate2">{tier.cadence}</span>
+                    </div>
+                    <p className="text-sm text-slate2 leading-relaxed flex-1 mb-6">{tier.summary}</p>
+                    <Button
+                      href="#"
+                      variant="ink"
+                      className="!px-4 !py-2.5 !text-sm justify-center"
+                    >
+                      {tier.cta}
+                    </Button>
+                  </article>
+                ))}
               </div>
-              <div className="flex items-baseline gap-1 mb-4">
-                <span className="text-3xl font-medium text-ink">{tier.price}</span>
-                <span className="text-sm text-slate2">{tier.cadence}</span>
-              </div>
-              <p className="text-sm text-slate2 leading-relaxed flex-1 mb-6">{tier.summary}</p>
-              <a
-                href="#"
-                className={
-                  'inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-full font-medium text-sm transition-colors ' +
-                  (tier.accent
-                    ? 'bg-accent text-white hover:bg-accentDeep'
-                    : 'bg-ink text-paper hover:bg-accentDeep')
-                }
-              >
-                {tier.cta} →
-              </a>
-            </article>
-          ))}
-        </div>
+            </>
+          );
+        })()}
       </section>
 
       <section className="bg-paperDeep/60 border-y border-rule">
@@ -186,15 +212,16 @@ function PricingPageContent() {
       </section>
 
       <section className="mx-auto max-w-3xl px-6 py-24 md:py-32">
-        <h2 className="text-3xl md:text-4xl font-medium tracking-tight text-ink mb-12">{t('faqHeading')}</h2>
-        <dl className="space-y-10">
-          {faq.map((qa) => (
-            <div key={qa.q}>
-              <dt className="text-lg md:text-xl font-medium text-ink mb-3 leading-snug">{qa.q}</dt>
-              <dd className="text-base md:text-lg text-slate2 leading-relaxed">{qa.a}</dd>
-            </div>
+        <h2 className="text-3xl md:text-4xl font-medium tracking-tight text-ink mb-10 md:mb-12">{t('faqHeading')}</h2>
+
+        <Accordion type="single" collapsible className="border-b border-rule">
+          {faq.map((qa, i) => (
+            <AccordionItem key={qa.q} value={`q${i}`}>
+              <AccordionTrigger>{qa.q}</AccordionTrigger>
+              <AccordionContent>{qa.a}</AccordionContent>
+            </AccordionItem>
           ))}
-        </dl>
+        </Accordion>
 
         <div className="mt-16 pt-10 border-t border-rule text-sm text-slate2">
           {t('faqStillQuestions')}{' '}

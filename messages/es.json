@@ -38,16 +38,17 @@
     "eyebrow": "Para conductores · para flotas",
     "h1": "Una segunda opinión para tu auto.",
     "quote": "La primera IA que ha visto lo que tu auto ha visto.",
-    "body": "Recibos, códigos OBD2, historial de reparaciones, documentos. CarFai los lee todos y responde preguntas que un motor de búsqueda jamás podría.",
+    "body": "Recibos, códigos OBD2, historial de reparaciones, documentos. CarFai lo lee todo y responde preguntas que ningún buscador podría contestar.",
     "ctaStart": "Empezar gratis",
     "ctaPricing": "Ver precios",
     "imagePlaceholder": "hero image slot — run `npm run gen:hero`",
     "imageAlt": "Bodegón editorial: guantera abierta con documentos a la derecha, teléfono con la puntuación de CarFai de 87 en el centro, indicadores análogos a la izquierda, todo bañado en la luz del atardecer."
   },
   "Problem": {
+    "eyebrow": "El problema",
     "h2Line1": "Tener un auto es caro y confuso.",
     "h2Line2": "No solucionamos el costo. Lo hicimos menos confuso.",
-    "body": "La mayoría de las apps para autos son una hoja de cálculo glorificada, un intento de venta del taller o un chatbot que no ha visto tu vehículo específico. CarFai lee tus registros de mantenimiento, tus escaneos OBD2, los costos de tu país y responde preguntas sobre <em>tu</em> auto."
+    "body": "La mayoría de las apps para autos son una hoja de cálculo disfrazada, una herramienta de venta del taller, o un chatbot que no conoce tu vehículo. CarFai lee tus registros de mantenimiento, tus escaneos OBD2, los costos propios de tu país, y responde a preguntas sobre <em>tu</em> auto."
   },
   "ScanTrack": {
     "mobileEyebrow": "Escanea · Categoriza · Analiza",
@@ -67,7 +68,7 @@
   },
   "Maintenance": {
     "eyebrow": "Mantenimiento · OBD2 · Renovaciones",
-    "h2": "Todo lo que se avería — predicho, no por sorpresa.",
+    "h2": "Cada avería posible, anticipada en lugar de sufrida.",
     "obd2Alt": "Panel de OBD2 de CarFai: 2 códigos de falla (P0000 info, P0043 advertencia), lecturas clave (batería 13.1 V, refrigerante 63 °C, odómetro 65,415 km) y un resumen de conducción de 30 días.",
     "missing": "missing<br />/public/app-obd2.jpg",
     "bullet1Eyebrow": "Calendario de mantenimiento con IA",
@@ -98,17 +99,17 @@
   "Advisor": {
     "eyebrow": "El asesor",
     "h2": "Pregúntale a tu auto lo que sea.",
-    "body": "El asesor lee tu historial de servicio, tus escaneos OBD2, tu país, tu modelo, tus hábitos de conducción y responde primero con tus datos. Las respuestas genéricas de la web van después.",
+    "body": "El asesor lee tu historial de servicio, tus escaneos OBD2, tu país, tu modelo, tus hábitos de conducción, y responde primero con tus datos. Lo genérico de la web viene después.",
     "youLabel": "Tú",
     "question": "\"¿Por qué mi seguro es más caro que el año pasado?\"",
     "answerLabel": "CarFai",
-    "answer": "Dos razones: tu ciclo de renovación alcanzó el reajuste de prima posterior a los 3 años y agregaste un reclamo con culpa en marzo. El punto de referencia para tu modelo + antigüedad en Quebec es de <strong>$1,840/año</strong>; tú estás en $2,210. Compara precios ahora o espera seis meses para que el reclamo prescriba y baje de categoría.",
+    "answer": "Dos razones: tu prima se reajustó al cumplir los 3 años, y agregaste un siniestro con responsabilidad en marzo. La referencia para tu modelo y antigüedad en Quebec es de <strong>$1,840/año</strong>; tú estás en $2,210. Compara precios ahora, o espera seis meses a que el siniestro caiga a un tramo inferior.",
     "imageAlt": "Pantalla del AI Advisor de CarFai mostrando una pregunta y una respuesta.",
     "missing": "drop AIAdvisorScreen<br />screenshot at<br />/public/app-aiadvisor.jpg"
   },
   "Fleet": {
     "eyebrow": "Para flotas",
-    "h2": "Un producto. Desde tu auto de fin de semana hasta tu patio de 200 vehículos.",
+    "h2": "Un solo producto. Desde tu auto de fin de semana hasta tu parque de 200 vehículos.",
     "swipeHint": "← desliza →",
     "card1Eyebrow": "Inicio B2B",
     "card1Title": "Elige una flota. Mira lo que está vencido.",
@@ -125,8 +126,8 @@
   },
   "PricingSection": {
     "eyebrow": "Precios",
-    "h2": "Una escala de precios. Elige el nivel que realmente necesitas.",
-    "body": "El plan gratuito es realmente gratis, sin período de prueba. Cada plan de pago transfiere los tokens no utilizados al mes siguiente para que un mes de poco uso no se desperdicie.",
+    "h2": "Una gama, cinco niveles. Elige el que de verdad vas a usar.",
+    "body": "El plan gratis lo es de verdad, sin cronómetro de prueba. En cada plan de pago, los tokens sin usar pasan al mes siguiente: un mes más tranquilo nunca se desperdicia.",
     "tier1Name": "Gratis",
     "tier1Price": "$0",
     "tier1Cadence": "para siempre",
@@ -164,8 +165,9 @@
     "metaTitle": "Precios",
     "metaDescription": "Precios de CarFai: cinco niveles, desde gratis para un auto hasta gestión de flotas a gran escala. Transferencia de tokens en cada plan de pago; no se requiere tarjeta para el nivel gratuito.",
     "eyebrow": "Precios",
-    "h1": "Una escala. Elige el nivel que realmente necesitas.",
-    "intro": "El plan gratuito es realmente gratis, sin período de prueba. Cada plan de pago transfiere los tokens no utilizados al mes siguiente para que un mes de poco uso no se desperdicie. Los precios a continuación están en USD; los precios en la app están localizados.",
+    "h1": "Una gama, cinco niveles. Elige el que de verdad vas a usar.",
+    "intro": "El plan gratis lo es de verdad, sin cronómetro de prueba. En cada plan de pago, los tokens sin usar pasan al mes siguiente: un mes más tranquilo nunca se desperdicia.",
+    "priceNote": "Precios mostrados en USD; en la app verás tu moneda local.",
     "comparisonHeading": "Cada función, lado a lado.",
     "comparisonIntro": "Lo que obtienes en cada plan. Todo lo de un nivel inferior está incluido en el nivel superior.",
     "recommended": "Recomendado",

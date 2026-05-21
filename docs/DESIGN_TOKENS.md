@@ -73,10 +73,10 @@ intentional and named, never decorative.
 | Use | Weight | Notes |
 |---|---|---|
 | Hero `h1` | 500 (medium) | **Not bold.** The Awwwards / Linear premium look uses regular-to-medium at huge sizes. Bold-at-huge is the AI-template tell. |
-| Section `h2` | 600 (semibold) | Tracks tight: `tracking-tight` in Tailwind. |
-| Subhead `h3` | 600 (semibold) | One step smaller than h2. |
+| Section `h2` | 500 (medium) | Tracks tight: `tracking-tight` in Tailwind. Revised down from semibold during the H1b polish pass — the softer weight reads more editorial at the 3xl/5xl size we use, and matches Hero. Tier-card `h3` on /pricing stays semibold for a clearer hierarchy break at the smaller size. |
+| Subhead `h3` | 500–600 | 500 in section bodies (Maintenance bullets, Advisor labels, ScanTrack steps). 600 inside Pricing tier cards where the price block needs more weight to read as a list-of-products. |
 | Body | 400 (regular) | Line-height `relaxed`. |
-| Eyebrow / label | 500 (medium) mono · `uppercase` · `tracking-widest` · small (10–12 px) |
+| Eyebrow / label | 500 (medium) mono · `uppercase` · `tracking-widest` · small (10–12 px). Shared `<Eyebrow>` component owns the implementation. Two-section rhythm break: Maintenance and Fleet ship without a top-of-section eyebrow on purpose. |
 | Stat callouts | 600 (semibold) mono | E.g. "5,000+ vehicles tracked" — mono adds legitimacy. |
 
 ### Size scale (TailwindCSS classes)

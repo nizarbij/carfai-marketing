@@ -1,7 +1,5 @@
 # CarFai End-User License Agreement (EULA)
 
-> ⚠️ **v0 DRAFT — NOT FOR PUBLICATION.** For lawyer review only.
-
 **Effective date**: 2026-05-20
 
 This End-User License Agreement ("EULA") is between you and **CarFai** ("CarFai") and governs your use of the CarFai mobile application ("Software").

@@ -1,7 +1,5 @@
 # CarFai Acceptable Use Policy
 
-> ⚠️ **v0 DRAFT — NOT FOR PUBLICATION.** For lawyer review only.
-
 **Effective date**: 2026-05-20
 
 This Acceptable Use Policy ("AUP") sets out activities that are prohibited when using the CarFai mobile application and related services (the "Service"). The AUP supplements the Terms of Service. **Violations may result in immediate suspension or termination of your account, without refund.**

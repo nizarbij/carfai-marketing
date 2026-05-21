@@ -99,7 +99,7 @@ export function SiteHeader() {
             className="inline-flex w-fit items-center gap-2 px-5 py-2.5 rounded-full bg-ink text-paper hover:bg-accentDeep transition-colors font-medium"
           >
             {t('startFree')}
-            <span aria-hidden>→</span>
+            <span aria-hidden className="arrow-rtl-flip">→</span>
           </a>
 
           {/* Locale switcher in mobile menu */}
