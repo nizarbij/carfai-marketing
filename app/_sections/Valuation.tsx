@@ -23,10 +23,10 @@ const factors = [
 export function Valuation() {
   return (
     <section className="bg-ink text-paper">
-      <div className="mx-auto max-w-6xl px-6 py-28 md:py-40 grid md:grid-cols-[1.1fr_1fr] gap-12 md:gap-16 items-center">
+      <div className="mx-auto max-w-6xl px-6 py-20 md:py-40 grid md:grid-cols-[1.1fr_1fr] gap-12 md:gap-16 items-center">
         {/* Left: the pitch */}
         <div>
-          <p className="font-mono text-base uppercase tracking-widest text-paper/50 mb-6">
+          <p className="font-mono text-sm md:text-base uppercase tracking-widest text-paper/50 mb-6">
             Vehicle valuation
           </p>
 
@@ -37,28 +37,29 @@ export function Valuation() {
             Know what your car is actually worth.
           </SplitTextReveal>
 
-          <p className="mt-8 text-lg md:text-xl text-paper/70 max-w-prose leading-relaxed">
+          <p className="mt-6 md:mt-8 text-base md:text-xl text-paper/70 max-w-prose leading-relaxed">
             CarFai cross-references current market listings, your
             service history, accident flags, and what other owners
             in your country are paying — then shows you a defended
             value with every factor that moves the number.
           </p>
 
-          {/* Stat callout */}
-          <div className="mt-12 inline-flex items-baseline gap-4 px-6 py-5 border border-paper/15 rounded-2xl bg-paper/[0.03]">
-            <span className="font-mono text-base uppercase tracking-widest text-paper/50">
+          {/* Stat callout — flex-wrap so it doesn't overflow narrow phones.
+              On mobile the items wrap into 2 rows with a tighter gap. */}
+          <div className="mt-8 md:mt-12 flex flex-wrap items-baseline gap-x-4 gap-y-2 px-5 py-4 md:px-6 md:py-5 border border-paper/15 rounded-2xl bg-paper/[0.03] w-fit max-w-full">
+            <span className="font-mono text-xs md:text-base uppercase tracking-widest text-paper/50">
               Estimated value
             </span>
-            <span className="font-mono text-3xl md:text-4xl font-medium text-accent">
+            <span className="font-mono text-2xl md:text-4xl font-medium text-accent">
               $25,400
             </span>
-            <span className="text-xs text-paper/40">
+            <span className="text-xs text-paper/40 w-full md:w-auto">
               ± 4% confidence band
             </span>
           </div>
 
           {/* Factor chips */}
-          <ul className="mt-8 flex flex-wrap gap-2 max-w-md">
+          <ul className="mt-6 md:mt-8 flex flex-wrap gap-2 max-w-md">
             {factors.map((f) => (
               <li
                 key={f.label}
@@ -72,7 +73,7 @@ export function Valuation() {
         </div>
 
         {/* Right: phone-shaped frame for the Valuation screen */}
-        <div className="relative aspect-[9/19] max-h-[78vh] mx-auto w-full max-w-xs rounded-[2.5rem] border-[10px] border-paper/15 bg-paper/[0.04] overflow-hidden shadow-[0_30px_60px_-20px_rgba(0,0,0,0.5)]">
+        <div className="relative aspect-[9/19] max-h-[70vh] md:max-h-[78vh] mx-auto w-full max-w-[260px] md:max-w-xs rounded-[2.5rem] border-[10px] border-paper/15 bg-paper/[0.04] overflow-hidden shadow-[0_30px_60px_-20px_rgba(0,0,0,0.5)]">
           {VALUATION_IMAGE_EXISTS ? (
             <Image
               src="/app-valuation.jpg"

@@ -29,35 +29,40 @@ export function ScanTrack() {
 
   useGSAP(
     () => {
-      const steps = stepRefs.current;
-      const screens = screenRefs.current;
-      if (steps.length === 0 || screens.length === 0) return;
+      // ScrollTrigger matchMedia: pin-and-scrub ONLY at md+ widths.
+      // On mobile the section flows naturally as a stacked block —
+      // all three steps render visibly and the user just scrolls.
+      const mm = gsap.matchMedia();
 
-      gsap.set(steps.slice(1),   { opacity: 0, y: 24 });
-      gsap.set(screens.slice(1), { opacity: 0 });
+      mm.add('(min-width: 768px)', () => {
+        const steps = stepRefs.current;
+        const screens = screenRefs.current;
+        if (steps.length === 0 || screens.length === 0) return;
 
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger:  sectionRef.current,
-          start:    'top top',
-          end:      '+=150%',
-          scrub:    0.6,
-          pin:      true,
-          anticipatePin: 1,
-        },
+        gsap.set(steps.slice(1),   { opacity: 0, y: 24 });
+        gsap.set(screens.slice(1), { opacity: 0 });
+
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger:  sectionRef.current,
+            start:    'top top',
+            end:      '+=150%',
+            scrub:    0.6,
+            pin:      true,
+            anticipatePin: 1,
+          },
+        });
+
+        tl.to(steps[0], { opacity: 0, y: -24, duration: 1 }, 0)
+          .to(steps[1], { opacity: 1, y: 0,   duration: 1 }, 0)
+          .to(steps[1], { opacity: 0, y: -24, duration: 1 }, 1.2)
+          .to(steps[2], { opacity: 1, y: 0,   duration: 1 }, 1.2);
+
+        tl.to(screens[0], { opacity: 0, duration: 1 }, 0)
+          .to(screens[1], { opacity: 1, duration: 1 }, 0)
+          .to(screens[1], { opacity: 0, duration: 1 }, 1.2)
+          .to(screens[2], { opacity: 1, duration: 1 }, 1.2);
       });
-
-      // Copy crossfade (step 0 → 1 → 2)
-      tl.to(steps[0], { opacity: 0, y: -24, duration: 1 }, 0)
-        .to(steps[1], { opacity: 1, y: 0,   duration: 1 }, 0)
-        .to(steps[1], { opacity: 0, y: -24, duration: 1 }, 1.2)
-        .to(steps[2], { opacity: 1, y: 0,   duration: 1 }, 1.2);
-
-      // Screenshot crossfade aligned to the copy beats
-      tl.to(screens[0], { opacity: 0, duration: 1 }, 0)
-        .to(screens[1], { opacity: 1, duration: 1 }, 0)
-        .to(screens[1], { opacity: 0, duration: 1 }, 1.2)
-        .to(screens[2], { opacity: 1, duration: 1 }, 1.2);
     },
     { scope: sectionRef },
   );
@@ -87,10 +92,40 @@ export function ScanTrack() {
   ];
 
   return (
-    <section ref={sectionRef} className="relative h-screen overflow-hidden">
-      <div className="mx-auto max-w-6xl px-6 h-full grid md:grid-cols-[1fr_1.1fr] gap-16 items-center">
+    <section ref={sectionRef} className="relative md:h-screen md:overflow-hidden">
+      {/* ── Mobile: stacked render (no pin, no crossfade — every
+            step + screenshot pair is visible by scrolling). ── */}
+      <div className="md:hidden mx-auto max-w-2xl px-6 py-20 space-y-20">
+        {steps.map((s, i) => (
+          <div key={i} className="space-y-8">
+            <div>
+              <p className="font-mono text-sm uppercase tracking-widest text-accent mb-3">
+                {s.eyebrow}
+              </p>
+              <h3 className="text-3xl font-medium tracking-tight text-ink leading-[1.1] mb-4">
+                {s.title}
+              </h3>
+              <p className="text-base text-slate2 leading-relaxed">
+                {s.body}
+              </p>
+            </div>
+            <div className="relative aspect-[9/19] mx-auto w-full max-w-[260px] rounded-[2.5rem] border-[10px] border-ink bg-ink overflow-hidden shadow-[0_30px_60px_-20px_rgba(11,14,19,0.35)]">
+              <Image
+                src={s.image}
+                alt={s.alt}
+                fill
+                sizes="260px"
+                className="phone-screen-img"
+              />
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* ── Desktop (md+): pinned-scrub with crossfade ── */}
+      <div className="hidden md:grid mx-auto max-w-6xl px-6 h-full md:grid-cols-[1fr_1.1fr] gap-16 items-center">
         {/* Left: the three step cards stack on top of each other */}
-        <div className="relative h-72 md:h-80">
+        <div className="relative h-80">
           {steps.map((s, i) => (
             <div
               key={i}
@@ -126,7 +161,7 @@ export function ScanTrack() {
                 src={s.image}
                 alt={s.alt}
                 fill
-                sizes="(min-width: 768px) 320px, 80vw"
+                sizes="320px"
                 className="phone-screen-img"
               />
             </div>
