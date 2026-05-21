@@ -42,6 +42,16 @@ export function Footer() {
                   Pricing
                 </Link>
               </li>
+              <li>
+                <Link href="/support" className="hover:text-accent">
+                  Support
+                </Link>
+              </li>
+              <li>
+                <Link href="/contact" className="hover:text-accent">
+                  Contact
+                </Link>
+              </li>
             </ul>
           </div>
 
