@@ -55,123 +55,263 @@ if (!API_KEY) {
 
 /* ─── The hero prompt — locked per docs/DESIGN_TOKENS.md ──────────────────── */
 
-// Adapted to the hero quote:
-//   "The first AI that's actually seen what your car has seen."
-// The composition stays steering-wheel-centred, but layers in
-// subtle WITNESS / ACCUMULATED-EXPERIENCE cues — worn leather
-// patina on the wheel, a softly-visible folded receipt in the
-// scene, and a phone-glass reflection that hints at "the phone
-// has absorbed the view". The screen itself stays pure black so
-// real app UI can be composited on top in code.
+// Hero concept v4 — "history flows into the phone."
+//
+// Founder pitched a narrative we kept: an open glove box on
+// one side spilling documents (receipts / insurance / service
+// records) toward a phone on the dashboard; analog gauges on
+// the other side facing the phone too. The phone is the
+// convergence point — the AI brain that turns physical history
+// into one number.
+//
+// Critical departure from the founder's original draft: NO
+// glowing data streams, NO holograms, NO electric-blue
+// sci-fi light. The "AI flow" is told COMPOSITIONALLY —
+// documents physically angled toward the phone, gauge faces
+// oriented toward it, warm window light raking from above to
+// land on it. The phone's screen shows the same minimal "87"
+// app UI we locked in v3. Editorial restraint over sci-fi
+// aesthetic, per docs/DESIGN_TOKENS.md anti-pattern list.
 
 const PROMPT = `
-Editorial product photograph for a mobile-app marketing landing.
-Wide cinematic landscape composition. Hyper-realistic, shot on a
-full-frame DSLR with a 50mm prime lens at f/2.0. Slight overhead
-angle — the camera looks DOWN from approximately driver's-eye
-height onto the lap area.
+CREATIVE BRIEF — editorial cinematic still-life for the hero
+of a premium SaaS landing page. Quote it illustrates:
+  "The first AI that's actually seen what your car has seen."
 
-THEME (sets the tone for every element below):
-This image illustrates the line "The first AI that's actually
-seen what your car has seen." The viewer should feel quiet
-witness — a phone that has been present through the life of the
-car. Lived-in, not new. Considered, not action.
+NARRATIVE: physical car history (paper documents in the open
+glove box, analog gauge data on the dashboard) flows into a
+phone resting on the dashboard. The phone is the AI brain
+that turns scattered physical evidence into one structured
+insight. The "flow" is suggested COMPOSITIONALLY (everything
+angles toward the phone), not literally — there are NO glowing
+data streams, NO illuminated cables, NO holograms, NO floating
+UI cards. The viewer reads the convergence intuitively.
 
-Subject: a single human hand holding a modern smartphone
-vertically, positioned ABOVE a car's steering wheel. The phone
-is closer to the camera; the steering wheel is just below it,
-softly out of focus, framing the lower third of the image.
+REFERENCES (the look we are targeting, in priority order):
+  · Apple iPhone product page editorial (warm neutrals, real
+    materials, single subject hero, no UI tricks)
+  · Stripe Press / Stripe annual report editorial photography
+    (paper, ink, daylight, monastic restraint)
+  · 1843 Magazine product cover stills (object-on-surface,
+    magic-hour window light, real shadows)
+  · Wes Anderson interior cinematography (symmetrical but
+    warm, considered materials, no kitsch)
 
-CRITICAL — the phone screen: completely BLACK / OFF / matte
-glass. NO user interface, NO text, NO icons, NO graphics, NO
-brand wordmarks, NO glow, NO patterns, NO wallpaper. The screen
-shows a soft, low-contrast WARM GRADIENT REFLECTION of the
-cabin and the windshield view — as if the phone has just been
-held up and is mirroring the scene back. Reflection is GENTLE
-and abstract, never resolvable into recognisable shapes. We
-composite real app UI onto this screen later in code.
+NOT REFERENCES (avoid the feel):
+  · stock photo "businessman with phone"
+  · IBM Watson / 2015-era "AI = electric blue cables" ads
+  · Midjourney art / SVG gradient meshes / glowing circuit
+    motifs / holographic floating UI cards
+  · CGI car render
+  · sci-fi dashboard HUD
+  · tech-bro flat-lay
 
-The hand: a single relaxed adult hand, holding the phone from
-the bottom edge between thumb and the side of the hand. Real
-human skin, slightly weathered (not model-perfect). Plain
-neutral cotton sleeve cuff visible at the wrist. No watch, no
-jewelry, no tattoos, no nail polish. Five fingers, total. ONE
-hand only.
+CAMERA PACKAGE:
+  · Body: Hasselblad H6D-100c (medium-format, 100MP)
+  · Lens: 80mm f/2.8 prime (normal focal length for MF)
+  · Aperture: f/4.0 (receipt edges crisp, phone face crisp,
+    leather background softly out of focus, no bokeh balls)
+  · ISO 200, shutter 1/125, handheld
+  · Film simulation: Kodak Portra 400 — warm skin tones,
+    neutral neutrals, slight magenta cast in shadows, fine
+    organic grain
 
-The steering wheel: a generic premium-sedan steering wheel,
-LEATHER-WRAPPED with subtle visible PATINA — slight darkening
-where hands have rested over years, a faint matte spot at the
-12-o'clock grip. Three-spoke. NO recognizable badges, NO
-manufacturer logos, NO model markings, NO visible audio buttons
-with brand names. The wheel sits in the bottom third of the
-frame, out of focus, providing the lived-in evidence.
+CAMERA ANGLE — CRITICAL:
+  · Position: looking STRAIGHT AT the dashboard surface from
+    directly above the passenger-side footwell, perpendicular
+    to the dashboard, NOT from the passenger seat back.
+  · The frame contains ONLY: the dashboard surface, the open
+    glove box on the left, and the analog gauge cluster on
+    the right. NOTHING ELSE.
+  · CRITICAL: the STEERING WHEEL is NOT VISIBLE in this
+    frame. Not partially, not as a soft blur, not as a rim
+    arc. Zero steering wheel. The camera angle is chosen
+    specifically to exclude it.
+  · No windshield visible. No seats visible. No doors visible.
+  · Strict 16:9 landscape crop.
 
-A SECONDARY WITNESS DETAIL — exactly ONE of these, softly out
-of focus, low contrast, NOT the focal subject (the model should
-pick the most natural one):
-  (a) a folded paper fuel receipt tucked into the door-side
-      cupholder ring, just visible at the bottom-right of the
-      frame; OR
-  (b) a worn-edge paper service-record card lying flat on the
-      passenger seat behind the wheel, just visible at the
-      bottom-left, slightly out of focus.
+THE SCENE — a wide cinematic view inside a premium car interior
+that quietly blends retro analog character with modern
+sophistication. Worn-but-loved aesthetic. Filling the frame
+edge to edge.
 
-The receipt / card is small, faded, and PLAUSIBLY REAL — NO
-readable text, NO bar codes, NO logos, just the shape of
-folded paper with handwritten-style ink suggestions. It is the
-quiet evidence that the car has a history.
+Anatomical note: this is a left-hand-drive car. The instrument
+cluster is in front of the driver (LEFT side of the image); the
+glove box is in front of the passenger (RIGHT side of the
+image). The camera is positioned above the centre of the
+dashboard looking down at it.
 
-Background: the upper portion of the frame is the dashboard
-edge and the lower part of the windshield, also out of focus.
-A thin slice of golden sunlight enters from the upper right
-corner of the frame. The cabin is calm — no passengers, no
-clutter, no devices, no GPS unit, no air freshener.
+  LEFT THIRD — the dashboard data (driver-side instrument
+  cluster):
+    - Two analog gauges seen from above: a tachometer
+      and a speedometer, chrome-rimmed, cream faces with
+      black needles
+    - A small recessed digital readout between them in
+      muted amber (NOT teal — the only teal in the frame
+      stays on the phone screen)
+    - Brushed-metal panel framing the gauges
+    - The gauge faces visually orient toward the centre
+      of the frame (toward the phone)
+    - NO manufacturer badges anywhere on the dashboard
 
-Composition (CRITICAL — 16:9 landscape):
-- Phone centred horizontally, occupying the centre-top half of
-  the frame (about 35% of frame height).
-- Steering wheel rim arc visible across the bottom 25–30% of
-  the frame, out of focus.
-- Hand enters from the bottom-right.
-- The camera looks slightly down (~15-degree top-down angle)
-  so the phone face is visible to the viewer.
-- The witness detail (receipt or service card) sits in one
-  bottom corner, soft, small.
+  CENTRE — the phone (THE HERO ELEMENT):
+    - A modern unbranded smartphone LYING FLAT on its back
+      directly on the dashboard surface, screen FACING
+      STRAIGHT UP toward the camera, fully readable. The
+      phone is HORIZONTAL in physical orientation but its
+      content reads as PORTRAIT (the "87" + arc displays
+      portrait-rotated so the camera sees them upright).
+    - CRITICAL: the phone is NOT in a mount, NOT in a vent
+      clip, NOT on a MagSafe stand, NOT in a phone holder of
+      any kind, NOT propped up at an angle, NOT in a cradle.
+      It rests directly and flatly on the dashboard surface.
+    - Body is matte graphite, completely clean glass, NO
+      Apple/Samsung/Google logos, NO branded camera bump.
+    - Resting on a small dark microfibre cloth on the dash
+      so the surface looks intentional, not improvised.
+    - All other elements visually point toward this phone.
 
-Light: warm golden-hour sunlight from upper right (off-frame).
-3000K colour temperature. ONE long, soft shadow cast by the
-steering wheel onto the dashboard — implies TIME of day,
-implies stillness, implies the car has been parked long enough
-to feel the light shift. The dashboard ambient provides cool
-fill on the underside of the phone.
+  RIGHT THIRD — open glove compartment (passenger-side):
+    - Glove box door open and dropped down, revealing the
+      inside
+    - Folded paper documents spilling slightly outward over
+      the lip of the open glove box, leftward toward the
+      centre of the frame: 5–7 visible items — fuel receipts
+      (curled edges), an insurance card, a folded service
+      history, a registration paper
+    - All paper is plausibly aged (5–10 years), paper colour
+      cream #F7F1E1 to faintly yellowed
+    - CRITICAL: NO readable text, NO numerals, NO bar codes,
+      NO QR codes, NO logos, NO brand marks. Ink abstracted
+      to soft grey suggestions only.
+    - The papers ANGLE COMPOSITIONALLY toward the centre of
+      the frame (toward the phone)
 
-Color story: warm cream highlights, deep charcoal shadows,
-muted leather brown on the wheel, faintly yellowed paper for
-the receipt detail. ABSOLUTELY NO saturated colours — no teal,
-no blue, no green, no red, no neon. The brand colour will be
-added in code via the composited app UI.
+THE PHONE SCREEN — this is the critical product cue. The
+screen is ON and shows a minimal app interface with three
+elements stacked vertically:
 
-Camera detail: subtle film grain, mild lens vignetting, true
-shallow DOF (phone tack sharp; hand sharp; wheel + dashboard
-+ receipt all soft). NO HDR, NO clarity boost, NO over-
-sharpening, NO heavy bokeh balls, NO chromatic aberration
-exaggeration.
+  1. TOP of screen: the wordmark "CarFai" rendered as exactly
+     six letters in this order: C, a, r, F, a, i. Medium-
+     weight sans-serif, in teal #089BC3, roughly 24pt
+     equivalent, centred horizontally, with a small amount of
+     top padding. Render the letters cleanly — they MUST
+     spell "CarFai" exactly, no extra letters, no missing
+     letters, no garbled glyphs.
 
-Mood: calm, considered, premium, LIVED-IN, observant. The
-viewer should feel like the photograph is a quiet witness to
-many earlier moments in this car.
+  2. CENTRE of screen: a circular progress arc, ~60%
+     complete, stroked in teal #089BC3 (our brand colour),
+     8px stroke. Inside the arc, centred: the number "87"
+     in a clean medium-weight sans-serif, ~120pt equivalent,
+     in warm cream #FAFAF7.
 
-Strictly forbidden: anything on the phone screen besides the
-abstract warm reflection (no text, icons, UI, glow, wallpaper,
-brand mark, app preview), square crop, vertical crop, two
-hands, extra fingers, sci-fi HUDs, holograms, neon, fisheye,
-motion blur, rain on the windshield, dramatic lens flare,
-visible manufacturer badges, GPS unit, hanging air freshener,
-child seat, sunset gradient in sky, anime stylization, glossy
-CGI feel, multiple receipts cluttering the scene, anyone in
-the passenger seat, a second phone, a coffee cup.
+  3. BELOW the arc, centred: the small uppercase label
+     "OVERALL SCORE" in a 12pt mono-style face, in cool
+     slate #6B7480 with wide letter-spacing. Render as
+     exactly the two words "OVERALL SCORE" — no extra text.
 
-Output: highest resolution available, strict 16:9 aspect ratio.
+  · Background: dark navy-charcoal #0B0E13
+  · Subtle glass-reflection sheen across the screen from the
+    ambient cabin light — not enough to obscure the content
+  · ABSOLUTELY NO other UI: no header bar, no buttons, no
+    menu bar, no battery indicator, no status bar, no nav
+    tabs, no icons, no notification dots. Just CarFai
+    wordmark + arc with "87" + "OVERALL SCORE" label.
+    Three text elements total. Nothing else.
+
+THE "FLOW" — narrative made visible WITHOUT sci-fi tricks:
+  · The papers in the glove box physically ANGLE toward
+    the phone (the open-glove-box geometry naturally points
+    inward and toward the centre)
+  · The gauge cluster on the right physically FACES the
+    phone (the curvature of the gauge bezels reads as
+    "oriented to the centre")
+  · The key warm-light ray from above lands on the phone
+    first, the documents and gauges sit in slightly softer
+    fill — the phone is visually the BRIGHTEST element by
+    a small margin
+  · This composition reads as convergence without ANY
+    illuminated cables, glowing streams, holograms, or
+    floating UI fragments. Those are explicitly forbidden
+    (see anti-patterns).
+
+LIGHTING:
+  · Key light: warm golden-hour window light entering from
+    upper-right (driver's window, off-frame), ~30° elevation,
+    colour temperature 3200K — falls primarily on the phone
+  · Fill: cool soft ambient bounce from the windshield
+    direction (5500K), at -2 stops vs key — softly lights
+    the glove box and dashboard equally
+  · Kicker: subtle warm rim of light along the upper edge of
+    the phone, separating it from the dashboard surface
+  · Shadow: long, low-contrast, falling diagonally from the
+    phone toward the lower-left. Soft edges, never harsh.
+  · NO direct overhead light, NO ring light, NO studio
+    strobes, NO under-dash LED glow.
+
+COMPOSITION (16:9, classical balance):
+  · Phone sits dead-centre, ~30% of frame width, the most
+    detailed element — this is the only intentional symmetry
+    breaking the rule-of-thirds because the phone is the
+    convergence point
+  · Gauge cluster fills the LEFT third (driver-side)
+  · Glove box opening + spilling documents fills the RIGHT
+    third (passenger-side)
+  · Upper third of frame is the dashboard top (soft, out of
+    focus), NOT the windshield (no windshield visible)
+  · Lower third is the dashboard surface itself, with the
+    phone as the foreground anchor
+  · No element touches the frame edges
+
+PALETTE (locked, treat as design tokens):
+  · Highlight cream: #FAFAF7 (paper highlights, "87" digit)
+  · Warm mid: #C9A57A (worn leather, tobacco)
+  · Brushed metal: #8E8B85 (gauge bezels, dashboard trim)
+  · Deep shadow: #2A2520 (warm charcoal)
+  · Phone screen background: #0B0E13
+  · Brand accent: #089BC3 (the single teal — ONLY on the
+    progress arc on the phone screen, NOWHERE ELSE in frame)
+  · Amber readout: muted warm #C49A5C (the digital dashboard
+    readout only — explicitly amber/warm, NOT electric blue)
+  · Paper warm: #F7F1E1 to #E7DDC4
+  · NO other saturated colours anywhere — no green, no red,
+    no electric blue, no purple, no neon.
+
+MOOD:
+  · intelligent, connected, transformative
+  · monastic, considered, lived-in
+  · quietly confident
+  · NOT bright, NOT loud, NOT energetic, NOT futuristic
+
+ANTI-PATTERNS — strictly forbidden, treat as instant retake:
+  · ANY steering wheel — not partially visible, not a soft
+    rim arc, not a blur at the edge of frame. Zero wheel.
+  · ANY phone mount, vent clip, MagSafe stand, dashboard
+    cradle, suction cup, magnetic disc, charging puck under
+    the phone. The phone rests flat on the cloth on the dash.
+  · ANY glowing cable, illuminated wire, light stream, data
+    flow visualisation, energy beam, neon line
+  · ANY hologram, floating UI card, transparent panel, AR
+    overlay, sci-fi HUD, HUD reticle
+  · ANY electric-blue light, neon-blue glow, "Tron" line work
+  · readable text/numbers anywhere (except the "87" + small
+    "OVERALL SCORE" label on the phone screen)
+  · a coffee cup, a wallet, AirPods, a laptop, a clipboard,
+    a person, any hand
+  · windshield, seats, doors, ceiling, sun-visor, rear-view
+    mirror — none should be visible
+  · two phones, smart-watch, GPS unit, hanging air freshener
+  · any visible Apple / Samsung / Google / car-brand logo
+  · CGI plastic, impossible specular highlights, HDR feel
+  · over-sharpening, clarity boost, halos, chromatic
+    aberration exaggeration
+  · big bokeh balls, dramatic lens flare, sunset gradient sky
+  · rain, snow, condensation, fog
+  · anime, illustration, painterly, watercolour, sketch
+  · vertical or square crop
+
+OUTPUT: highest resolution available, strict 16:9 landscape
+crop, photographic realism, single take.
 `.trim();
 
 /* ─── Generate ───────────────────────────────────────────────────────────── */
@@ -183,6 +323,12 @@ const response = await ai.models.generateContent({
   model:    'gemini-2.5-flash-image',
   contents: PROMPT,
   config: {
+    // Force the model to return an image binary, not a text
+    // "here is the image:" message. Gemini 2.5 Flash Image can
+    // output either modality; without this flag the model
+    // sometimes chooses text (especially when the prompt reads
+    // like a brief / conversation rather than a direct ask).
+    responseModalities: ['Image'],
     // Force 16:9 landscape — the prompt alone isn't enough; the
     // model defaults to 1:1 unless aspectRatio is set via config.
     imageConfig: { aspectRatio: '16:9' },
