@@ -11,8 +11,15 @@ import { useTranslations } from 'next-intl';
  *   <StoreBadges variant="card" />  → icon + label + QR, two cards.
  *                                     For closing CTA / "download" sections.
  *
+ * STORES_LIVE flips the badges between two states:
+ *   false → visual-only, no href, no QR; "LAUNCHING SUMMER 2026" caption shown.
+ *   true  → real links + QR codes; caption hidden.
+ *
+ * Set to true on the day Apple + Play listings go live (see RELEASE_PLAN H5).
  * All labels are translated via the StoreBadges namespace.
  */
+
+const STORES_LIVE = false;
 
 type Variant = 'pill' | 'card';
 type Surface = 'light' | 'dark';
@@ -52,8 +59,24 @@ function useStoreCopy(s: Store) {
 }
 
 export function StoreBadges({ variant = 'pill', surface = 'light' }: Props) {
-  if (variant === 'pill') return <PillRow surface={surface} />;
-  return <CardRow surface={surface} />;
+  const t = useTranslations('StoreBadges');
+  const dark = surface === 'dark';
+
+  return (
+    <div className="space-y-3">
+      {variant === 'pill' ? <PillRow surface={surface} /> : <CardRow surface={surface} />}
+      {!STORES_LIVE && (
+        <p
+          className={
+            'text-[11px] font-mono uppercase tracking-widest text-start ' +
+            (dark ? 'text-paper/55' : 'text-slate2')
+          }
+        >
+          {t('launchingCaption')}
+        </p>
+      )}
+    </div>
+  );
 }
 
 /* ─── PILL variant ─────────────────────────────────────────────────────── */
@@ -69,17 +92,12 @@ function PillRow({ surface }: { surface: Surface }) {
 
 function PillBadge({ store: s, dark }: { store: Store; dark: boolean }) {
   const { sub, label } = useStoreCopy(s);
-  return (
-    <a
-      href={s.href}
-      aria-label={`${sub} ${label}`}
-      className={
-        'group inline-flex items-center gap-3 ps-3 pe-5 py-2.5 rounded-full border transition-colors ' +
-        (dark
-          ? 'bg-paper/[0.06] border-paper/15 hover:bg-paper/10'
-          : 'bg-paper border-rule hover:bg-paperDeep')
-      }
-    >
+
+  // Shared visual chrome. When STORES_LIVE is false we render a <div> with
+  // aria-disabled rather than an <a> with a stale href — keeps the design
+  // intact, avoids dead clicks and screen-reader confusion.
+  const inner = (
+    <>
       <span className="relative h-7 w-7 shrink-0 rounded-md overflow-hidden">
         <Image src={s.icon} alt="" fill sizes="28px" className="object-contain" />
       </span>
@@ -91,6 +109,33 @@ function PillBadge({ store: s, dark }: { store: Store; dark: boolean }) {
           {label}
         </span>
       </span>
+    </>
+  );
+
+  const baseClass =
+    'inline-flex items-center gap-3 ps-3 pe-5 py-2.5 rounded-full border ' +
+    (dark ? 'bg-paper/[0.06] border-paper/15' : 'bg-paper border-rule');
+
+  if (!STORES_LIVE) {
+    return (
+      <div
+        role="group"
+        aria-disabled="true"
+        aria-label={`${sub} ${label}`}
+        className={baseClass + ' opacity-70 cursor-default select-none'}
+      >
+        {inner}
+      </div>
+    );
+  }
+
+  return (
+    <a
+      href={s.href}
+      aria-label={`${sub} ${label}`}
+      className={baseClass + ' transition-colors ' + (dark ? 'hover:bg-paper/10' : 'hover:bg-paperDeep')}
+    >
+      {inner}
     </a>
   );
 }
@@ -109,22 +154,16 @@ function CardRow({ surface }: { surface: Surface }) {
 function CardBadge({ store: s, dark }: { store: Store; dark: boolean }) {
   const t = useTranslations('StoreBadges');
   const { sub, label } = useStoreCopy(s);
-  return (
-    <a
-      href={s.href}
-      aria-label={`${sub} ${label}`}
-      className={
-        'group flex items-center gap-5 p-5 rounded-2xl border transition-colors ' +
-        (dark
-          ? 'bg-paper/[0.04] border-paper/15 hover:bg-paper/[0.08]'
-          : 'bg-paper border-rule hover:bg-paperDeep')
-      }
-    >
-      <div className="shrink-0 flex flex-col items-center gap-2">
-        <div className="relative h-24 w-24 rounded-lg overflow-hidden bg-paper p-1">
-          <Image src={s.qr} alt={`${sub} ${label}`} fill sizes="96px" className="object-contain" />
+
+  const inner = (
+    <>
+      {STORES_LIVE && (
+        <div className="shrink-0 flex flex-col items-center gap-2">
+          <div className="relative h-24 w-24 rounded-lg overflow-hidden bg-paper p-1">
+            <Image src={s.qr} alt={`${sub} ${label}`} fill sizes="96px" className="object-contain" />
+          </div>
         </div>
-      </div>
+      )}
 
       <div className="flex-1 min-w-0">
         <div className="flex items-center gap-3 mb-2">
@@ -140,10 +179,39 @@ function CardBadge({ store: s, dark }: { store: Store; dark: boolean }) {
             </span>
           </span>
         </div>
-        <p className={'text-xs ' + (dark ? 'text-paper/55' : 'text-slate2')}>
-          {t('scanHint')}
-        </p>
+        {STORES_LIVE && (
+          <p className={'text-xs ' + (dark ? 'text-paper/55' : 'text-slate2')}>
+            {t('scanHint')}
+          </p>
+        )}
       </div>
+    </>
+  );
+
+  const baseClass =
+    'flex items-center gap-5 p-5 rounded-2xl border ' +
+    (dark ? 'bg-paper/[0.04] border-paper/15' : 'bg-paper border-rule');
+
+  if (!STORES_LIVE) {
+    return (
+      <div
+        role="group"
+        aria-disabled="true"
+        aria-label={`${sub} ${label}`}
+        className={baseClass + ' opacity-70 cursor-default select-none'}
+      >
+        {inner}
+      </div>
+    );
+  }
+
+  return (
+    <a
+      href={s.href}
+      aria-label={`${sub} ${label}`}
+      className={baseClass + ' transition-colors ' + (dark ? 'hover:bg-paper/[0.08]' : 'hover:bg-paperDeep')}
+    >
+      {inner}
     </a>
   );
 }

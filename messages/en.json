@@ -32,7 +32,8 @@
     "appleLabel": "App Store",
     "googleSub": "Get it on",
     "googleLabel": "Google Play",
-    "scanHint": "Scan the QR or tap to open."
+    "scanHint": "Scan the QR or tap to open.",
+    "launchingCaption": "Launching summer 2026"
   },
   "Hero": {
     "eyebrow": "For drivers · for fleets",

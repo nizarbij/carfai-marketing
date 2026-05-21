@@ -32,7 +32,8 @@
     "appleLabel": "App Store",
     "googleSub": "Disponible sur",
     "googleLabel": "Google Play",
-    "scanHint": "Scannez le code QR ou touchez pour ouvrir."
+    "scanHint": "Scannez le code QR ou touchez pour ouvrir.",
+    "launchingCaption": "Lancement été 2026"
   },
   "Hero": {
     "eyebrow": "Pour conducteurs · pour flottes",

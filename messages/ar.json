@@ -32,7 +32,8 @@
     "appleLabel": "App Store",
     "googleSub": "احصل عليه من",
     "googleLabel": "Google Play",
-    "scanHint": "امسح رمز QR أو انقر للفتح."
+    "scanHint": "امسح رمز QR أو انقر للفتح.",
+    "launchingCaption": "الإطلاق في صيف 2026"
   },
   "Hero": {
     "eyebrow": "للسائقين · للأساطيل",
