@@ -18,11 +18,19 @@
 }
 
 @layer components {
-  /* All phone-frame screenshots use this so the device status bar
-     (time / wifi / battery) is cropped out the top while the in-app
-     content stays anchored at the bottom of the frame. */
+  /* All phone-frame screenshots use this. The screenshot's content is
+     anchored to the bottom of the phone frame so the device status bar
+     (time / wifi / battery) at the top gets clipped naturally by the
+     9:19 frame vs 9:19.5 image aspect mismatch.
+
+     Earlier versions added scale-[1.06] + origin-bottom to crop more
+     of the status bar, but in some browsers (particularly Chrome on
+     Windows under certain devicePixelRatio combinations) the
+     compounded transform pushed the entire image outside the visible
+     area, leaving the phone-frame's bg-ink bezel showing as a black
+     rectangle. Pure object-fit + object-position is the safe path. */
   .phone-screen-img {
-    @apply object-cover object-bottom scale-[1.06] origin-bottom;
+    @apply object-cover object-bottom;
   }
 }
 
