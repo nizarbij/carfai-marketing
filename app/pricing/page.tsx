@@ -67,7 +67,6 @@ const sections: { heading: string; rows: Row[] }[] = [
     heading: 'Vehicles & documents',
     rows: [
       { feature: 'Vehicles',                values: ['1',   '3',     '5',     '50',    '200'] },
-      { feature: 'Documents per year',      values: ['50',  '500',   '2,000', '10,000', '50,000'] },
       { feature: 'Document scanning + AI extraction', values: [true, true, true, true, true] },
       { feature: 'Categorization (fuel / maintenance / insurance / …)', values: [true, true, true, true, true] },
       { feature: 'Document expiry tracking', values: [true, true, true, true, true] },
@@ -160,7 +159,7 @@ export default function PricingPage() {
     <>
       {/* ── Hero ── */}
       <section className="mx-auto max-w-6xl px-6 pt-20 pb-12 md:pt-28">
-        <p className="font-mono text-xs uppercase tracking-widest text-slate2 mb-6">
+        <p className="font-mono text-sm uppercase tracking-widest text-slate2 mb-6">
           Pricing
         </p>
         <h1 className="text-4xl md:text-6xl font-medium tracking-tight text-ink leading-[1.05] max-w-3xl">
@@ -230,7 +229,7 @@ export default function PricingPage() {
 
           {sections.map((section) => (
             <div key={section.heading} className="mb-12">
-              <h3 className="font-mono text-xs uppercase tracking-widest text-accent mb-4">
+              <h3 className="font-mono text-sm uppercase tracking-widest text-accent mb-4">
                 {section.heading}
               </h3>
               <div className="overflow-x-auto rounded-2xl border border-rule bg-paper">
@@ -286,8 +285,8 @@ export default function PricingPage() {
             Contact support
           </Link>
           {' '}or email{' '}
-          <a href="mailto:hello@carfai.app" className="text-accent underline underline-offset-2 hover:no-underline">
-            hello@carfai.app
+          <a href="mailto:carfai.info@gmail.com" className="text-accent underline underline-offset-2 hover:no-underline">
+            carfai.info@gmail.com
           </a>.
         </div>
       </section>

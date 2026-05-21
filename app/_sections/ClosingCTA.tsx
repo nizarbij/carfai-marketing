@@ -4,6 +4,7 @@ import { useRef } from 'react';
 import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { SplitTextReveal } from '../_components/SplitTextReveal';
+import { StoreBadges } from '../_components/StoreBadges';
 
 /**
  * Section 7 — Closing CTA. Named patterns: splittext-reveal on the
@@ -55,7 +56,7 @@ export function ClosingCTA() {
   return (
     <section ref={sectionRef} className="border-t border-rule bg-ink text-paper">
       <div className="mx-auto max-w-6xl px-6 py-32 md:py-48 text-center">
-        <p className="font-mono text-xs uppercase tracking-widest text-paper/50 mb-8">
+        <p className="font-mono text-sm uppercase tracking-widest text-paper/50 mb-8">
           One more thing
         </p>
 
@@ -81,6 +82,11 @@ export function ClosingCTA() {
             Open CarFai
             <span aria-hidden>→</span>
           </a>
+        </div>
+
+        {/* Store cards with QRs — the final conversion surface */}
+        <div className="mt-16">
+          <StoreBadges variant="card" surface="dark" />
         </div>
       </div>
     </section>

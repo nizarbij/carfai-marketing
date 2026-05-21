@@ -83,14 +83,14 @@ The AI Advisor is hardened against common prompt-injection attacks (system / use
 - A response that ignores its instructions or behaves out of character
 - Any unusual or alarming behavior
 
-Please report it to security@carfai.app immediately. We treat such reports seriously and respond within 24 hours.
+Please report it to carfai.info@gmail.com immediately. We treat such reports seriously and respond within 24 hours.
 
 ## 7. Your rights regarding AI processing
 
 - **Opt-out** — you may opt out of AI features by not using the AI Advisor / scanner. Free-tier features that don't depend on AI continue to work.
 - **Deletion** — when you delete your account, we delete your AI conversation history per the Privacy Policy retention schedule.
 - **Access** — your AI conversation history is included in the "Export my data" bundle (Privacy Policy §7).
-- **Object to AI use** — under GDPR Article 22, you have the right not to be subject to solely-automated decisions with legal effects. CarFai's AI features provide information, not legally binding decisions; if you have a specific concern, contact privacy@carfai.app.
+- **Object to AI use** — under GDPR Article 22, you have the right not to be subject to solely-automated decisions with legal effects. CarFai's AI features provide information, not legally binding decisions; if you have a specific concern, contact carfai.info@gmail.com.
 
 ## 8. Updates
 
@@ -98,9 +98,9 @@ This Disclosure will be updated as our AI use evolves (new features, new models,
 
 ## 9. Contact
 
-- General AI questions: support@carfai.app
-- Privacy: privacy@carfai.app
-- Security: security@carfai.app
+- General AI questions: carfai.info@gmail.com
+- Privacy: carfai.info@gmail.com
+- Security: carfai.info@gmail.com
 
 ---
 

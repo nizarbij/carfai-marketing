@@ -21,7 +21,7 @@ You may register for an account using:
 - Google Sign In
 - Microsoft Sign In
 
-You are responsible for maintaining the confidentiality of your credentials. You must promptly notify us at security@carfai.app if you suspect unauthorized access. You are responsible for activities that occur under your account.
+You are responsible for maintaining the confidentiality of your credentials. You must promptly notify us at carfai.info@gmail.com if you suspect unauthorized access. You are responsible for activities that occur under your account.
 
 You agree to provide accurate, current information at registration and to keep it accurate.
 
@@ -152,7 +152,7 @@ The Service relies on third-party services including Apple, Google, Anthropic, S
 ## 12. Termination
 
 ### 12.1 By you
-You may terminate your account at any time via the in-app "Delete account" flow or by contacting support@carfai.app.
+You may terminate your account at any time via the in-app "Delete account" flow or by contacting carfai.info@gmail.com.
 
 ### 12.2 By us
 We may suspend or terminate your account if:
@@ -206,7 +206,7 @@ You agree to indemnify, defend, and hold harmless CarFai and its officers, direc
 ## 16. Dispute resolution
 
 ### 16.1 Informal resolution
-Before filing a formal dispute, you agree to attempt informal resolution by contacting legal@carfai.app. We will respond within 30 days.
+Before filing a formal dispute, you agree to attempt informal resolution by contacting carfai.info@gmail.com. We will respond within 30 days.
 
 ### 16.2 [JURISDICTION-SPECIFIC clauses to be reviewed by lawyer]
 **[FOR US USERS]**: Any dispute arising out of or relating to these Terms shall be resolved by **binding individual arbitration** administered by **JAMS** under its consumer arbitration rules. **You waive the right to bring claims as a class action or in a representative capacity.** This arbitration agreement does not apply to claims that may be brought in small claims court.
@@ -242,13 +242,13 @@ We may update these Terms. We will notify you of material changes via email and 
 - **No waiver** — our failure to enforce a provision is not a waiver of future enforcement.
 - **Assignment** — you may not assign these Terms without our consent. We may assign these Terms to an affiliate or in connection with a merger or sale.
 - **Force majeure** — neither party is liable for delays due to circumstances beyond its reasonable control.
-- **Notices** — we send notices to your registered email or via in-app notification. You send notices to legal@carfai.app.
+- **Notices** — we send notices to your registered email or via in-app notification. You send notices to carfai.info@gmail.com.
 
 ## 21. Contact
 
-- **General**: support@carfai.app
-- **Legal**: legal@carfai.app
-- **Postal**: `CarFai, address available on request via privacy@carfai.app`
+- **General**: carfai.info@gmail.com
+- **Legal**: carfai.info@gmail.com
+- **Postal**: `CarFai, address available on request via carfai.info@gmail.com`
 
 ---
 

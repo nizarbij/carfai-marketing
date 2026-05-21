@@ -6,7 +6,7 @@
 
 This Data Processing Addendum ("DPA") is between:
 - **Customer** ("you" or "Controller") — the entity identified in the CarFai subscription agreement.
-- **CarFai** — **CarFai** ("we" or "Processor"), located at **address available on request via privacy@carfai.app**.
+- **CarFai** — **CarFai** ("we" or "Processor"), located at **address available on request via carfai.info@gmail.com**.
 
 ## 2. Scope and applicability
 

@@ -79,8 +79,8 @@ This EULA, together with the Terms of Service, Privacy Policy, AI Disclosure, an
 
 ## 14. Contact
 
-- legal@carfai.app
-- `CarFai, address available on request via privacy@carfai.app`
+- carfai.info@gmail.com
+- `CarFai, address available on request via carfai.info@gmail.com`
 
 ---
 

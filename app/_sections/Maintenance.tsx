@@ -46,7 +46,7 @@ export function Maintenance() {
             />
           ) : (
             <div className="absolute inset-0 flex items-center justify-center text-center px-6 bg-paperDeep">
-              <p className="font-mono text-xs uppercase tracking-widest text-slate2">
+              <p className="font-mono text-sm uppercase tracking-widest text-slate2">
                 missing<br />/public/app-obd2.jpg
               </p>
             </div>
@@ -55,7 +55,7 @@ export function Maintenance() {
 
         {/* Right: copy + 3 bullets */}
         <div className="order-1 md:order-2">
-          <p className="font-mono text-xs uppercase tracking-widest text-slate2 mb-6">
+          <p className="font-mono text-sm uppercase tracking-widest text-slate2 mb-6">
             Maintenance · OBD2 · Renewals
           </p>
           <h2 className="text-3xl md:text-5xl font-medium tracking-tight text-ink leading-[1.1] max-w-xl">
@@ -65,7 +65,7 @@ export function Maintenance() {
           <ul className="mt-10 space-y-8">
             {bullets.map((b) => (
               <li key={b.eyebrow}>
-                <p className="font-mono text-xs uppercase tracking-widest text-accent mb-2">
+                <p className="font-mono text-sm uppercase tracking-widest text-accent mb-2">
                   {b.eyebrow}
                 </p>
                 <p className="text-lg md:text-xl text-slate2 leading-relaxed max-w-prose">

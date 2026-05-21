@@ -13,9 +13,9 @@ export function Footer() {
               <Image
                 src="/logo.png"
                 alt="CarFai"
-                width={240}
-                height={56}
-                className="h-14 w-auto"
+                width={320}
+                height={72}
+                className="h-16 md:h-20 w-auto"
               />
             </Link>
             <p className="mt-5 text-sm text-slate2 max-w-prose">
@@ -64,10 +64,10 @@ export function Footer() {
         <div className="mt-10 pt-6 border-t border-rule text-xs text-slate2 flex flex-wrap gap-x-6 gap-y-2">
           <span>© {year} CarFai</span>
           <a
-            href="mailto:privacy@carfai.app"
+            href="mailto:carfai.info@gmail.com"
             className="hover:text-accent"
           >
-            privacy@carfai.app
+            carfai.info@gmail.com
           </a>
         </div>
       </div>

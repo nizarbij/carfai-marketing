@@ -111,7 +111,7 @@ Outputs are returned as aggregate JSON like `{ avg_price, median_price, sample_s
 
 ### 4.4 Right to request human review of AI decisions
 
-For users in Quebec (Law 25 s. 12.1) and the EEA / UK (GDPR Art. 22), you have the right not to be subject to a solely-automated decision with legal or significant effects on you. The AI Advisor's outputs in CarFai are **informational** (recommendations, valuations, maintenance suggestions) — they are not legally binding decisions. However, if you believe an AI Advisor output materially affected a decision you made, you may request human review by contacting privacy@carfai.app with the analysis identifier (visible at the bottom of every Detailed Analysis output).
+For users in Quebec (Law 25 s. 12.1) and the EEA / UK (GDPR Art. 22), you have the right not to be subject to a solely-automated decision with legal or significant effects on you. The AI Advisor's outputs in CarFai are **informational** (recommendations, valuations, maintenance suggestions) — they are not legally binding decisions. However, if you believe an AI Advisor output materially affected a decision you made, you may request human review by contacting carfai.info@gmail.com with the analysis identifier (visible at the bottom of every Detailed Analysis output).
 
 We will respond within 30 days. The review is performed by CarFai personnel (the founder, in v1; the support team thereafter).
 
@@ -155,11 +155,11 @@ Depending on your jurisdiction, you have some or all of the following rights:
 
 **California residents (CCPA/CPRA)** also have the right to know what categories of personal information are collected, the categories of sources, the purposes of use, and the categories of third parties with whom data is shared (covered above), and the right to opt out of "sale" or "sharing" of personal information. **CarFai does not sell or share personal information for cross-context behavioral advertising.** You can confirm this and exercise the related opt-out at any time from **Settings → About → Do Not Sell or Share My Personal Information**.
 
-**Other US state residents (added 2026-05-18 — M1.10)** — Texas (TDPSA, eff. 2024), Colorado (CPA), Connecticut (CTDPA), Virginia (VCDPA), Utah (UCPA), Oregon (OCPA), Montana (MTCDPA), Indiana (INCDPA), Tennessee (TIPA), Iowa (ICDPA), Delaware (DPDPA), New Hampshire (NHPA), New Jersey (NJDPL) and other state comprehensive privacy laws confer substantially the same rights as the EU baseline above: access, deletion, correction, portability, and opt-out of targeted advertising / sale / profiling for significant decisions. **CarFai does not engage in targeted advertising, does not sell personal information, and does not use personal information for profiling with legal or similarly significant effects.** To exercise any of these rights, contact privacy@carfai.app or use the in-app **Settings → About → Do Not Sell or Share My Personal Information** entry.
+**Other US state residents (added 2026-05-18 — M1.10)** — Texas (TDPSA, eff. 2024), Colorado (CPA), Connecticut (CTDPA), Virginia (VCDPA), Utah (UCPA), Oregon (OCPA), Montana (MTCDPA), Indiana (INCDPA), Tennessee (TIPA), Iowa (ICDPA), Delaware (DPDPA), New Hampshire (NHPA), New Jersey (NJDPL) and other state comprehensive privacy laws confer substantially the same rights as the EU baseline above: access, deletion, correction, portability, and opt-out of targeted advertising / sale / profiling for significant decisions. **CarFai does not engage in targeted advertising, does not sell personal information, and does not use personal information for profiling with legal or similarly significant effects.** To exercise any of these rights, contact carfai.info@gmail.com or use the in-app **Settings → About → Do Not Sell or Share My Personal Information** entry.
 
 **UAE PDPL / Saudi PDPL / Egypt DPL** — equivalent rights to access, rectification, deletion, and objection apply. We comply with the local supervisory authority's requirements in each country.
 
-To exercise any right, contact privacy@carfai.app. We respond within 30 days (or the period required by your jurisdiction's law if shorter).
+To exercise any right, contact carfai.info@gmail.com. We respond within 30 days (or the period required by your jurisdiction's law if shorter).
 
 ## 8. International data transfers
 
@@ -213,9 +213,9 @@ Listed for transparency. Not currently processing your Personal Data. Will be ad
 
 ## 14. Contact
 
-- **General privacy inquiries**: privacy@carfai.app
-- **Data Protection Officer (GDPR)**: `[DPO Email: dpo@carfai.app]`
-- **Postal address**: `CarFai, address available on request via privacy@carfai.app`
+- **General privacy inquiries**: carfai.info@gmail.com
+- **Data Protection Officer (GDPR)**: carfai.info@gmail.com
+- **Postal address**: `CarFai, address available on request via carfai.info@gmail.com`
 - **EEA representative (if required by GDPR Article 27)**: `[TBD by lawyer]`
 - **UK representative (if required by UK GDPR Article 27)**: `[TBD by lawyer]`
 

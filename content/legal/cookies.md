@@ -79,8 +79,8 @@ We may update this Policy. Material changes will be notified via the cookie cons
 
 ## Contact
 
-- General privacy: privacy@carfai.app
-- Postal: `CarFai, address available on request via privacy@carfai.app`
+- General privacy: carfai.info@gmail.com
+- Postal: `CarFai, address available on request via carfai.info@gmail.com`
 
 ---
 
