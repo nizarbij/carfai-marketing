@@ -2,20 +2,23 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
+import { useTranslations } from 'next-intl';
+import { Link } from '@/i18n/navigation';
 import { StoreBadges } from './StoreBadges';
+import { LocaleSwitcher } from './LocaleSwitcher';
 
 /**
  * Editorial-restraint header.
  *
  * Desktop (md+): brand logo left, horizontal nav right (Pricing /
- *   Support / Start-free pill).
+ *   Support / Start-free pill) + LocaleSwitcher.
  * Mobile (< md): brand logo left, hamburger button right. Tap opens
- *   a slide-down panel with the same links + the store badges so
- *   visitors can download the app from the panel without scrolling
- *   to the closing CTA.
+ *   a slide-down panel with the same links + the store badges +
+ *   LocaleSwitcher so visitors can change language and download
+ *   the app from the panel without scrolling.
  */
 export function SiteHeader() {
+  const t = useTranslations('Header');
   const [open, setOpen] = useState(false);
 
   return (
@@ -23,7 +26,7 @@ export function SiteHeader() {
       <div className="mx-auto max-w-6xl px-6 h-20 flex items-center justify-between">
         <Link
           href="/"
-          aria-label="CarFai home"
+          aria-label={t('ariaHome')}
           className="flex items-center"
           onClick={() => setOpen(false)}
         >
@@ -40,23 +43,24 @@ export function SiteHeader() {
         {/* Desktop nav */}
         <nav className="hidden md:flex items-center gap-6 text-sm">
           <Link href="/pricing" className="text-slate2 hover:text-ink transition-colors">
-            Pricing
+            {t('pricing')}
           </Link>
           <Link href="/support" className="text-slate2 hover:text-ink transition-colors">
-            Support
+            {t('support')}
           </Link>
+          <LocaleSwitcher />
           <a
             href="#start"
             className="px-3 py-1.5 rounded-full bg-ink text-paper hover:bg-accentDeep transition-colors"
           >
-            Start free
+            {t('startFree')}
           </a>
         </nav>
 
         {/* Mobile hamburger button */}
         <button
           type="button"
-          aria-label={open ? 'Close menu' : 'Open menu'}
+          aria-label={open ? t('menuClose') : t('menuOpen')}
           aria-expanded={open}
           aria-controls="mobile-menu"
           className="md:hidden inline-flex items-center justify-center w-11 h-11 -mr-2 rounded-full hover:bg-paperDeep transition-colors"
@@ -80,28 +84,33 @@ export function SiteHeader() {
             onClick={() => setOpen(false)}
             className="text-lg text-ink hover:text-accentDeep transition-colors"
           >
-            Pricing
+            {t('pricing')}
           </Link>
           <Link
             href="/support"
             onClick={() => setOpen(false)}
             className="text-lg text-ink hover:text-accentDeep transition-colors"
           >
-            Support
+            {t('support')}
           </Link>
           <a
             href="#start"
             onClick={() => setOpen(false)}
             className="inline-flex w-fit items-center gap-2 px-5 py-2.5 rounded-full bg-ink text-paper hover:bg-accentDeep transition-colors font-medium"
           >
-            Start free
+            {t('startFree')}
             <span aria-hidden>→</span>
           </a>
+
+          {/* Locale switcher in mobile menu */}
+          <div className="pt-2">
+            <LocaleSwitcher />
+          </div>
 
           {/* Divider + store badges so the app is one tap away from the menu */}
           <div className="pt-4 mt-2 border-t border-rule">
             <p className="font-mono text-xs uppercase tracking-widest text-slate2 mb-3">
-              Or download
+              {t('orDownload')}
             </p>
             <StoreBadges variant="pill" surface="light" />
           </div>
