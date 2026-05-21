@@ -38,7 +38,7 @@ const STORES = [
     key:   'google',
     label: 'Google Play',
     sub:   'Get it on',
-    icon:  '/store-google.jpg',
+    icon:  '/store-google.png',
     qr:    '/qr-google.png',
     href:  'https://play.google.com/store/apps/details?id=com.carfai.app',
   },

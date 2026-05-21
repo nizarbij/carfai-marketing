@@ -13,8 +13,8 @@ export function SiteHeader() {
           <Image
             src="/logo.png"
             alt="CarFai"
-            width={420}
-            height={96}
+            width={1200}
+            height={250}
             priority
             className="h-20 md:h-24 w-auto"
           />
