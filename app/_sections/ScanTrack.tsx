@@ -93,33 +93,48 @@ export function ScanTrack() {
 
   return (
     <section ref={sectionRef} className="relative md:h-screen md:overflow-hidden">
-      {/* ── Mobile: stacked render (no pin, no crossfade — every
-            step + screenshot pair is visible by scrolling). ── */}
-      <div className="md:hidden mx-auto max-w-2xl px-6 py-20 space-y-20">
-        {steps.map((s, i) => (
-          <div key={i} className="space-y-8">
-            <div>
-              <p className="font-mono text-sm uppercase tracking-widest text-accent mb-3">
-                {s.eyebrow}
-              </p>
-              <h3 className="text-3xl font-medium tracking-tight text-ink leading-[1.1] mb-4">
-                {s.title}
-              </h3>
-              <p className="text-base text-slate2 leading-relaxed">
-                {s.body}
-              </p>
-            </div>
-            <div className="relative aspect-[9/19] mx-auto w-full max-w-[260px] rounded-[2.5rem] border-[10px] border-ink bg-ink overflow-hidden shadow-[0_30px_60px_-20px_rgba(11,14,19,0.35)]">
-              <Image
-                src={s.image}
-                alt={s.alt}
-                fill
-                sizes="260px"
-                className="phone-screen-img"
-              />
-            </div>
-          </div>
-        ))}
+      {/* ── Mobile: native swipe carousel (no GSAP). Native CSS
+            scroll-snap, edge-bled. Each step is a full-viewport
+            card; user swipes left/right to advance. Snap indicators
+            below the carousel tell the user where they are. ── */}
+      <div className="md:hidden py-16">
+        <div className="px-6 mb-8">
+          <p className="font-mono text-sm uppercase tracking-widest text-slate2">
+            Scan · Categorize · Trend
+          </p>
+        </div>
+        <div className="flex gap-4 overflow-x-auto snap-x snap-mandatory scroll-pl-6 px-6 pb-6 [-webkit-overflow-scrolling:touch] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+          {steps.map((s, i) => (
+            <article
+              key={i}
+              className="shrink-0 w-[82vw] snap-start space-y-6"
+            >
+              <div className="relative aspect-[9/19] w-full max-w-[280px] mx-auto rounded-[2.5rem] border-[10px] border-ink bg-ink overflow-hidden shadow-[0_30px_60px_-20px_rgba(11,14,19,0.35)]">
+                <Image
+                  src={s.image}
+                  alt={s.alt}
+                  fill
+                  sizes="280px"
+                  className="phone-screen-img"
+                />
+              </div>
+              <div>
+                <p className="font-mono text-sm uppercase tracking-widest text-accent mb-2">
+                  {s.eyebrow}
+                </p>
+                <h3 className="text-2xl font-medium tracking-tight text-ink leading-[1.15] mb-3">
+                  {s.title}
+                </h3>
+                <p className="text-base text-slate2 leading-relaxed">
+                  {s.body}
+                </p>
+              </div>
+            </article>
+          ))}
+        </div>
+        <p className="px-6 mt-4 text-xs text-slate2 font-mono">
+          ← swipe →
+        </p>
       </div>
 
       {/* ── Desktop (md+): pinned-scrub with crossfade ── */}

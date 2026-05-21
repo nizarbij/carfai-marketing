@@ -11,12 +11,15 @@ if (typeof window !== 'undefined') {
 }
 
 /**
- * Section 7 — Fleet band. Named pattern: horizontal-on-vertical.
+ * Section 7 — Fleet band.
  *
- * Cards translate sideways inside a pinned container as the user
- * scrolls down. Each card = phone frame + real B2B screenshot +
- * one-line caption. Replaces the earlier all-text 4-card layout
- * once the founder shipped 3 real fleet screenshots.
+ * Desktop (md+): horizontal-on-vertical scroll. Section pins; cards
+ *   translate sideways as the user scrolls down. GSAP ScrollTrigger
+ *   does the pinning; matchMedia gates the timeline so it only
+ *   registers on md+ widths.
+ * Mobile (< md): native horizontal-swipe carousel with CSS
+ *   scroll-snap. No GSAP, no pin. Each card is a full-width
+ *   swipeable panel.
  */
 
 const cards = [
@@ -49,32 +52,42 @@ export function Fleet() {
 
   useGSAP(
     () => {
-      const track = trackRef.current;
-      if (!track) return;
-      const distance = track.scrollWidth - track.clientWidth;
-      if (distance <= 0) return;
+      // Pin-and-translate ONLY at md+ widths. Mobile uses native
+      // horizontal scroll (CSS only) so it doesn't get trapped in
+      // a too-tall pinned viewport.
+      const mm = gsap.matchMedia();
 
-      gsap.to(track, {
-        x: -distance,
-        ease: 'none',
-        scrollTrigger: {
-          trigger:  sectionRef.current,
-          start:    'top top',
-          end:      () => `+=${distance + 200}`,
-          scrub:    0.5,
-          pin:      true,
-          anticipatePin: 1,
-          invalidateOnRefresh: true,
-        },
+      mm.add('(min-width: 768px)', () => {
+        const track = trackRef.current;
+        if (!track) return;
+        const distance = track.scrollWidth - track.clientWidth;
+        if (distance <= 0) return;
+
+        gsap.to(track, {
+          x: -distance,
+          ease: 'none',
+          scrollTrigger: {
+            trigger:  sectionRef.current,
+            start:    'top top',
+            end:      () => `+=${distance + 200}`,
+            scrub:    0.5,
+            pin:      true,
+            anticipatePin: 1,
+            invalidateOnRefresh: true,
+          },
+        });
       });
     },
     { scope: sectionRef },
   );
 
   return (
-    <section ref={sectionRef} className="relative h-screen overflow-hidden bg-paperDeep">
+    <section
+      ref={sectionRef}
+      className="relative bg-paperDeep md:h-screen md:overflow-hidden"
+    >
       <div className="mx-auto max-w-6xl px-6 pt-16 pb-8 md:pt-20">
-        <p className="font-mono text-base uppercase tracking-widest text-slate2 mb-4">
+        <p className="font-mono text-sm md:text-base uppercase tracking-widest text-slate2 mb-4">
           For fleets
         </p>
         <h2 className="text-3xl md:text-5xl font-medium tracking-tight text-ink max-w-2xl leading-[1.1]">
@@ -82,18 +95,52 @@ export function Fleet() {
         </h2>
       </div>
 
-      <div className="overflow-hidden">
+      {/* ── Mobile: native CSS swipe carousel ── */}
+      <div className="md:hidden flex gap-4 overflow-x-auto snap-x snap-mandatory scroll-pl-6 px-6 pb-12 [-webkit-overflow-scrolling:touch] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+        {cards.map((c, i) => (
+          <article
+            key={i}
+            className="shrink-0 w-[85vw] snap-start rounded-3xl border border-rule bg-paper p-6 flex flex-col gap-5"
+          >
+            <div className="relative aspect-[9/19] w-full max-w-[200px] mx-auto rounded-[1.75rem] border-[8px] border-ink bg-ink overflow-hidden shadow-[0_20px_40px_-15px_rgba(11,14,19,0.35)]">
+              <Image
+                src={c.image}
+                alt={c.alt}
+                fill
+                sizes="200px"
+                className="phone-screen-img"
+              />
+            </div>
+            <div>
+              <p className="font-mono text-sm uppercase tracking-widest text-accent mb-2">
+                {String(i + 1).padStart(2, '0')} · {c.eyebrow}
+              </p>
+              <h3 className="text-xl font-medium tracking-tight text-ink leading-tight mb-2">
+                {c.title}
+              </h3>
+              <p className="text-base text-slate2 leading-relaxed">
+                {c.body}
+              </p>
+            </div>
+          </article>
+        ))}
+      </div>
+      <p className="md:hidden px-6 pb-12 -mt-6 text-xs text-slate2 font-mono">
+        ← swipe →
+      </p>
+
+      {/* ── Desktop: GSAP horizontal-on-vertical pin track ── */}
+      <div className="hidden md:block overflow-hidden">
         <div
           ref={trackRef}
-          className="flex gap-8 px-6 md:px-[max(1.5rem,calc((100vw-72rem)/2))] will-change-transform items-stretch"
+          className="flex gap-8 px-[max(1.5rem,calc((100vw-72rem)/2))] will-change-transform items-stretch"
         >
           {cards.map((c, i) => (
             <article
               key={i}
-              className="shrink-0 w-[88vw] md:w-[42rem] rounded-3xl border border-rule bg-paper p-8 md:p-10 grid md:grid-cols-[auto_1fr] gap-8 items-center"
+              className="shrink-0 w-[42rem] rounded-3xl border border-rule bg-paper p-10 grid grid-cols-[auto_1fr] gap-8 items-center"
             >
-              {/* Phone frame with the real fleet screenshot */}
-              <div className="relative aspect-[9/19] w-[180px] md:w-[200px] rounded-[2rem] border-[8px] border-ink bg-ink overflow-hidden shadow-[0_20px_40px_-15px_rgba(11,14,19,0.35)] mx-auto">
+              <div className="relative aspect-[9/19] w-[200px] rounded-[2rem] border-[8px] border-ink bg-ink overflow-hidden shadow-[0_20px_40px_-15px_rgba(11,14,19,0.35)] mx-auto">
                 <Image
                   src={c.image}
                   alt={c.alt}
@@ -103,7 +150,6 @@ export function Fleet() {
                 />
               </div>
 
-              {/* Caption */}
               <div>
                 <p className="font-mono text-base uppercase tracking-widest text-accent mb-3">
                   {String(i + 1).padStart(2, '0')} · {c.eyebrow}
