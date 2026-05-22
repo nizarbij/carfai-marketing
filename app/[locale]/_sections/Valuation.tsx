@@ -1,14 +1,8 @@
-import { existsSync } from 'fs';
-import { join } from 'path';
 import { useTranslations } from 'next-intl';
 import { SplitTextReveal } from '../_components/SplitTextReveal';
 import { PhoneFrame } from '../_components/PhoneFrame';
 import { Eyebrow } from '../_components/Eyebrow';
 import { SectionIndex } from '../_components/SectionIndex';
-
-const VALUATION_IMAGE_EXISTS = existsSync(
-  join(process.cwd(), 'public', 'app-valuation.jpg'),
-);
 
 export function Valuation() {
   const t = useTranslations('Valuation');
@@ -65,13 +59,8 @@ export function Valuation() {
 
         <PhoneFrame
           surface="dark"
-          src={VALUATION_IMAGE_EXISTS ? '/app-valuation.jpg' : undefined}
+          src="/app-valuation.jpg"
           alt={t('imageAlt')}
-          fallback={
-            <p className="font-mono text-base uppercase tracking-widest text-paper/40">
-              {t.rich('missing', { br: () => <br /> })}
-            </p>
-          }
           className="max-h-[70vh] md:max-h-[78vh] mx-auto w-full max-w-[260px] md:max-w-xs"
         />
       </div>

@@ -1,15 +1,9 @@
-// Server component — SplitTextReveal is its own 'use client' island,
-// so this file can stay on the server and import node-only fs.
-import { existsSync } from 'fs';
-import { join } from 'path';
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import { SplitTextReveal } from '../_components/SplitTextReveal';
 import { StoreBadges } from '../_components/StoreBadges';
 import { Button } from '../_components/Button';
 import { SectionIndex } from '../_components/SectionIndex';
-
-const HERO_IMAGE_EXISTS = existsSync(join(process.cwd(), 'public', 'hero.png'));
 
 /**
  * Hero — stacked layout with the image as a full-bleed band below the
@@ -58,22 +52,14 @@ export function Hero() {
             edge-to-edge (`-mx-6`) so the photo bleeds against the viewport
             on small screens; md+ gets a rounded corner inset. */}
         <div className="-mx-6 md:mx-0 mt-10 md:mt-20 relative aspect-[4/3] md:aspect-[16/9] md:rounded-2xl border border-rule bg-paperDeep overflow-hidden">
-          {HERO_IMAGE_EXISTS ? (
-            <Image
-              src="/hero.png"
-              alt={t('imageAlt')}
-              fill
-              priority
-              sizes="(min-width: 1280px) 1100px, 95vw"
-              className="object-cover"
-            />
-          ) : (
-            <div className="absolute inset-0 flex items-center justify-center">
-              <p className="font-mono text-base uppercase tracking-widest text-slate2">
-                {t('imagePlaceholder')}
-              </p>
-            </div>
-          )}
+          <Image
+            src="/hero.png"
+            alt={t('imageAlt')}
+            fill
+            priority
+            sizes="(min-width: 1280px) 1100px, 95vw"
+            className="object-cover"
+          />
         </div>
       </div>
     </section>

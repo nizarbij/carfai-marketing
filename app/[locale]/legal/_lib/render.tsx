@@ -1,36 +1,34 @@
-import { readFile } from 'fs/promises';
-import path from 'path';
 import { notFound } from 'next/navigation';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { LegalLayout } from '../_components/LegalLayout';
 import { findLegalPage } from '../_data/pages';
 import { routing } from '@/i18n/routing';
-
-type LegalSlug = 'privacy' | 'terms' | 'eula' | 'ai-disclosure' | 'cookies' | 'dpa' | 'aup';
+import { LEGAL_CONTENT, type LegalSlug, type LegalLocale } from './manifest.generated';
 
 /**
- * Locale-aware legal-page renderer. Each route file is a one-line
- * wrapper that calls `renderLegalPage('its-slug', locale)`.
+ * Locale-aware legal-page renderer. Each route file is a one-line wrapper
+ * that calls `renderLegalPage('its-slug', locale)`.
  *
- * The markdown file lives at content/legal/<locale>/<slug>.md.
- * If the locale-specific file is missing (e.g. translation not
- * generated yet), we fall back to the English source.
+ * Markdown content is inlined at build time via
+ * scripts/build-legal-manifest.mjs — read manifest.generated.ts to see
+ * the embedded data. No fs/path is touched at request time, so the
+ * Cloudflare edge runtime can render these pages.
+ *
+ * If the locale-specific markdown is missing (translation not yet
+ * generated), the English source is used as fallback.
  */
 export async function renderLegalPage(slug: string, locale: string) {
   if (!findLegalPage(slug)) notFound();
   setRequestLocale(locale);
 
-  const fileForLocale = path.join(process.cwd(), 'content', 'legal', locale, `${slug}.md`);
-  const fileForEn     = path.join(process.cwd(), 'content', 'legal', 'en',  `${slug}.md`);
+  const localeKey = (LEGAL_CONTENT[locale as LegalLocale] ? locale : 'en') as LegalLocale;
+  const markdown  =
+    LEGAL_CONTENT[localeKey][slug as LegalSlug] ??
+    LEGAL_CONTENT.en[slug as LegalSlug];
 
-  let markdown: string;
-  try {
-    markdown = await readFile(fileForLocale, 'utf-8');
-  } catch {
-    markdown = await readFile(fileForEn, 'utf-8');
-  }
+  if (!markdown) notFound();
 
-  const tl = await getTranslations({ locale, namespace: 'LegalPages' });
+  const tl    = await getTranslations({ locale, namespace: 'LegalPages' });
   const title = tl(slug as LegalSlug);
 
   return <LegalLayout slug={slug} title={title} markdown={markdown} />;

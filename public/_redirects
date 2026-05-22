@@ -1,0 +1,8 @@
+# Cloudflare Pages redirect rules.
+# https://developers.cloudflare.com/pages/configuration/redirects/
+#
+# Root → default locale. Static export with localePrefix: 'as-needed'
+# generates /en, /fr, /es, /ar but no index.html at /, so visitors
+# hitting the apex URL would 404 without this rule.
+
+/    /en/    302

@@ -1,13 +1,7 @@
-import { existsSync } from 'fs';
-import { join } from 'path';
 import { useTranslations } from 'next-intl';
 import { PhoneFrame } from '../_components/PhoneFrame';
 import { Eyebrow } from '../_components/Eyebrow';
 import { SectionIndex } from '../_components/SectionIndex';
-
-const OBD2_IMAGE_EXISTS = existsSync(
-  join(process.cwd(), 'public', 'app-obd2.jpg'),
-);
 
 /**
  * Section 4 — Maintenance & OBD2.
@@ -33,13 +27,8 @@ export function Maintenance() {
         <SectionIndex number={4} label={t('eyebrow')} className="mb-12 md:mb-20" />
       <div className="grid md:grid-cols-[1fr_1fr] gap-12 md:gap-16 items-center">
         <PhoneFrame
-          src={OBD2_IMAGE_EXISTS ? '/app-obd2.jpg' : undefined}
+          src="/app-obd2.jpg"
           alt={t('obd2Alt')}
-          fallback={
-            <p className="font-mono text-base uppercase tracking-widest text-slate2">
-              {t.rich('missing', { br: () => <br /> })}
-            </p>
-          }
           className="max-h-[78vh] mx-auto w-full max-w-xs order-2 md:order-1"
         />
 

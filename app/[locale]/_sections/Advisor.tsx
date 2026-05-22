@@ -1,12 +1,8 @@
-import { existsSync } from 'fs';
-import { join } from 'path';
 import { useTranslations } from 'next-intl';
 import { SplitTextReveal } from '../_components/SplitTextReveal';
 import { PhoneFrame } from '../_components/PhoneFrame';
 import { Eyebrow } from '../_components/Eyebrow';
 import { SectionIndex } from '../_components/SectionIndex';
-
-const ADVISOR_IMAGE_EXISTS = existsSync(join(process.cwd(), 'public', 'app-aiadvisor.jpg'));
 
 export function Advisor() {
   const t = useTranslations('Advisor');
@@ -46,13 +42,8 @@ export function Advisor() {
           </ul>
 
           <PhoneFrame
-            src={ADVISOR_IMAGE_EXISTS ? '/app-aiadvisor.jpg' : undefined}
+            src="/app-aiadvisor.jpg"
             alt={t('imageAlt')}
-            fallback={
-              <p className="font-mono text-base uppercase tracking-widest text-slate2">
-                {t.rich('missing', { br: () => <br /> })}
-              </p>
-            }
             className="max-h-[78vh] mx-auto w-full max-w-xs"
           />
         </div>
