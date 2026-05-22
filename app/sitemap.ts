@@ -5,14 +5,16 @@ import { routing } from '../i18n/routing';
 const BASE_URL = 'https://carfai.app';
 
 /**
- * Emit per-locale URLs for every route. English at the root,
- * other locales under /<locale>/. Each entry tagged with proper
- * hreflang alternates so search engines surface the right
- * variant per visitor.
+ * Emit per-locale URLs for every route. Every locale is prefixed
+ * (`localePrefix: 'always'`), so even English lives at /en. Each
+ * entry tagged with hreflang alternates so search engines surface
+ * the right variant per visitor.
  */
 function urlFor(locale: string, path: string): string {
-  const prefix = locale === routing.defaultLocale ? '' : `/${locale}`;
-  return `${BASE_URL}${prefix}${path}`;
+  // Home is `/${locale}` (no trailing slash); other paths are
+  // `/${locale}${path}` (path already starts with /).
+  if (path === '/') return `${BASE_URL}/${locale}`;
+  return `${BASE_URL}/${locale}${path}`;
 }
 
 function alternates(path: string): Record<string, string> {

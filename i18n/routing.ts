@@ -3,14 +3,21 @@
  * ─────────────────────────────────────────────────────────────────────────────
  * Single source of truth for the locales supported by the marketing
  * site. Used by:
- *   - middleware.ts (locale detection + routing)
  *   - i18n/request.ts (server message loading)
  *   - app/[locale]/layout.tsx (html lang + dir)
  *   - app/sitemap.ts (per-locale URLs + hreflang)
  *
- * Strategy: English at the root, others at /<locale>. This keeps the
- * primary audience (English) on the canonical URL while giving each
- * other locale a clean, predictable prefix.
+ * Strategy: every locale is prefixed (/en, /fr, /es, /ar). The static
+ * export emits all pages under /[locale]/, and Link components from
+ * next-intl/navigation auto-emit prefixed URLs that match the static
+ * files. Visitors landing on `/` are 302'd to `/en/` via
+ * public/_redirects since middleware doesn't run in static export.
+ *
+ * Earlier we used `localePrefix: 'as-needed'` (English at root, others
+ * prefixed) but that depended on middleware to strip the /en prefix at
+ * request time. Static export = no middleware → bare /privacy 404'd
+ * while /en/privacy resolved. See feedback memory
+ * `feedback-cloudflare-static-export`.
  * ─────────────────────────────────────────────────────────────────────────────
  */
 
@@ -19,10 +26,7 @@ import { defineRouting } from 'next-intl/routing';
 export const routing = defineRouting({
   locales:       ['en', 'fr', 'es', 'ar'] as const,
   defaultLocale: 'en',
-  // English stays at the root (no /en prefix). Other locales get /fr,
-  // /es, /ar. Less repetition for the largest audience; canonical
-  // English URL stays clean for sharing.
-  localePrefix:  'as-needed',
+  localePrefix:  'always',
 });
 
 export type Locale = (typeof routing.locales)[number];
