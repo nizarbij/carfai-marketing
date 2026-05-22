@@ -2,8 +2,6 @@
 
 # Contrato de Licencia de Usuario Final (EULA) de CarFai
 
-> ⚠️ **BORRADOR v0 — NO PUBLICAR.** Solo para revisión de abogados.
-
 **Fecha de entrada en vigor**: 2026-05-20
 
 Este Contrato de Licencia de Usuario Final ("EULA") se celebra entre usted y **CarFai** ("CarFai") y rige su uso de la aplicación móvil de CarFai ("Software").

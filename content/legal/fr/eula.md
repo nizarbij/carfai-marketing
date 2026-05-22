@@ -2,8 +2,6 @@
 
 # Contrat de Licence Utilisateur Final (CLUF) de CarFai
 
-> ⚠️ **ÉBAUCHE v0 — NON DESTINÉ À LA PUBLICATION.** Pour examen par un avocat uniquement.
-
 **Date d'entrée en vigueur** : 2026-05-20
 
 Le présent Contrat de Licence Utilisateur Final (« CLUF ») est conclu entre vous et **CarFai** (« CarFai ») et régit votre utilisation de l'application mobile CarFai (le « Logiciel »).

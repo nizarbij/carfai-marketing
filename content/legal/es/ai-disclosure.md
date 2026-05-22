@@ -2,8 +2,6 @@
 
 # Declaración sobre IA de CarFai
 
-> ⚠️ **BORRADOR v0 — NO PUBLICAR.** Solo para revisión legal.
-
 **Fecha de entrada en vigor**: 2026-05-20
 
 Esta Declaración sobre IA complementa la Política de Privacidad y los Términos de Servicio de CarFai. Explica cómo CarFai utiliza la inteligencia artificial y los límites que debe tener en cuenta.

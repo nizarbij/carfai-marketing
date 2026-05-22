@@ -2,8 +2,6 @@
 
 # Politique d'utilisation acceptable de CarFai
 
-> ⚠️ **ÉBAUCHE v0 — NON DESTINÉE À LA PUBLICATION.** Pour examen juridique uniquement.
-
 **Date d'entrée en vigueur** : 2026-05-20
 
 La présente Politique d'utilisation acceptable (« PUA ») énonce les activités qui sont interdites lors de l'utilisation de l'application mobile CarFai et des services connexes (le « Service »). La PUA complète les Conditions d'utilisation. **Toute violation peut entraîner la suspension ou la résiliation immédiate de votre compte, sans remboursement.**

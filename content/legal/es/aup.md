@@ -2,8 +2,6 @@
 
 # Política de Uso Aceptable de CarFai
 
-> ⚠️ **BORRADOR v0 — NO PUBLICAR.** Solo para revisión legal.
-
 **Fecha de entrada en vigor**: 2026-05-20
 
 Esta Política de Uso Aceptable («PUA») establece las actividades que están prohibidas al utilizar la aplicación móvil de CarFai y los servicios relacionados (el «Servicio»). La PUA complementa los Términos de Servicio. **Las violaciones pueden resultar en la suspensión o terminación inmediata de su cuenta, sin derecho a reembolso.**
