@@ -7,7 +7,7 @@
     "build": "next build",
     "build:legal": "node scripts/build-legal-manifest.mjs",
     "prebuild": "node scripts/build-legal-manifest.mjs",
-    "pages:build": "next build",
+    "pages:build": "node scripts/build-legal-manifest.mjs && next build",
     "preview": "npm run pages:build && wrangler pages dev out",
     "start": "next start",
     "lint": "next lint",
