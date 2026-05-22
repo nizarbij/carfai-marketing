@@ -1,0 +1,15 @@
+# Cloudflare Pages — carfai-marketing
+#
+# Pages auto-detects the adapter output at .vercel/output/static when
+# pages_build_output_dir is set. `nodejs_compat` is required by the
+# @cloudflare/next-on-pages runtime for shimming Node built-ins that
+# next-intl + Next 14 transitively reference.
+#
+# compatibility_date pinned to the adapter-recommended floor; bump it
+# only after re-running `npm run pages:build` and `npm run preview`
+# locally.
+
+name = "carfai-marketing"
+pages_build_output_dir = ".vercel/output/static"
+compatibility_date = "2024-09-23"
+compatibility_flags = ["nodejs_compat"]

@@ -23,5 +23,8 @@ next-env.d.ts
 # vercel
 .vercel
 
+# cloudflare local dev vars (wrangler pages dev)
+.dev.vars
+
 # generated store-slide artifacts (npm run gen:store)
 /output/
