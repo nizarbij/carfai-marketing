@@ -19,7 +19,7 @@ CarFai utilise **Claude**, un système d'IA développé par **Anthropic, PBC**, 
 | Scanner de documents | Lit les factures, les reçus, les documents d'immatriculation et en extrait des champs structurés (montant, fournisseur, date, catégorie) |
 | Calendrier d'entretien | Génère un calendrier d'entretien sur 12 mois en fonction de votre véhicule et de votre utilisation |
 | Analyse multi-véhicules / de flotte (B2B) | Informations inter-véhicules pour les gestionnaires de flotte |
-| Évaluation du véhicule (lorsque la fonctionnalité sera mise en œuvre) | Estime la valeur de revente en combinant les données inter-utilisateurs et les signaux du marché |
+| Évaluation du véhicule | Estime la valeur de revente en combinant les données inter-utilisateurs et les signaux du marché |
 
 ## 2. Ce que nous envoyons à Claude
 
@@ -68,8 +68,6 @@ Les résultats générés par l'IA peuvent :
 - Un évaluateur, un comptable, un avocat ou un conseiller financier agréé pour les évaluations et autres questions professionnelles
 
 ## 5. Avis de non-responsabilité concernant l'évaluation du véhicule
-
-**[À VENIR LORS DU LANCEMENT DE LA FONCTIONNALITÉ D'ÉVALUATION — voir la section K de RELEASE_PLAN.md]**
 
 Lorsque l'AI Advisor estime la valeur d'un véhicule, le résultat est une **estimation** basée sur :
 - Les prix d'achat agrégés des utilisateurs de CarFai ayant la même marque/le même modèle/la même année

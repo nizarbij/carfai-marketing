@@ -15,7 +15,7 @@ CarFai uses **Claude**, an AI system developed by **Anthropic, PBC**, to power s
 | Document scanner | Reads invoices, receipts, registration documents and extracts structured fields (amount, vendor, date, category) |
 | Maintenance calendar | Generates a 12-month service calendar based on your vehicle and usage |
 | Multi-vehicle / fleet analysis (B2B) | Cross-vehicle insights for fleet operators |
-| Vehicle valuation (when implemented) | Estimates resale value combining cross-user data and market signals |
+| Vehicle valuation | Estimates resale value combining cross-user data and market signals |
 
 ## 2. What we send Claude
 
@@ -64,8 +64,6 @@ AI-generated outputs may:
 - A licensed appraiser, accountant, lawyer, or financial advisor for valuations and other professional matters
 
 ## 5. Vehicle valuation disclaimer
-
-**[FORTHCOMING WHEN VALUATION FEATURE SHIPS — see RELEASE_PLAN.md Section K]**
 
 When the AI Advisor estimates a vehicle's value, the output is an **estimate** based on:
 - Aggregate purchase prices from CarFai users with the same make/model/year
