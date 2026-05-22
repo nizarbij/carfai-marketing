@@ -57,11 +57,13 @@ The Service is built on top of several third-party processors. Each is bound by 
 | **Supabase Inc.** | Database, authentication, storage (your account, vehicles, documents) | All data described in Section 1 except payment card details | United States (provisioned region as of 2026-05-20) | https://supabase.com/privacy |
 | **RevenueCat, Inc.** | Subscription state management (interfaces with Apple/Google) | Subscription tier, purchase history, an opaque ID linking you to Apple/Google | United States | https://www.revenuecat.com/privacy |
 | **Resend Inc.** | Transactional email delivery (welcome, receipts, password reset) | Email address, language preference, transactional content | United States | https://resend.com/legal/privacy-policy |
+| **Sentry (Functional Software, Inc.)** | Crash and error reporting (mobile + edge functions) | Stack traces, device context, opaque user ID — never document or vehicle data | United States | https://sentry.io/privacy/ |
+| **PostHog Inc.** | Product analytics (screens viewed, time-on-screen, activation events) | Anonymized usage events, opaque user ID | United States | https://posthog.com/privacy |
 | **Apple Inc.** | App Store distribution, In-App Purchase processing (iOS) | Subscription state, IAP events; payment card details remain with Apple | United States | https://www.apple.com/legal/privacy/ |
 | **Google LLC** | Play Store distribution, Play Billing processing (Android), OAuth sign-in | Subscription state, IAP events, OAuth identity (if used); payment card details remain with Google | United States | https://policies.google.com/privacy |
 | **Microsoft Corp.** | OAuth sign-in (if used) | OAuth identity | United States | https://privacy.microsoft.com |
 
-Future processors are listed in the Roadmap appendix below for transparency. We will notify you (via email and in-app banner) at least 30 days before adding any sub-processor that processes your Personal Data, with the opportunity to terminate your account before the change takes effect.
+We will notify you (via email and in-app banner) at least 30 days before adding any sub-processor that processes your Personal Data, with the opportunity to terminate your account before the change takes effect.
 
 ## 4. AI processing — special disclosure
 
@@ -107,7 +109,7 @@ Outputs are returned as aggregate JSON like `{ avg_price, median_price, sample_s
 
 ### 4.3 Manager performance scoring (B2B fleet accounts)
 
-[TBD — Section pending Q4 founder decision. Manager performance scoring is a B2B feature concept the legal review surfaced. The Quebec Law 25 s. 12.1 automated-decision notice + algorithm spec (5 weighted categories, inputs, output range, who-sees-what) lands as part of `RELEASE_PLAN.md` Section M1.3 in Sprint 4. Until then, manager performance scoring is NOT in production. This Section will be expanded with the algorithm specification when the feature ships.]
+Manager performance scoring is **not a feature of CarFai v1**. If introduced in a future version, this Policy will be updated with the algorithm specification, the Quebec Law 25 s. 12.1 automated-decision notice, and the human-review request flow before the feature is enabled for any B2B account.
 
 ### 4.4 Right to request human review of AI decisions
 
@@ -163,14 +165,14 @@ To exercise any right, contact carfai.info@gmail.com. We respond within 30 days 
 
 ## 8. International data transfers
 
-CarFai's primary servers are located in the **[United States — region: us-east-1]** (via Supabase) and Anthropic's API is also US-hosted. If you access the Service from outside the United States, your data will be transferred to and processed in the US.
+CarFai's primary servers are located in the **United States** (region us-east-1, via Supabase) and Anthropic's API is also US-hosted. If you access the Service from outside the United States, your data will be transferred to and processed in the US.
 
 For users in the EEA / UK / Switzerland, we rely on:
 - The European Commission's **Standard Contractual Clauses (SCCs)** with our US sub-processors, supplemented by appropriate technical and organizational measures.
 - The **UK Addendum** to the SCCs for UK data subjects.
 - The **Swiss FADP** equivalent assessment.
 
-**[POST-LAUNCH]** — when we provision dedicated EU regional infrastructure, we will update this Policy and route EEA users accordingly.
+CarFai currently uses US-based infrastructure exclusively. If we provision dedicated EU regional infrastructure in the future, this Policy will be updated and EEA users routed accordingly.
 
 ## 9. Security
 
@@ -189,7 +191,7 @@ CarFai is **not directed at children under 13** (or the equivalent age of consen
 
 ## 11. Cookies (web only)
 
-The CarFai mobile app does not use cookies. The CarFai marketing website (`carfai.app` and any subdomains) uses essential cookies for site operation. See the separate Cookie Policy at `https://carfai.app/cookies` (post-launch).
+The CarFai mobile app does not use cookies. The CarFai marketing website (`carfai.app` and any subdomains) uses essential cookies for site operation. See the separate Cookie Policy at `https://carfai.app/cookies`.
 
 ## 12. Third-party links
 
@@ -199,25 +201,13 @@ The Service may contain links to third-party websites (e.g., to Apple/Google sub
 
 We may update this Policy from time to time. The "Last updated" date at the top will reflect any changes. For material changes affecting your rights, we will notify you via email and require re-acceptance in-app before continuing to use the Service.
 
-Previous versions are archived in our public legal docs repository (link TBD post-launch).
-
-## Roadmap appendix — future processors (informational)
-
-Listed for transparency. Not currently processing your Personal Data. Will be added to Section 3 (and you will be notified per the policy above) when integration begins.
-
-| Processor | Service | Target | Privacy link |
-|---|---|---|---|
-| Sentry | Crash + error reporting | Sprint 4 (per `RELEASE_PLAN.md`) | https://sentry.io/privacy/ |
-| PostHog | Product analytics | Sprint 4 | https://posthog.com/privacy |
-| Resend | Transactional email (welcome, invoice, password reset) | Sprint 4 H2.0 | https://resend.com/legal/privacy-policy |
-
 ## 14. Contact
 
 - **General privacy inquiries**: carfai.info@gmail.com
 - **Data Protection Officer (GDPR)**: carfai.info@gmail.com
 - **Postal address**: `CarFai, address available on request via carfai.info@gmail.com`
-- **EEA representative (if required by GDPR Article 27)**: `[TBD by lawyer]`
-- **UK representative (if required by UK GDPR Article 27)**: `[TBD by lawyer]`
+- **EEA representative (GDPR Article 27)**: not yet designated. EEA data subjects may contact CarFai directly at carfai.info@gmail.com for any privacy inquiry.
+- **UK representative (UK GDPR Article 27)**: not yet designated. UK data subjects may contact CarFai directly at carfai.info@gmail.com for any privacy inquiry.
 
 ---
 

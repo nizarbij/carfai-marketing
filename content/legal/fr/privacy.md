@@ -59,11 +59,13 @@ Le Service repose sur plusieurs processeurs tiers. Chacun est lié par des oblig
 | **Supabase Inc.** | Base de données, authentification, stockage (votre compte, véhicules, documents) | Toutes les données décrites à la Section 1, à l'exception des détails de la carte de paiement | États-Unis (région provisionnée au 2026-05-20) | https://supabase.com/privacy |
 | **RevenueCat, Inc.** | Gestion de l'état de l'abonnement (s'interface avec Apple/Google) | Niveau d'abonnement, historique d'achat, un identifiant opaque vous liant à Apple/Google | États-Unis | https://www.revenuecat.com/privacy |
 | **Resend Inc.** | Livraison de courriels transactionnels (bienvenue, reçus, réinitialisation de mot de passe) | Adresse courriel, préférence linguistique, contenu transactionnel | États-Unis | https://resend.com/legal/privacy-policy |
+| **Sentry (Functional Software, Inc.)** | Rapports de plantage et d'erreurs (mobile + fonctions edge) | Traces de pile, contexte de l'appareil, identifiant utilisateur opaque — jamais de données de document ou de véhicule | États-Unis | https://sentry.io/privacy/ |
+| **PostHog Inc.** | Analyse de produit (écrans visualisés, temps passé à l'écran, événements d'activation) | Événements d'utilisation anonymisés, identifiant utilisateur opaque | États-Unis | https://posthog.com/privacy |
 | **Apple Inc.** | Distribution sur l'App Store, traitement des achats intégrés (iOS) | État de l'abonnement, événements IAP ; les détails de la carte de paiement restent chez Apple | États-Unis | https://www.apple.com/legal/privacy/ |
 | **Google LLC** | Distribution sur le Play Store, traitement de la facturation Play (Android), connexion OAuth | État de l'abonnement, événements IAP, identité OAuth (si utilisée) ; les détails de la carte de paiement restent chez Google | États-Unis | https://policies.google.com/privacy |
 | **Microsoft Corp.** | Connexion OAuth (si utilisée) | Identité OAuth | États-Unis | https://privacy.microsoft.com |
 
-Les futurs processeurs sont listés dans l'annexe Feuille de route ci-dessous par souci de transparence. Nous vous informerons (par courriel et par une bannière dans l'application) au moins 30 jours avant d'ajouter tout sous-traitant qui traite vos Données Personnelles, en vous donnant la possibilité de résilier votre compte avant que le changement ne prenne effet.
+Nous vous informerons (par courriel et par une bannière dans l'application) au moins 30 jours avant d'ajouter tout sous-traitant qui traite vos Données Personnelles, en vous donnant la possibilité de résilier votre compte avant que le changement ne prenne effet.
 
 ## 4. Traitement par IA — divulgation spéciale
 
@@ -109,7 +111,7 @@ Les résultats sont retournés sous forme de JSON agrégé comme `{ avg_price, m
 
 ### 4.3 Notation de la performance des gestionnaires (comptes de flotte B2B)
 
-[À DÉTERMINER — Section en attente de la décision du fondateur au T4. La notation de la performance des gestionnaires est un concept de fonctionnalité B2B que l'examen juridique a mis en évidence. L'avis de décision automatisée de l'art. 12.1 de la Loi 25 du Québec + la spécification de l'algorithme (5 catégories pondérées, entrées, plage de sortie, qui voit quoi) feront partie de la Section M1.3 de `RELEASE_PLAN.md` au Sprint 4. D'ici là, la notation de la performance des gestionnaires n'est PAS en production. Cette Section sera développée avec la spécification de l'algorithme lorsque la fonctionnalité sera lancée.]
+La notation de la performance des gestionnaires n'est **pas une fonctionnalité de CarFai v1**. Si elle est introduite dans une version future, cette Politique sera mise à jour avec la spécification de l'algorithme, l'avis de décision automatisée de l'art. 12.1 de la Loi 25 du Québec, et le flux de demande de révision humaine avant que la fonctionnalité ne soit activée pour tout compte B2B.
 
 ### 4.4 Droit de demander une révision humaine des décisions de l'IA
 
@@ -165,14 +167,14 @@ Pour exercer l'un de ces droits, contactez carfai.info@gmail.com. Nous répondon
 
 ## 8. Transferts internationaux de données
 
-Les serveurs principaux de CarFai sont situés aux **[États-Unis — région : us-east-1]** (via Supabase) et l'API d'Anthropic est également hébergée aux États-Unis. Si vous accédez au Service depuis l'extérieur des États-Unis, vos données seront transférées et traitées aux États-Unis.
+Les serveurs principaux de CarFai sont situés aux **États-Unis** (région us-east-1, via Supabase) et l'API d'Anthropic est également hébergée aux États-Unis. Si vous accédez au Service depuis l'extérieur des États-Unis, vos données seront transférées et traitées aux États-Unis.
 
 Pour les utilisateurs de l'EEE / du Royaume-Uni / de la Suisse, nous nous appuyons sur :
 - Les **Clauses Contractuelles Types (CCT)** de la Commission européenne avec nos sous-traitants américains, complétées par des mesures techniques et organisationnelles appropriées.
 - L'**Addendum britannique** aux CCT pour les personnes concernées au Royaume-Uni.
 - L'évaluation équivalente de la **LPD suisse**.
 
-**[POST-LANCEMENT]** — lorsque nous mettrons en place une infrastructure régionale dédiée dans l'UE, nous mettrons à jour cette Politique et acheminerons les utilisateurs de l'EEE en conséquence.
+CarFai utilise actuellement exclusivement une infrastructure basée aux États-Unis. Si nous mettons en place une infrastructure régionale dédiée dans l'UE à l'avenir, cette Politique sera mise à jour et les utilisateurs de l'EEE seront acheminés en conséquence.
 
 ## 9. Sécurité
 
@@ -191,7 +193,7 @@ CarFai n'est **pas destiné aux enfants de moins de 13 ans** (ou l'âge de conse
 
 ## 11. Cookies (web uniquement)
 
-L'application mobile CarFai n'utilise pas de cookies. Le site web marketing de CarFai (`carfai.app` et tout sous-domaine) utilise des cookies essentiels au fonctionnement du site. Consultez la Politique sur les cookies distincte à l'adresse `https://carfai.app/cookies` (post-lancement).
+L'application mobile CarFai n'utilise pas de cookies. Le site web marketing de CarFai (`carfai.app` et tout sous-domaine) utilise des cookies essentiels au fonctionnement du site. Consultez la Politique sur les cookies distincte à l'adresse `https://carfai.app/cookies`.
 
 ## 12. Liens vers des tiers
 
@@ -201,25 +203,13 @@ Le Service peut contenir des liens vers des sites web de tiers (par ex., vers la
 
 Nous pouvons mettre à jour cette Politique de temps à autre. La date de « Dernière mise à jour » en haut de la page reflétera tout changement. Pour les modifications importantes affectant vos droits, nous vous en informerons par courriel et exigerons une nouvelle acceptation dans l'application avant que vous ne puissiez continuer à utiliser le Service.
 
-Les versions précédentes sont archivées dans notre dépôt public de documents juridiques (lien à déterminer après le lancement).
-
-## Annexe Feuille de route — futurs processeurs (à titre informatif)
-
-Listés par souci de transparence. Ne traitent pas actuellement vos Données Personnelles. Seront ajoutés à la Section 3 (et vous serez notifié conformément à la politique ci-dessus) lorsque l'intégration commencera.
-
-| Processeur | Service | Cible | Lien de confidentialité |
-|---|---|---|---|
-| Sentry | Rapports de plantage et d'erreurs | Sprint 4 (selon `RELEASE_PLAN.md`) | https://sentry.io/privacy/ |
-| PostHog | Analyse de produit | Sprint 4 | https://posthog.com/privacy |
-| Resend | Courriel transactionnel (bienvenue, facture, réinitialisation de mot de passe) | Sprint 4 H2.0 | https://resend.com/legal/privacy-policy |
-
 ## 14. Contact
 
 - **Demandes générales sur la confidentialité** : carfai.info@gmail.com
 - **Délégué à la protection des données (GDPR)** : carfai.info@gmail.com
 - **Adresse postale** : `CarFai, adresse disponible sur demande via carfai.info@gmail.com`
-- **Représentant dans l'EEE (si requis par l'Article 27 du GDPR)** : `[À déterminer par l'avocat]`
-- **Représentant au R.-U. (si requis par l'Article 27 du UK GDPR)** : `[À déterminer par l'avocat]`
+- **Représentant dans l'EEE (Article 27 du GDPR)** : non encore désigné. Les personnes concernées dans l'EEE peuvent contacter CarFai directement à carfai.info@gmail.com pour toute demande relative à la vie privée.
+- **Représentant au R.-U. (Article 27 du UK GDPR)** : non encore désigné. Les personnes concernées au R.-U. peuvent contacter CarFai directement à carfai.info@gmail.com pour toute demande relative à la vie privée.
 
 ---
 
