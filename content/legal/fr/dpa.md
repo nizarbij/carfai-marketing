@@ -59,7 +59,7 @@ CarFai s'engage à :
 
 6. **Au choix du Client, restituer ou supprimer les Données Personnelles** à la fin du contrat, sauf lorsque la conservation est requise par la loi (par exemple, l'historique des abonnements pour la conformité fiscale — anonymisé après la période de conservation légale).
 
-7. **Mettre à disposition les informations** nécessaires pour démontrer la conformité avec cet ATD, y compris les rapports d'audit des contrôles de CarFai. CarFai peut fournir des rapports d'audit de tiers indépendants (SOC 2, ISO 27001 — lorsqu'ils seront obtenus après le lancement) au lieu d'autoriser des audits sur site, sauf si la loi l'exige.
+7. **Mettre à disposition les informations** nécessaires pour démontrer la conformité avec cet ATD, y compris les rapports d'audit des contrôles de CarFai. Lorsque CarFai dispose de rapports d'audit de tiers indépendants (par exemple SOC 2, ISO 27001), ceux-ci peuvent être fournis au lieu d'autoriser des audits sur site, sauf si la loi l'exige.
 
 ## 7. Sous-traitants ultérieurs
 
@@ -110,11 +110,9 @@ Les ajouts d'infrastructure suivants sont prévus mais ne sont pas actuellement 
 
 | Jalon | Cible |
 |---|---|
-| Rapports de plantage et d'erreurs Sentry | Sprint 4 (selon `RELEASE_PLAN.md`) |
-| Analyses de produit PostHog | Sprint 4 |
 | Vérification des antécédents du personnel | Lors de l'embauche du premier employé non-fondateur de CarFai |
-| Certification SOC 2 Type II / ISO 27001 | Après le lancement, en fonction de la demande des clients |
-| Bannière de consentement aux cookies du site marketing | Sprint 4 |
+| Certification SOC 2 Type II / ISO 27001 | À venir, en fonction de la demande des clients |
+| Bannière de consentement aux cookies du site marketing | Avant la première activation du trafic UE |
 
 ## 12. Responsabilité
 
@@ -169,7 +167,7 @@ CarFai met en œuvre les MTO suivantes pour protéger les Données Personnelles 
 ### Sécurité applicative
 - Analyse des secrets avant commit (Gitleaks)
 - Analyse des vulnérabilités des dépendances (Dependabot, npm audit) sur chaque PR
-- Revue de sécurité manuelle avant le lancement (selon la section L de `RELEASE_PLAN.md`)
+- Revue de sécurité manuelle au regard des contrôles OWASP Mobile et ASVS applicables au Service
 - Défenses contre l'injection de prompts IA : séparation des prompts système/utilisateur, marquage du contenu non fiable, validation des sorties, mise en quarantaine du contenu de recherche web
 
 ### Surveillance et réponse aux incidents

@@ -59,7 +59,7 @@ CarFai deberá:
 
 6. **A elección del Cliente, devolver o eliminar los Datos Personales** al finalizar el acuerdo, excepto cuando la ley exija su conservación (p. ej., historial de suscripciones para el cumplimiento fiscal — anonimizado después del período de retención legal).
 
-7. **Poner a disposición la información** necesaria para demostrar el cumplimiento de este DPA, incluidos los informes de auditoría de los controles de CarFai. CarFai podrá proporcionar informes de auditoría de terceros independientes (SOC 2, ISO 27001 — cuando se obtengan después del lanzamiento) en lugar de permitir auditorías in situ, excepto cuando la ley lo exija.
+7. **Poner a disposición la información** necesaria para demostrar el cumplimiento de este DPA, incluidos los informes de auditoría de los controles de CarFai. Cuando CarFai disponga de informes de auditoría de terceros independientes (por ejemplo, SOC 2, ISO 27001), podrá proporcionarlos en lugar de permitir auditorías in situ, excepto cuando la ley lo exija.
 
 ## 7. Subencargados del Tratamiento
 
@@ -110,11 +110,9 @@ Las siguientes adiciones de infraestructura están planificadas pero no implemen
 
 | Hito | Objetivo |
 |---|---|
-| Informes de errores y fallos de Sentry | Sprint 4 (según `RELEASE_PLAN.md`) |
-| Analíticas de producto de PostHog | Sprint 4 |
 | Verificación de antecedentes del personal | Cuando CarFai realice su primera contratación que no sea un fundador |
-| Certificación SOC 2 Tipo II / ISO 27001 | Después del lanzamiento, dependiendo de la demanda de los clientes |
-| Banner de consentimiento de cookies del sitio de marketing | Sprint 4 |
+| Certificación SOC 2 Tipo II / ISO 27001 | Futuro, dependiendo de la demanda de los clientes |
+| Banner de consentimiento de cookies del sitio de marketing | Antes de la primera activación de tráfico de la UE |
 
 ## 12. Responsabilidad
 
@@ -169,7 +167,7 @@ CarFai implementa las siguientes MTO para proteger los Datos Personales:
 ### Seguridad de la aplicación
 - Escaneo de secretos antes de la confirmación (Gitleaks)
 - Escaneo de vulnerabilidades en dependencias (Dependabot, npm audit) en cada PR
-- Revisión manual de seguridad previa al lanzamiento (según la Sección L de `RELEASE_PLAN.md`)
+- Revisión manual de seguridad frente a los controles OWASP Mobile y ASVS aplicables al Servicio
 - Defensas contra la inyección de prompts de IA: separación de prompts de sistema/usuario, etiquetado de contenido no confiable, validación de salida, cuarentena de contenido de búsqueda web
 
 ### Monitoreo y respuesta a incidentes

@@ -57,7 +57,7 @@ CarFai shall:
 
 6. **At Customer's choice, return or delete Personal Data** at the end of the agreement, except where retention is required by law (e.g., subscription history for tax compliance — anonymized after the legal retention period).
 
-7. **Make available information** necessary to demonstrate compliance with this DPA, including audit reports of CarFai's controls. CarFai may provide independent third-party audit reports (SOC 2, ISO 27001 — when achieved post-launch) in lieu of permitting on-site audits, except where required by law.
+7. **Make available information** necessary to demonstrate compliance with this DPA, including audit reports of CarFai's controls. Where CarFai holds independent third-party audit reports (e.g., SOC 2, ISO 27001), they may be provided in lieu of permitting on-site audits, except where required by law.
 
 ## 7. Sub-processors
 
@@ -108,11 +108,9 @@ The following infrastructure additions are planned but not currently in place. T
 
 | Milestone | Target |
 |---|---|
-| Sentry crash + error reporting | Sprint 4 (per `RELEASE_PLAN.md`) |
-| PostHog product analytics | Sprint 4 |
 | Personnel background checks | When CarFai's first non-founder hire is made |
-| SOC 2 Type II / ISO 27001 certification | Post-launch, contingent on customer demand |
-| Marketing-site cookie consent banner | Sprint 4 |
+| SOC 2 Type II / ISO 27001 certification | Future, contingent on customer demand |
+| Marketing-site cookie consent banner | Before first EU traffic activation |
 
 ## 12. Liability
 
@@ -167,7 +165,7 @@ CarFai implements the following TOMs to protect Personal Data:
 ### Application security
 - Pre-commit secret scanning (Gitleaks)
 - Dependency vulnerability scanning (Dependabot, npm audit) on every PR
-- Pre-launch manual security review (per `RELEASE_PLAN.md` Section L)
+- Manual security review against the OWASP Mobile and ASVS controls relevant to the Service
 - AI prompt injection defenses: system/user prompt separation, untrusted-content tagging, output validation, web-search content quarantine
 
 ### Monitoring and incident response

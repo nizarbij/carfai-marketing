@@ -72,7 +72,7 @@ Vous ne pouvez pas :
 
 Vous ne pouvez pas effectuer de tests de sécurité, d'analyses de vulnérabilités ou de tests d'intrusion contre l'infrastructure de CarFai (l'application mobile, le backend Supabase, les fonctions edge de l'AI Advisor ou tout autre composant) sans notre **autorisation écrite**.
 
-Si vous découvrez une vulnérabilité de sécurité, nous vous invitons à en faire une divulgation responsable à carfai.info@gmail.com. Nous nous engageons à répondre dans les 72 heures et à ne pas engager de poursuites judiciaires contre les chercheurs de bonne foi qui suivent notre future **Politique de divulgation responsable** (après le lancement).
+Si vous découvrez une vulnérabilité de sécurité, nous vous invitons à en faire une divulgation responsable à carfai.info@gmail.com. Nous nous engageons à répondre dans les 72 heures et à ne pas engager de poursuites judiciaires contre les chercheurs agissant de bonne foi conformément aux normes standard de divulgation responsable (pas d'exfiltration de données au-delà de ce qui est nécessaire pour démontrer la vulnérabilité ; pas de divulgation publique avant qu'un correctif ne soit déployé ou que 90 jours ne se soient écoulés ; coordination du calendrier).
 
 ## 10. Interdictions spécifiques au B2B
 
@@ -105,7 +105,7 @@ Pour les comptes payants, la résiliation pour violation de la PUA ne vous donne
 
 ## 14. Mises à jour
 
-Nous pouvons mettre à jour cette PUA. Les modifications importantes seront notifiées par courriel et l'utilisation continue du Service vaudra acceptation. La version la plus récente est toujours disponible à l'adresse `https://carfai.app/aup` (après le lancement).
+Nous pouvons mettre à jour cette PUA. Les modifications importantes seront notifiées par courriel et l'utilisation continue du Service vaudra acceptation. La version la plus récente est toujours disponible à l'adresse `https://carfai.app/aup`.
 
 ## 15. Contact
 

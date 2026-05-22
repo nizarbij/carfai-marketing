@@ -70,7 +70,7 @@ You may not:
 
 You may not conduct security testing, vulnerability scanning, or penetration testing against CarFai's infrastructure (the mobile app, Supabase backend, AI Advisor edge functions, or any other component) without our **written permission**.
 
-If you discover a security vulnerability, we welcome a responsible disclosure to carfai.info@gmail.com. We commit to responding within 72 hours and to not pursuing legal action against good-faith researchers who follow our forthcoming **Responsible Disclosure Policy** (post-launch).
+If you discover a security vulnerability, we welcome a responsible disclosure to carfai.info@gmail.com. We commit to responding within 72 hours and to not pursuing legal action against good-faith researchers acting under standard responsible-disclosure norms (no data exfiltration beyond what is needed to demonstrate the vulnerability; no public disclosure before a fix is shipped or 90 days have elapsed; coordinated timing).
 
 ## 10. B2B-specific prohibitions
 
@@ -103,7 +103,7 @@ For paid accounts, termination for AUP violation does not entitle you to a refun
 
 ## 14. Updates
 
-We may update this AUP. Material changes will be notified via email and require continued use to indicate acceptance. The latest version is always available at `https://carfai.app/aup` (post-launch).
+We may update this AUP. Material changes will be notified via email and require continued use to indicate acceptance. The latest version is always available at `https://carfai.app/aup`.
 
 ## 15. Contact
 
