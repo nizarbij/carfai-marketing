@@ -191,7 +191,7 @@ Para los usuarios ubicados en Australia, lo siguiente reemplaza los descargos de
 - CarFai no será responsable de **daños indirectos, incidentales, consecuentes, especiales, ejemplares o punitivos**, incluyendo, entre otros, la pérdida de beneficios, la pérdida de datos, la pérdida de fondo de comercio o daños al vehículo, **independientemente de la teoría legal** (contrato, agravio, estatuto u otro), incluso si se le ha advertido de la posibilidad de tales daños.
 - La **responsabilidad total agregada** de CarFai hacia usted por cualquier reclamación que surja de o esté relacionada con el Servicio o estos Términos no excederá la **cantidad mayor entre (a) el monto que usted pagó a CarFai en los 12 meses inmediatamente anteriores al evento que dio lugar a la reclamación, o (b) 100 USD**.
 
-**[JURISDICTION-SPECIFIC: Algunas jurisdicciones no permiten la limitación o exclusión de responsabilidad por daños incidentales o consecuentes; las limitaciones anteriores se aplican solo en la máxima medida permitida en su jurisdicción. Nada en estos Términos limita la responsabilidad por fraude, negligencia grave o cualquier responsabilidad que no pueda ser limitada bajo la ley aplicable.]**
+Algunas jurisdicciones no permiten la limitación o exclusión de responsabilidad por daños incidentales o consecuentes; las limitaciones anteriores se aplican solo en la máxima medida permitida en su jurisdicción. Nada en estos Términos limita la responsabilidad por fraude, negligencia grave o cualquier responsabilidad que no pueda ser limitada bajo la ley aplicable.
 
 ### 14.1 Excepción de protección al consumidor de la UE / Reino Unido
 
@@ -210,12 +210,13 @@ Usted acepta indemnizar, defender y eximir de responsabilidad a CarFai y a sus d
 ### 16.1 Resolución informal
 Antes de presentar una disputa formal, usted acepta intentar una resolución informal contactando a carfai.info@gmail.com. Responderemos en un plazo de 30 días.
 
-### 16.2 [JURISDICTION-SPECIFIC: Cláusulas a ser revisadas por un abogado]
-**[FOR US USERS]**: Cualquier disputa que surja de o esté relacionada con estos Términos se resolverá mediante **arbitraje individual vinculante** administrado por **JAMS** bajo sus reglas de arbitraje para consumidores. **Usted renuncia al derecho de presentar reclamaciones como una acción de clase o en calidad de representante.** Este acuerdo de arbitraje no se aplica a las reclamaciones que puedan presentarse en un tribunal de reclamos menores.
+### 16.2 Cláusulas específicas por jurisdicción
 
-**[FOR EU/UK USERS]**: Se aplican las leyes obligatorias de protección al consumidor de su país de residencia, y también puede presentar reclamaciones en los tribunales de su país.
+**Para usuarios en los Estados Unidos**: cualquier disputa que surja de o esté relacionada con estos Términos se resolverá mediante **arbitraje individual vinculante** administrado por **JAMS** bajo sus reglas de arbitraje para consumidores. **Usted renuncia al derecho de presentar reclamaciones como una acción de clase o en calidad de representante.** Este acuerdo de arbitraje no se aplica a las reclamaciones que puedan presentarse en un tribunal de reclamos menores.
 
-**[CONSUMERS WORLDWIDE]**: Nada en esta sección afecta sus derechos legales como consumidor en su jurisdicción.
+**Para usuarios en la UE o el Reino Unido**: se aplican las leyes obligatorias de protección al consumidor de su país de residencia, y también puede presentar reclamaciones en los tribunales de su país.
+
+**Para consumidores en todo el mundo**: nada en esta sección afecta sus derechos legales como consumidor en su jurisdicción.
 
 ### 16.3 Plazo de prescripción
 Cualquier reclamación debe presentarse en el plazo de **un (1) año** a partir de la fecha en que surgió la causa de la acción, excepto cuando la ley aplicable establezca un mínimo obligatorio más largo.

@@ -116,7 +116,7 @@ The following infrastructure additions are planned but not currently in place. T
 
 ## 12. Liability
 
-The liability provisions of the Terms of Service apply to this DPA. **[JURISDICTION-SPECIFIC: lawyer to confirm whether to set a separate cap for data protection breaches under GDPR in the relevant jurisdiction.]**
+The liability provisions of the Terms of Service apply to this DPA, subject to any non-excludable statutory liability under GDPR or equivalent data protection law in the Customer's jurisdiction.
 
 ## 13. Term and termination
 

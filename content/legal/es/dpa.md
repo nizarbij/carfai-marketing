@@ -118,7 +118,7 @@ Las siguientes adiciones de infraestructura están planificadas pero no implemen
 
 ## 12. Responsabilidad
 
-Las disposiciones sobre responsabilidad de los Términos de Servicio se aplican a este DPA. **[JURISDICTION-SPECIFIC: el abogado debe confirmar si se establece un límite de responsabilidad separado para las violaciones de protección de datos bajo el GDPR en la jurisdicción pertinente.]**
+Las disposiciones sobre responsabilidad de los Términos de Servicio se aplican a este DPA, sujeto a cualquier responsabilidad legal no excluible bajo el GDPR o la legislación equivalente de protección de datos en la jurisdicción del Cliente.
 
 ## 13. Vigencia y terminación
 

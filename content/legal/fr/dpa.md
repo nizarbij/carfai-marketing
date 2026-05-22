@@ -118,7 +118,7 @@ Les ajouts d'infrastructure suivants sont prévus mais ne sont pas actuellement 
 
 ## 12. Responsabilité
 
-Les dispositions relatives à la responsabilité des Conditions d'Utilisation s'appliquent à cet ATD. **[JURISDICTION-SPECIFIC: l'avocat doit confirmer s'il faut fixer un plafond de responsabilité distinct pour les violations de la protection des données en vertu du GDPR dans la juridiction concernée.]**
+Les dispositions relatives à la responsabilité des Conditions d'Utilisation s'appliquent à cet ATD, sous réserve de toute responsabilité légale non excluable au titre du GDPR ou de la législation équivalente sur la protection des données dans la juridiction du Client.
 
 ## 13. Durée et résiliation
 

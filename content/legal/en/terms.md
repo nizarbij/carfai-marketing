@@ -189,7 +189,7 @@ For users located in Australia, the following supersedes the disclaimers above t
 - CarFai shall not be liable for **indirect, incidental, consequential, special, exemplary, or punitive damages**, including but not limited to lost profits, lost data, loss of goodwill, or vehicle damage, **regardless of the legal theory** (contract, tort, statute, or otherwise), even if advised of the possibility of such damages.
 - CarFai's **total aggregate liability** to you for any claim arising out of or relating to the Service or these Terms shall not exceed the **greater of (a) the amount you paid CarFai in the 12 months immediately preceding the event giving rise to the claim, or (b) USD $100**.
 
-**[JURISDICTION-SPECIFIC: Some jurisdictions do not allow the limitation or exclusion of liability for incidental or consequential damages; the above limitations apply only to the maximum extent permitted in your jurisdiction. Nothing in these Terms limits liability for fraud, gross negligence, or any liability that cannot be limited under applicable law.]**
+Some jurisdictions do not allow the limitation or exclusion of liability for incidental or consequential damages; the above limitations apply only to the maximum extent permitted in your jurisdiction. Nothing in these Terms limits liability for fraud, gross negligence, or any liability that cannot be limited under applicable law.
 
 ### 14.1 EU / UK consumer protection carve-out
 
@@ -208,12 +208,13 @@ You agree to indemnify, defend, and hold harmless CarFai and its officers, direc
 ### 16.1 Informal resolution
 Before filing a formal dispute, you agree to attempt informal resolution by contacting carfai.info@gmail.com. We will respond within 30 days.
 
-### 16.2 [JURISDICTION-SPECIFIC clauses to be reviewed by lawyer]
-**[FOR US USERS]**: Any dispute arising out of or relating to these Terms shall be resolved by **binding individual arbitration** administered by **JAMS** under its consumer arbitration rules. **You waive the right to bring claims as a class action or in a representative capacity.** This arbitration agreement does not apply to claims that may be brought in small claims court.
+### 16.2 Jurisdiction-specific clauses
 
-**[FOR EU/UK USERS]**: Mandatory consumer protection laws of your country of residence apply, and you may also bring claims in the courts of your country.
+**For users in the United States**: any dispute arising out of or relating to these Terms shall be resolved by **binding individual arbitration** administered by **JAMS** under its consumer arbitration rules. **You waive the right to bring claims as a class action or in a representative capacity.** This arbitration agreement does not apply to claims that may be brought in small claims court.
 
-**[CONSUMERS WORLDWIDE]**: Nothing in this section affects your statutory consumer rights in your jurisdiction.
+**For users in the EU or UK**: mandatory consumer protection laws of your country of residence apply, and you may also bring claims in the courts of your country.
+
+**For consumers worldwide**: nothing in this section affects your statutory consumer rights in your jurisdiction.
 
 ### 16.3 Time limitation
 Any claim must be brought within **one (1) year** from the date the cause of action arose, except where applicable law provides for a longer mandatory minimum.

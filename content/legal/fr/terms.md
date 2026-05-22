@@ -191,7 +191,7 @@ Pour les utilisateurs situés en Australie, ce qui suit remplace les exclusions 
 - CarFai ne sera pas responsable des **dommages indirects, accessoires, consécutifs, spéciaux, exemplaires ou punitifs**, y compris, mais sans s'y limiter, la perte de profits, la perte de données, la perte de clientèle ou les dommages au véhicule, **quelle que soit la théorie juridique** (contrat, délit, loi ou autre), même si elle a été informée de la possibilité de tels dommages.
 - La **responsabilité totale et globale** de CarFai envers vous pour toute réclamation découlant du Service ou des présentes Conditions ou s'y rapportant ne dépassera pas le **plus élevé des montants suivants : (a) le montant que vous avez payé à CarFai au cours des 12 mois précédant immédiatement l'événement à l'origine de la réclamation, ou (b) 100 $ US**.
 
-**[JURISDICTION-SPECIFIC: Certaines juridictions ne permettent pas la limitation ou l'exclusion de la responsabilité pour les dommages accessoires ou consécutifs ; les limitations ci-dessus ne s'appliquent que dans la mesure maximale permise dans votre juridiction. Rien dans les présentes Conditions ne limite la responsabilité en cas de fraude, de négligence grave ou toute responsabilité qui ne peut être limitée en vertu de la loi applicable.]**
+Certaines juridictions ne permettent pas la limitation ou l'exclusion de la responsabilité pour les dommages accessoires ou consécutifs ; les limitations ci-dessus ne s'appliquent que dans la mesure maximale permise dans votre juridiction. Rien dans les présentes Conditions ne limite la responsabilité en cas de fraude, de négligence grave ou toute responsabilité qui ne peut être limitée en vertu de la loi applicable.
 
 ### 14.1 Exception relative à la protection des consommateurs de l'UE / du Royaume-Uni
 
@@ -210,12 +210,13 @@ Vous acceptez d'indemniser, de défendre et de dégager de toute responsabilité
 ### 16.1 Règlement à l'amiable
 Avant d'engager un litige formel, vous acceptez de tenter un règlement à l'amiable en contactant carfai.info@gmail.com. Nous répondrons dans les 30 jours.
 
-### 16.2 [JURISDICTION-SPECIFIC: clauses à examiner par un avocat]
-**[FOR US USERS]** : Tout différend découlant des présentes Conditions ou s'y rapportant sera résolu par un **arbitrage individuel contraignant** administré par **JAMS** en vertu de ses règles d'arbitrage pour les consommateurs. **Vous renoncez au droit d'intenter des réclamations dans le cadre d'un recours collectif ou à titre de représentant.** Cette convention d'arbitrage ne s'applique pas aux réclamations qui peuvent être portées devant un tribunal des petites créances.
+### 16.2 Clauses propres à chaque juridiction
 
-**[FOR EU/UK USERS]** : Les lois impératives de protection des consommateurs de votre pays de résidence s'appliquent, et vous pouvez également porter vos réclamations devant les tribunaux de votre pays.
+**Pour les utilisateurs aux États-Unis** : tout différend découlant des présentes Conditions ou s'y rapportant sera résolu par un **arbitrage individuel contraignant** administré par **JAMS** en vertu de ses règles d'arbitrage pour les consommateurs. **Vous renoncez au droit d'intenter des réclamations dans le cadre d'un recours collectif ou à titre de représentant.** Cette convention d'arbitrage ne s'applique pas aux réclamations qui peuvent être portées devant un tribunal des petites créances.
 
-**[CONSUMERS WORLDWIDE]** : Rien dans cette section n'affecte vos droits statutaires de consommateur dans votre juridiction.
+**Pour les utilisateurs dans l'UE ou au Royaume-Uni** : les lois impératives de protection des consommateurs de votre pays de résidence s'appliquent, et vous pouvez également porter vos réclamations devant les tribunaux de votre pays.
+
+**Pour les consommateurs dans le monde entier** : rien dans cette section n'affecte vos droits statutaires de consommateur dans votre juridiction.
 
 ### 16.3 Délai de prescription
 Toute réclamation doit être présentée dans un délai d'**un (1) an** à compter de la date à laquelle la cause d'action est née, sauf si la loi applicable prévoit un délai minimum obligatoire plus long.
