@@ -89,7 +89,7 @@ When the AI Advisor answers a question (especially a value, cost, or comparison 
 
 2. **Anonymous community benchmarks** — aggregate statistics across all CarFai users with the same make/model/year/region. Examples: median purchase price, average insurance cost, typical maintenance interval. Retrieved via SECURITY DEFINER SQL functions (`get_carfai_market_data`, `get_carfai_financial_benchmark`) that **return aggregates only** — never individual rows, prices, or user identifiers. **Anonymization standard**: [TBD — to be defined per Quebec Law 25 s. 28; placeholder pending Q5 in `docs/legal/REVIEW_FINDINGS_2026-05-09.md`. Likely k-anonymity with minimum aggregation cohort size.] You CANNOT be re-identified from a benchmark response.
 
-3. **Web search content** (when relevant) — for time-sensitive context (e.g., current fuel prices, recent recalls, market shifts), the AI Advisor may retrieve a small number of public web pages via [TBD — search service per Q8]. The fetched content is treated as untrusted input (per Section L.2 prompt-injection defenses) and never written to your CarFai account.
+3. **Web search content** (when relevant) — for time-sensitive context (e.g., current fuel prices, recent recalls, market shifts), the AI Advisor may retrieve a small number of public web pages via Anthropic's Claude web search tool. The fetched content is processed under the same Commercial Customer Terms as the rest of our Anthropic usage (no model training; standard operational-log retention) and is treated as untrusted input (per Section L.2 prompt-injection defenses) — never written to your CarFai account.
 
 You may opt out of contributing to the community benchmark layer (#2) at any time in Settings → Privacy. Your data will be excluded from future benchmark queries on a best-effort basis (existing snapshots in benchmark caches expire within 30 days).
 
@@ -109,7 +109,7 @@ Outputs are returned as aggregate JSON like `{ avg_price, median_price, sample_s
 
 ### 4.3 Manager performance scoring (B2B fleet accounts)
 
-Manager performance scoring is **not a feature of CarFai v1**. If introduced in a future version, this Policy will be updated with the algorithm specification, the Quebec Law 25 s. 12.1 automated-decision notice, and the human-review request flow before the feature is enabled for any B2B account.
+Manager performance scoring is being introduced in CarFai v1 for B2B fleet accounts. The full algorithm specification (weighted categories, inputs, output range, visibility scope), the Quebec Law 25 s. 12.1 automated-decision notice, and the human-review request flow will be added to this Policy — and surfaced in the in-app B2B onboarding — before the feature is enabled for any account. Until that update is published, no manager performance scoring takes place and no manager-scoring outputs are produced.
 
 ### 4.4 Right to request human review of AI decisions
 
@@ -205,6 +205,7 @@ We may update this Policy from time to time. The "Last updated" date at the top 
 
 - **General privacy inquiries**: carfai.info@gmail.com
 - **Data Protection Officer (GDPR)**: carfai.info@gmail.com
+- **Quebec Privacy Officer (Loi 25 s. 3.1)**: Nizar Bijjou — carfai.info@gmail.com
 - **Postal address**: `CarFai, address available on request via carfai.info@gmail.com`
 - **EEA representative (GDPR Article 27)**: not yet designated. EEA data subjects may contact CarFai directly at carfai.info@gmail.com for any privacy inquiry.
 - **UK representative (UK GDPR Article 27)**: not yet designated. UK data subjects may contact CarFai directly at carfai.info@gmail.com for any privacy inquiry.

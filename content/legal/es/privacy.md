@@ -91,7 +91,7 @@ Cuando el AI Advisor responde a una pregunta (especialmente una pregunta sobre v
 
 2. **Parámetros de referencia anónimos de la comunidad** — estadísticas agregadas de todos los usuarios de CarFai con la misma marca/modelo/año/región. Ejemplos: precio medio de compra, coste medio del seguro, intervalo de mantenimiento típico. Se obtienen a través de funciones SQL SECURITY DEFINER (`get_carfai_market_data`, `get_carfai_financial_benchmark`) que **devuelven solo agregados** — nunca filas individuales, precios o identificadores de usuario. **Estándar de anonimización**: [JURISDICTION-SPECIFIC: Por determinar — se definirá según la sección 28 de la Quebec Law 25; marcador de posición pendiente de la P5 en `docs/legal/REVIEW_FINDINGS_2026-05-09.md`. Probablemente k-anonimato con un tamaño mínimo de cohorte de agregación.] Usted NO PUEDE ser reidentificado a partir de una respuesta de referencia.
 
-3. **Contenido de búsqueda web** (cuando sea relevante) — para un contexto sensible al tiempo (p. ej., precios actuales del combustible, retiradas recientes del mercado, cambios en el mercado), el AI Advisor puede recuperar un pequeño número de páginas web públicas a través de [Por determinar — servicio de búsqueda según la P8]. El contenido obtenido se trata como una entrada no fiable (según las defensas contra la inyección de instrucciones de la Sección L.2) y nunca se escribe en su cuenta de CarFai.
+3. **Contenido de búsqueda web** (cuando sea relevante) — para un contexto sensible al tiempo (p. ej., precios actuales del combustible, retiradas recientes del mercado, cambios en el mercado), el AI Advisor puede recuperar un pequeño número de páginas web públicas a través de la herramienta de búsqueda web de Claude de Anthropic. El contenido obtenido se procesa bajo los mismos Términos para Clientes Comerciales que el resto de nuestro uso de Anthropic (sin entrenamiento de modelos; retención estándar de registros operativos) y se trata como una entrada no fiable (según las defensas contra la inyección de instrucciones de la Sección L.2) — nunca se escribe en su cuenta de CarFai.
 
 Puede optar por no contribuir a la capa de parámetros de referencia de la comunidad (n.º 2) en cualquier momento en Ajustes → Privacidad. Sus datos se excluirán de futuras consultas de referencia en la medida de lo posible (las instantáneas existentes en las cachés de referencia caducan en 30 días).
 
@@ -111,7 +111,7 @@ Los resultados se devuelven como un JSON agregado como `{ avg_price, median_pric
 
 ### 4.3 Puntuación del rendimiento de los gestores (cuentas de flotas B2B)
 
-La puntuación del rendimiento de los gestores **no es una función de CarFai v1**. Si se introduce en una versión futura, esta Política se actualizará con la especificación del algoritmo, el aviso de decisión automatizada de la sección 12.1 de la Quebec Law 25 y el flujo de solicitud de revisión humana antes de que la función se habilite para cualquier cuenta B2B.
+La puntuación del rendimiento de los gestores se está introduciendo en CarFai v1 para las cuentas de flotas B2B. La especificación completa del algoritmo (categorías ponderadas, entradas, rango de salida, alcance de visibilidad), el aviso de decisión automatizada de la sección 12.1 de la Quebec Law 25 y el flujo de solicitud de revisión humana se añadirán a esta Política — y se mostrarán en la incorporación B2B dentro de la aplicación — antes de que la función se habilite para cualquier cuenta. Hasta que esa actualización se publique, no se realiza ninguna puntuación del rendimiento de los gestores y no se producen resultados de puntuación.
 
 ### 4.4 Derecho a solicitar la revisión humana de las decisiones de la IA
 
@@ -207,6 +207,7 @@ Podemos actualizar esta Política de vez en cuando. La fecha de «Última actual
 
 - **Consultas generales sobre privacidad**: carfai.info@gmail.com
 - **Delegado de Protección de Datos (GDPR)**: carfai.info@gmail.com
+- **Responsable de Privacidad de Quebec (Loi 25 art. 3.1)**: Nizar Bijou — carfai.info@gmail.com
 - **Dirección postal**: `CarFai, dirección disponible bajo petición a través de carfai.info@gmail.com`
 - **Representante en el EEE (artículo 27 del GDPR)**: aún no designado. Los interesados del EEE pueden ponerse en contacto con CarFai directamente en carfai.info@gmail.com para cualquier consulta sobre privacidad.
 - **Representante en el Reino Unido (artículo 27 del GDPR del Reino Unido)**: aún no designado. Los interesados del Reino Unido pueden ponerse en contacto con CarFai directamente en carfai.info@gmail.com para cualquier consulta sobre privacidad.

@@ -91,7 +91,7 @@ Lorsque l'AI Advisor répond à une question (en particulier une question de val
 
 2.  **Indicateurs de référence communautaires anonymes** — statistiques agrégées sur tous les utilisateurs de CarFai ayant la même marque/modèle/année/région. Exemples : prix d'achat médian, coût moyen de l'assurance, intervalle d'entretien typique. Récupérés via des fonctions SQL SECURITY DEFINER (`get_carfai_market_data`, `get_carfai_financial_benchmark`) qui **ne retournent que des agrégats** — jamais de lignes individuelles, de prix ou d'identifiants d'utilisateur. **Norme d'anonymisation** : [JURISDICTION-SPECIFIC: À DÉTERMINER — à définir conformément à l'art. 28 de la Loi 25 du Québec ; texte provisoire en attente de la Q5 dans `docs/legal/REVIEW_FINDINGS_2026-05-09.md`. Probablement k-anonymat avec une taille de cohorte d'agrégation minimale.] Vous NE POUVEZ PAS être ré-identifié à partir d'une réponse d'indicateur de référence.
 
-3.  **Contenu de recherche Web** (lorsque pertinent) — pour un contexte sensible au temps (par ex., prix actuels du carburant, rappels récents, évolutions du marché), l'AI Advisor peut récupérer un petit nombre de pages Web publiques via [À DÉTERMINER — service de recherche selon Q8]. Le contenu récupéré est traité comme une entrée non fiable (conformément aux défenses contre l'injection de requêtes de la Section L.2) et n'est jamais écrit dans votre compte CarFai.
+3.  **Contenu de recherche Web** (lorsque pertinent) — pour un contexte sensible au temps (par ex., prix actuels du carburant, rappels récents, évolutions du marché), l'AI Advisor peut récupérer un petit nombre de pages Web publiques via l'outil de recherche Web Claude d'Anthropic. Le contenu récupéré est traité conformément aux mêmes Conditions pour les clients commerciaux que le reste de notre utilisation d'Anthropic (pas d'entraînement des modèles ; conservation standard des journaux opérationnels) et est traité comme une entrée non fiable (conformément aux défenses contre l'injection de requêtes de la Section L.2) — jamais écrit dans votre compte CarFai.
 
 Vous pouvez refuser de contribuer à la couche d'indicateurs de référence communautaires (n° 2) à tout moment dans Paramètres → Confidentialité. Vos données seront exclues des futures requêtes d'indicateurs de référence sur la base du meilleur effort (les instantanés existants dans les caches d'indicateurs de référence expirent dans les 30 jours).
 
@@ -111,7 +111,7 @@ Les résultats sont retournés sous forme de JSON agrégé comme `{ avg_price, m
 
 ### 4.3 Notation de la performance des gestionnaires (comptes de flotte B2B)
 
-La notation de la performance des gestionnaires n'est **pas une fonctionnalité de CarFai v1**. Si elle est introduite dans une version future, cette Politique sera mise à jour avec la spécification de l'algorithme, l'avis de décision automatisée de l'art. 12.1 de la Loi 25 du Québec, et le flux de demande de révision humaine avant que la fonctionnalité ne soit activée pour tout compte B2B.
+La notation de la performance des gestionnaires est introduite dans CarFai v1 pour les comptes de flotte B2B. La spécification complète de l'algorithme (catégories pondérées, entrées, plage de sortie, portée de visibilité), l'avis de décision automatisée de l'art. 12.1 de la Loi 25 du Québec, et le flux de demande de révision humaine seront ajoutés à cette Politique — et présentés dans l'intégration B2B dans l'application — avant que la fonctionnalité ne soit activée pour tout compte. Jusqu'à ce que cette mise à jour soit publiée, aucune notation de la performance des gestionnaires n'a lieu et aucun résultat de notation n'est produit.
 
 ### 4.4 Droit de demander une révision humaine des décisions de l'IA
 
@@ -207,6 +207,7 @@ Nous pouvons mettre à jour cette Politique de temps à autre. La date de « Der
 
 - **Demandes générales sur la confidentialité** : carfai.info@gmail.com
 - **Délégué à la protection des données (GDPR)** : carfai.info@gmail.com
+- **Responsable de la protection des renseignements personnels au Québec (Loi 25, art. 3.1)** : Nizar Bijou — carfai.info@gmail.com
 - **Adresse postale** : `CarFai, adresse disponible sur demande via carfai.info@gmail.com`
 - **Représentant dans l'EEE (Article 27 du GDPR)** : non encore désigné. Les personnes concernées dans l'EEE peuvent contacter CarFai directement à carfai.info@gmail.com pour toute demande relative à la vie privée.
 - **Représentant au R.-U. (Article 27 du UK GDPR)** : non encore désigné. Les personnes concernées au R.-U. peuvent contacter CarFai directement à carfai.info@gmail.com pour toute demande relative à la vie privée.
