@@ -13,6 +13,7 @@
     "lint": "next lint",
     "typecheck": "tsc --noEmit",
     "gen:hero": "node scripts/generate-hero.mjs",
+    "gen:tiktok": "node scripts/generate-tiktok.mjs",
     "gen:store": "node scripts/gen-store-screenshots.mjs",
     "gen:play": "node scripts/gen-play-graphics.mjs",
     "gen:qr": "node scripts/generate-qr.mjs",

@@ -41,7 +41,7 @@ export function Pricing() {
         </p>
       </div>
 
-      <div className="mx-auto max-w-6xl px-6 pb-32 space-y-6 md:space-y-10">
+      <div className="mx-auto max-w-6xl px-6 pb-16 md:pb-20 space-y-6 md:space-y-10">
         {tiers.map((tier, i) => (
           <article
             key={tier.key}
@@ -89,6 +89,33 @@ export function Pricing() {
             </Button>
           </article>
         ))}
+      </div>
+
+      {/* One-time alternative to the subscription ladder. Placed outside
+          the sticky-stack so it doesn't get folded into the same
+          scroll-overlap rhythm — it reads as a deliberate "or take this
+          other path" choice, not a 6th rung. */}
+      <div className="mx-auto max-w-6xl px-6 pb-32">
+        <article className="rounded-3xl border border-rule bg-paperDeep p-8 md:p-12 grid md:grid-cols-[auto_1fr_auto] gap-6 md:gap-10 items-center">
+          <div>
+            <p className="font-mono text-xs uppercase tracking-widest text-slate2 mb-3">
+              {t('bundleEyebrow')}
+            </p>
+            <h3 className="text-2xl md:text-3xl font-semibold text-ink mb-3">
+              {t('bundleName')}
+            </h3>
+            <div className="flex items-baseline gap-2">
+              <span className="text-4xl md:text-5xl font-medium text-ink">{t('bundlePrice')}</span>
+              <span className="text-base text-slate2">{t('bundleCadence')}</span>
+            </div>
+          </div>
+          <p className="text-base md:text-lg text-slate2 leading-relaxed max-w-prose">
+            {t('bundleBody')}
+          </p>
+          <Button href="#" variant="ink" size="md" className="shrink-0">
+            {t('bundleCta')}
+          </Button>
+        </article>
       </div>
     </section>
   );

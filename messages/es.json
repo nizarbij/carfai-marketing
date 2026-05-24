@@ -156,7 +156,13 @@
     "tier5Price": "$99",
     "tier5Cadence": "/ mes",
     "tier5Body": "Hasta 200 vehículos. Alcance de conductor vs. gerente. Tablas de clasificación de costos. Exportaciones para contadores por período.",
-    "tier5Cta": "Elegir Fleet"
+    "tier5Cta": "Elegir Fleet",
+    "bundleEyebrow": "O paga una sola vez",
+    "bundleName": "Power User Bundle",
+    "bundlePrice": "$39.99",
+    "bundleCadence": "pago único",
+    "bundleBody": "2 millones de tokens de IA, válidos hasta agotarse. Sin suscripción ni renovación automática. Los consumidores de la UE / Reino Unido / Suiza conservan un derecho de desistimiento de 14 días.",
+    "bundleCta": "Obtener el Bundle"
   },
   "ClosingCTA": {
     "eyebrow": "Una cosa más",

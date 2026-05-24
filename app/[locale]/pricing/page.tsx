@@ -169,6 +169,29 @@ function PricingPageContent() {
                   </article>
                 ))}
               </div>
+
+              {/* One-time alternative — separate card below the subscription grid.
+                  Same content as the homepage callout; this is the page-local copy. */}
+              <article className="mt-6 rounded-3xl border border-rule bg-paperDeep p-8 md:p-10 grid md:grid-cols-[auto_1fr_auto] gap-6 md:gap-10 items-center">
+                <div>
+                  <p className="font-mono text-xs uppercase tracking-widest text-slate2 mb-3">
+                    {ts('bundleEyebrow')}
+                  </p>
+                  <h2 className="text-2xl md:text-3xl font-semibold text-ink mb-3">
+                    {ts('bundleName')}
+                  </h2>
+                  <div className="flex items-baseline gap-2">
+                    <span className="text-4xl md:text-5xl font-medium text-ink">{ts('bundlePrice')}</span>
+                    <span className="text-base text-slate2">{ts('bundleCadence')}</span>
+                  </div>
+                </div>
+                <p className="text-base md:text-lg text-slate2 leading-relaxed">
+                  {ts('bundleBody')}
+                </p>
+                <Button href="#" variant="ink" size="md" className="shrink-0">
+                  {ts('bundleCta')}
+                </Button>
+              </article>
             </>
           );
         })()}

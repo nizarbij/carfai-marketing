@@ -156,7 +156,13 @@
     "tier5Price": "$99",
     "tier5Cadence": "/ month",
     "tier5Body": "Up to 200 vehicles. Driver vs manager scope. Cost leaderboards. Per-period accountant exports.",
-    "tier5Cta": "Choose Fleet"
+    "tier5Cta": "Choose Fleet",
+    "bundleEyebrow": "Or pay once",
+    "bundleName": "Power User Bundle",
+    "bundlePrice": "$39.99",
+    "bundleCadence": "one-time",
+    "bundleBody": "2 million AI tokens, valid until consumed. No subscription, no auto-renewal. EU / UK / Swiss consumers keep a 14-day right of withdrawal.",
+    "bundleCta": "Get the Bundle"
   },
   "ClosingCTA": {
     "eyebrow": "One more thing",
