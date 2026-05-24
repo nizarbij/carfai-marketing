@@ -158,11 +158,11 @@
     "tier5Body": "Jusqu'à 200 véhicules. Portée conducteur vs gestionnaire. Classements des coûts. Exportations comptables par période.",
     "tier5Cta": "Choisir Flotte",
     "bundleEyebrow": "Ou payez en une fois",
-    "bundleName": "Power User Bundle",
+    "bundleName": "Max Lifetime",
     "bundlePrice": "$39.99",
     "bundleCadence": "achat unique",
-    "bundleBody": "2 millions de jetons IA, valables jusqu'à épuisement. Pas d'abonnement, pas de renouvellement automatique. Les consommateurs de l'UE / R.-U. / Suisse conservent un droit de rétractation de 14 jours.",
-    "bundleCta": "Obtenir le Bundle"
+    "bundleBody": "Tout ce qui est inclus dans Max — 5 véhicules, l'AI Advisor avec évaluation du véhicule, raisonnement OBD2 et analyse détaillée — plus 2 millions de jetons IA valables jusqu'à épuisement. Paiement unique, pas d'abonnement, pas de renouvellement automatique. Les consommateurs de l'UE / R.-U. / Suisse conservent un droit de rétractation de 14 jours.",
+    "bundleCta": "Obtenir Max Lifetime"
   },
   "ClosingCTA": {
     "eyebrow": "Une dernière chose",
