@@ -67,15 +67,15 @@ For refund requests, contact Apple or Google directly (CarFai cannot process ref
 
 When you upgrade, the new plan takes effect immediately. When you downgrade, the change takes effect at the end of the current billing period. Token allocations and feature access adjust accordingly.
 
-### 4.7 Power User Bundle (one-time purchase)
+### 4.7 Max Lifetime (one-time purchase)
 
-The Power User Bundle is a one-time purchase that grants 2 million AI tokens, valid until consumed. It is not a subscription and does not auto-renew. Once tokens are consumed, you may continue using free-tier features or subscribe to a paid tier.
+The Max Lifetime is a one-time purchase that grants 2 million AI tokens, valid until consumed. It is not a subscription and does not auto-renew. Once tokens are consumed, you may continue using free-tier features or subscribe to a paid tier.
 
 ### 4.8 EU consumer 14-day right of withdrawal (digital content)
 
-If you are a consumer located in the European Economic Area, the United Kingdom, or Switzerland, the EU Consumer Rights Directive (and equivalent UK / Swiss law) gives you a **14-day right of withdrawal** from a digital-content purchase. This applies to the **Power User Bundle** (Section 4.7).
+If you are a consumer located in the European Economic Area, the United Kingdom, or Switzerland, the EU Consumer Rights Directive (and equivalent UK / Swiss law) gives you a **14-day right of withdrawal** from a digital-content purchase. This applies to the **Max Lifetime** (Section 4.7).
 
-Because the Bundle delivers immediate access to digital content (your AI tokens become spendable the moment the purchase completes), the right of withdrawal lapses **only if** you have **expressly waived it** at the time of purchase, and **expressly acknowledged** that you lose the right by doing so. CarFai will present a clear waiver checkbox during the Power User Bundle checkout flow. You may decline the waiver:
+Because Max Lifetime delivers immediate access to digital content (your AI tokens become spendable the moment the purchase completes), the right of withdrawal lapses **only if** you have **expressly waived it** at the time of purchase, and **expressly acknowledged** that you lose the right by doing so. CarFai will present a clear waiver checkbox during the Max Lifetime checkout flow. You may decline the waiver:
 
 - **If you waive**: tokens are immediately usable; no refund right under the EU 14-day rule (your other consumer rights are unaffected).
 - **If you do not waive**: tokens are still immediately usable, but you may request a full refund within 14 days of purchase. Refund will be issued via the original payment method (Apple App Store or Google Play, who handle the actual refund per their terms). Your `lifetime_balance` token allocation will be reversed; tokens already consumed during the 14-day window are NOT charged back to you.

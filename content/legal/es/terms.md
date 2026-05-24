@@ -69,15 +69,15 @@ Para solicitudes de reembolso, contacte directamente a Apple o Google (CarFai no
 
 Cuando actualiza a un plan superior, el nuevo plan entra en vigor de inmediato. Cuando cambia a un plan inferior, el cambio entra en vigor al final del período de facturación actual. Las asignaciones de tokens y el acceso a las funciones se ajustan en consecuencia.
 
-### 4.7 Paquete de Usuario Avanzado (compra única)
+### 4.7 Max Lifetime (compra única)
 
-El Paquete de Usuario Avanzado es una compra única que otorga 2 millones de tokens de IA, válidos hasta que se consuman. No es una suscripción y no se renueva automáticamente. Una vez que se consumen los tokens, puede continuar utilizando las funciones del nivel gratuito o suscribirse a un nivel de pago.
+El Max Lifetime es una compra única que otorga 2 millones de tokens de IA, válidos hasta que se consuman. No es una suscripción y no se renueva automáticamente. Una vez que se consumen los tokens, puede continuar utilizando las funciones del nivel gratuito o suscribirse a un nivel de pago.
 
 ### 4.8 Derecho de desistimiento de 14 días para consumidores de la UE (contenido digital)
 
-Si usted es un consumidor ubicado en el Espacio Económico Europeo, el Reino Unido o Suiza, la Directiva de la UE sobre los Derechos de los Consumidores (y la legislación equivalente del Reino Unido / Suiza) le otorga un **derecho de desistimiento de 14 días** de una compra de contenido digital. Esto se aplica al **Paquete de Usuario Avanzado** (Sección 4.7).
+Si usted es un consumidor ubicado en el Espacio Económico Europeo, el Reino Unido o Suiza, la Directiva de la UE sobre los Derechos de los Consumidores (y la legislación equivalente del Reino Unido / Suiza) le otorga un **derecho de desistimiento de 14 días** de una compra de contenido digital. Esto se aplica al **Max Lifetime** (Sección 4.7).
 
-Debido a que el Paquete ofrece acceso inmediato a contenido digital (sus tokens de IA se pueden gastar en el momento en que se completa la compra), el derecho de desistimiento caduca **solo si** usted ha **renunciado expresamente a él** en el momento de la compra y ha **reconocido expresamente** que pierde el derecho al hacerlo. CarFai presentará una casilla de verificación de renuncia clara durante el proceso de pago del Paquete de Usuario Avanzado. Usted puede rechazar la renuncia:
+Debido a que Max Lifetime ofrece acceso inmediato a contenido digital (sus tokens de IA se pueden gastar en el momento en que se completa la compra), el derecho de desistimiento caduca **solo si** usted ha **renunciado expresamente a él** en el momento de la compra y ha **reconocido expresamente** que pierde el derecho al hacerlo. CarFai presentará una casilla de verificación de renuncia clara durante el proceso de pago del Max Lifetime. Usted puede rechazar la renuncia:
 
 - **Si renuncia**: los tokens son utilizables de inmediato; no hay derecho a reembolso bajo la regla de 14 días de la UE (sus otros derechos como consumidor no se ven afectados).
 - **Si no renuncia**: los tokens siguen siendo utilizables de inmediato, pero puede solicitar un reembolso completo dentro de los 14 días posteriores a la compra. El reembolso se emitirá a través del método de pago original (Apple App Store o Google Play, quienes gestionan el reembolso real según sus términos). Su asignación de tokens `lifetime_balance` será revertida; los tokens ya consumidos durante el período de 14 días NO se le cobrarán.

@@ -69,15 +69,15 @@ Pour les demandes de remboursement, contactez directement Apple ou Google (CarFa
 
 Lorsque vous passez à un forfait supérieur, le nouveau forfait prend effet immédiatement. Lorsque vous passez à un forfait inférieur, le changement prend effet à la fin de la période de facturation en cours. Les attributions de jetons et l'accès aux fonctionnalités s'ajustent en conséquence.
 
-### 4.7 Forfait Super-utilisateur (achat unique)
+### 4.7 Max Lifetime (achat unique)
 
-Le Forfait Super-utilisateur est un achat unique qui accorde 2 millions de jetons IA, valables jusqu'à leur consommation. Il ne s'agit pas d'un abonnement et il ne se renouvelle pas automatiquement. Une fois les jetons consommés, vous pouvez continuer à utiliser les fonctionnalités du niveau gratuit ou vous abonner à un niveau payant.
+Le Max Lifetime est un achat unique qui accorde 2 millions de jetons IA, valables jusqu'à leur consommation. Il ne s'agit pas d'un abonnement et il ne se renouvelle pas automatiquement. Une fois les jetons consommés, vous pouvez continuer à utiliser les fonctionnalités du niveau gratuit ou vous abonner à un niveau payant.
 
 ### 4.8 Droit de rétractation de 14 jours pour les consommateurs de l'UE (contenu numérique)
 
-Si vous êtes un consommateur situé dans l'Espace économique européen, au Royaume-Uni ou en Suisse, la Directive de l'UE relative aux droits des consommateurs (et les lois équivalentes du Royaume-Uni et de la Suisse) vous accorde un **droit de rétractation de 14 jours** pour un achat de contenu numérique. Ceci s'applique au **Forfait Super-utilisateur** (Section 4.7).
+Si vous êtes un consommateur situé dans l'Espace économique européen, au Royaume-Uni ou en Suisse, la Directive de l'UE relative aux droits des consommateurs (et les lois équivalentes du Royaume-Uni et de la Suisse) vous accorde un **droit de rétractation de 14 jours** pour un achat de contenu numérique. Ceci s'applique au **Max Lifetime** (Section 4.7).
 
-Étant donné que le Forfait fournit un accès immédiat au contenu numérique (vos jetons IA deviennent utilisables dès la finalisation de l'achat), le droit de rétractation expire **uniquement si** vous y avez **expressément renoncé** au moment de l'achat et si vous avez **expressément reconnu** que vous perdiez ce droit ce faisant. CarFai présentera une case à cocher de renonciation claire lors du processus de paiement du Forfait Super-utilisateur. Vous pouvez refuser la renonciation :
+Étant donné que Max Lifetime fournit un accès immédiat au contenu numérique (vos jetons IA deviennent utilisables dès la finalisation de l'achat), le droit de rétractation expire **uniquement si** vous y avez **expressément renoncé** au moment de l'achat et si vous avez **expressément reconnu** que vous perdiez ce droit ce faisant. CarFai présentera une case à cocher de renonciation claire lors du processus de paiement du Max Lifetime. Vous pouvez refuser la renonciation :
 
 - **Si vous renoncez** : les jetons sont immédiatement utilisables ; aucun droit de remboursement en vertu de la règle des 14 jours de l'UE (vos autres droits de consommateur ne sont pas affectés).
 - **Si vous ne renoncez pas** : les jetons sont tout de même immédiatement utilisables, mais vous pouvez demander un remboursement complet dans les 14 jours suivant l'achat. Le remboursement sera effectué via le mode de paiement original (Apple App Store ou Google Play, qui gèrent le remboursement effectif selon leurs conditions). Votre attribution de jetons `lifetime_balance` sera annulée ; les jetons déjà consommés pendant la période de 14 jours ne vous seront PAS facturés.
