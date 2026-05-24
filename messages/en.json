@@ -207,7 +207,7 @@
     "faq1Q": "Is the free tier really free, with no trial timer?",
     "faq1A": "Yes. The free tier is permanent — one vehicle, basic analytics, 50 scanned documents per year, no AI Advisor. No card on file.",
     "faq2Q": "What is a token, and what happens if I run out?",
-    "faq2A": "Tokens measure the AI work CarFai does on your behalf — scanning a receipt, answering an Advisor question, running a Detailed Analysis. Each plan ships a monthly bucket. If you do not use them in a month, leftover tokens roll over to the next month on every paid plan. If you exhaust them, you can buy a one-time Token Pack from the in-app settings or wait for the next monthly refill.",
+    "faq2A": "Tokens measure the AI work CarFai does on your behalf — scanning a receipt, answering an Advisor question, running a Detailed Analysis. Each plan ships a monthly bucket. If you do not use them in a month, leftover tokens roll over to the next month on every paid plan. If you exhaust them, you can upgrade your plan or wait for the next monthly refill.",
     "faq3Q": "Can I switch tiers mid-month?",
     "faq3A": "Yes — upgrades take effect immediately; downgrades take effect at the end of the current billing period. Token balances on paid tiers carry forward.",
     "faq4Q": "How does the 3-day free trial work?",
