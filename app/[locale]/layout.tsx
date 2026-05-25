@@ -16,6 +16,24 @@ export const metadata: Metadata = {
   description:
     'Cost tracking, OBD2 diagnostics, document scanning, valuation, and an AI advisor that answers questions about your car using your own history — not generic advice.',
   metadataBase: new URL('https://carfai.app'),
+  // Cross-locale hreflang signals so Google serves the right locale variant
+  // per visitor and consolidates ranking signal across versions instead of
+  // treating /en, /fr, /es, /ar as four separate competing pages.
+  // No layout-level `canonical` here on purpose — Next merges `languages`
+  // but child metadata REPLACES `canonical`, so a wrong default at this
+  // level would leak into every deep page that doesn't override. Per-page
+  // canonical lives in each route's generateMetadata; the _redirects rule
+  // (https://www → https://) is the load-bearing fix for www/apex
+  // duplication regardless of any canonical tag.
+  alternates: {
+    languages: {
+      'en':        '/en',
+      'fr':        '/fr',
+      'es':        '/es',
+      'ar':        '/ar',
+      'x-default': '/en',
+    },
+  },
   openGraph: {
     title: 'CarFai',
     description:

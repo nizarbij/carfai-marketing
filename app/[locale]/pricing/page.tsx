@@ -11,7 +11,11 @@ const CONTACT_EMAIL = 'carfai.info@gmail.com';
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'PricingPage' });
-  return { title: t('metaTitle'), description: t('metaDescription') };
+  return {
+    title: t('metaTitle'),
+    description: t('metaDescription'),
+    alternates: { canonical: `/${locale}/pricing` },
+  };
 }
 
 export default async function PricingPage({ params }: { params: Promise<{ locale: string }> }) {

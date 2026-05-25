@@ -7,7 +7,11 @@ import { Eyebrow } from '../_components/Eyebrow';
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'PressPage' });
-  return { title: t('metaTitle'), description: t('metaDescription') };
+  return {
+    title: t('metaTitle'),
+    description: t('metaDescription'),
+    alternates: { canonical: `/${locale}/press` },
+  };
 }
 
 export default async function PressPage({ params }: { params: Promise<{ locale: string }> }) {

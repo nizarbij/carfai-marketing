@@ -1,8 +1,15 @@
 # Cloudflare Pages redirect rules.
 # https://developers.cloudflare.com/pages/configuration/redirects/
-#
-# Root → default locale. Static export with localePrefix: 'as-needed'
-# generates /en, /fr, /es, /ar but no index.html at /, so visitors
-# hitting the apex URL would 404 without this rule.
 
+# ── www → apex (301) ────────────────────────────────────────────────────────
+# Both www.carfai.app and carfai.app resolve to the same Cloudflare Pages
+# project. Without this rule Google indexes both variants and treats them as
+# duplicate content, splitting ranking signal. Force the apex as canonical.
+# Order matters — must precede the locale-root rule below so the www request
+# isn't first 302'd to /en on the wrong host.
+https://www.carfai.app/*    https://carfai.app/:splat    301!
+
+# ── Root → default locale ───────────────────────────────────────────────────
+# Static export with localePrefix: 'as-needed' generates /en, /fr, /es, /ar
+# but no index.html at /, so visitors hitting the apex URL would 404.
 /    /en    302

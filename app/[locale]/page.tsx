@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import { setRequestLocale } from 'next-intl/server';
 import { Hero }        from './_sections/Hero';
 import { Problem }     from './_sections/Problem';
@@ -8,6 +9,11 @@ import { Advisor }     from './_sections/Advisor';
 import { Fleet }       from './_sections/Fleet';
 import { Pricing }     from './_sections/Pricing';
 import { ClosingCTA }  from './_sections/ClosingCTA';
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  return { alternates: { canonical: `/${locale}` } };
+}
 
 /**
  * H1b landing page — 9 sections.

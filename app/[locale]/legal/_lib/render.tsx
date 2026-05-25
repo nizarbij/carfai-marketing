@@ -37,9 +37,13 @@ export async function renderLegalPage(slug: string, locale: string) {
 export async function legalMetadata(slug: string, locale: string) {
   if (!routing.locales.includes(locale as never)) return { title: 'Legal' };
   const tl = await getTranslations({ locale, namespace: 'LegalPages' });
+  // Per-page canonical so Google consolidates ranking for each legal doc
+  // to its apex+locale URL and doesn't split signal across www/apex or
+  // multiple locales. Layout sets hreflang `languages`; this sets self.
+  const canonical = `/${locale}/${slug}`;
   try {
-    return { title: tl(slug as LegalSlug) };
+    return { title: tl(slug as LegalSlug), alternates: { canonical } };
   } catch {
-    return { title: 'Legal' };
+    return { title: 'Legal', alternates: { canonical } };
   }
 }
