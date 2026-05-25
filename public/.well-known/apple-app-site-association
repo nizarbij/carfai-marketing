@@ -1,0 +1,17 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": [
+          "REPLACE_WITH_TEAM_ID.com.carfai.app"
+        ],
+        "components": [
+          { "/": "/en/auth/*", "comment": "EN password reset + future auth flows" },
+          { "/": "/fr/auth/*", "comment": "FR password reset + future auth flows" },
+          { "/": "/es/auth/*", "comment": "ES password reset + future auth flows" },
+          { "/": "/ar/auth/*", "comment": "AR password reset + future auth flows" }
+        ]
+      }
+    ]
+  }
+}

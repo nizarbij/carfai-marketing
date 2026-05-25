@@ -1,0 +1,19 @@
+# Cloudflare Pages custom response headers.
+# https://developers.cloudflare.com/pages/configuration/headers/
+
+# Apple App Site Association — must be served as application/json even
+# though the file has no extension. iOS spec: the file MUST be hosted at
+# /.well-known/apple-app-site-association over HTTPS with a JSON
+# content-type. Without this header Cloudflare defaults to a generic
+# content-type and iOS rejects the file silently — Universal Links don't
+# work, password-reset emails open an empty page.
+/.well-known/apple-app-site-association
+  Content-Type: application/json
+  Cache-Control: public, max-age=3600
+
+# Android Asset Links — served by default with the .json extension as
+# application/json, so no header override strictly needed. Adding a short
+# cache header so iOS / Android can re-validate without hammering the
+# origin during the App Links domain-verification step.
+/.well-known/assetlinks.json
+  Cache-Control: public, max-age=3600

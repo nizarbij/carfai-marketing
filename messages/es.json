@@ -302,5 +302,12 @@
     "faq42A": "En la app: Ajustes → Privacidad → Eliminar cuenta. La acción es inmediata y permanente.",
     "faq43Q": "¿Con quién comparten mis datos?",
     "faq43A": "Nunca vendemos tus datos. Los compartimos solo con subprocesadores estrictamente necesarios para prestar el servicio. La lista completa está en nuestra "
+  },
+  "AuthResetPassword": {
+    "title": "Abrir en la app de CarFai",
+    "intro": "Completamos los restablecimientos de contraseña dentro de la app móvil de CarFai para que tu nueva contraseña nunca viaje por un navegador. Si la app está instalada en este dispositivo, el enlace debería haberla abierto automáticamente.",
+    "appStoreBtn": "Descargar en App Store",
+    "googlePlayBtn": "Disponible en Google Play",
+    "hint": "¿Ya la tienes instalada? Abre este correo en el dispositivo donde está instalada CarFai, o solicita un nuevo enlace desde la pantalla « Olvidé mi contraseña » de la app."
   }
 }

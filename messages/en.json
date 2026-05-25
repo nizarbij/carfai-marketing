@@ -302,5 +302,12 @@
     "faq42A": "In-app: Settings → Privacy → Delete account. Action is immediate and permanent.",
     "faq43Q": "Who do you share my data with?",
     "faq43A": "We never sell your data. We share it only with sub-processors strictly necessary to provide the service. The full list is in our "
+  },
+  "AuthResetPassword": {
+    "title": "Open in the CarFai app",
+    "intro": "We complete password resets inside the CarFai mobile app so your new password never travels through a browser. If the app is installed on this device, the link should have opened it automatically.",
+    "appStoreBtn": "Download on the App Store",
+    "googlePlayBtn": "Get it on Google Play",
+    "hint": "Already installed? Try opening this email on the device where CarFai is installed, or request a new reset link from the app's Forgot password screen."
   }
 }

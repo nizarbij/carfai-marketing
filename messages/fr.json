@@ -302,5 +302,12 @@
     "faq42A": "Dans l'app : Paramètres → Confidentialité → Supprimer le compte. L'action est immédiate et permanente.",
     "faq43Q": "Avec qui partagez-vous mes données?",
     "faq43A": "Nous ne vendons jamais vos données. Nous les partageons uniquement avec des sous-traitants strictement nécessaires pour fournir le service. La liste complète se trouve dans notre "
+  },
+  "AuthResetPassword": {
+    "title": "Ouvrir dans l'application CarFai",
+    "intro": "Nous finalisons les réinitialisations de mot de passe dans l'application mobile CarFai afin que votre nouveau mot de passe ne transite jamais par un navigateur. Si l'application est installée sur cet appareil, le lien aurait dû l'ouvrir automatiquement.",
+    "appStoreBtn": "Télécharger sur l'App Store",
+    "googlePlayBtn": "Disponible sur Google Play",
+    "hint": "Déjà installée ? Ouvrez ce courriel sur l'appareil où CarFai est installé, ou demandez un nouveau lien depuis l'écran « Mot de passe oublié » de l'app."
   }
 }
