@@ -3,7 +3,7 @@
     "details": [
       {
         "appIDs": [
-          "REPLACE_WITH_TEAM_ID.com.carfai.app"
+          "FTLSZZ24Y5.com.carfai.app"
         ],
         "components": [
           { "/": "/en/auth/*", "comment": "EN password reset + future auth flows" },
