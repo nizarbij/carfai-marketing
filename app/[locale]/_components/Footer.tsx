@@ -54,6 +54,15 @@ export function Footer() {
                   </Link>
                 </li>
               ))}
+              {/* Account deletion — standalone page, not a renderLegalPage
+                  markdown route, so it lives outside LEGAL_PAGES. Surface
+                  here for crawler reachability + UX symmetry with Privacy /
+                  Terms (Play 2024 Data Safety crawler may follow this). */}
+              <li>
+                <Link href="/account-deletion" className="hover:text-accent">
+                  {t('navAccountDeletion')}
+                </Link>
+              </li>
             </ul>
           </div>
         </div>

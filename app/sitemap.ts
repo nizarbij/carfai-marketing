@@ -28,7 +28,11 @@ const ROUTES: Array<{ path: string; changeFrequency: MetadataRoute.Sitemap[numbe
   { path: '/pricing', changeFrequency: 'monthly', priority: 0.8 },
   { path: '/support', changeFrequency: 'monthly', priority: 0.7 },
   { path: '/contact', changeFrequency: 'yearly',  priority: 0.6 },
-  { path: '/press',   changeFrequency: 'monthly', priority: 0.5 },
+  { path: '/press',            changeFrequency: 'monthly', priority: 0.5 },
+  // Account-deletion page — not in LEGAL_PAGES (no markdown source; it's
+  // a hand-written page.tsx) but still surfaces in the footer + needs
+  // to be in the sitemap so Google Play's Data Safety crawler can verify.
+  { path: '/account-deletion', changeFrequency: 'yearly',  priority: 0.4 },
   ...LEGAL_PAGES.map((p) => ({
     path:            `/${p.slug}`,
     changeFrequency: 'monthly' as const,

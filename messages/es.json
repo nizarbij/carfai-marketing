@@ -18,6 +18,7 @@
     "navSupport": "Soporte",
     "navContact": "Contacto",
     "navPress": "Kit de prensa",
+    "navAccountDeletion": "Eliminar mi cuenta",
     "copyright": "© {year} CarFai"
   },
   "LegalPages": {
@@ -320,7 +321,7 @@
     "inAppNote": "Si aún tienes acceso a la app, esta es la vía más rápida — la eliminación es automatizada y se confirma en pantalla.",
     "emailTitle": "Opción 2 — Solicitar por correo",
     "emailIntro": "Si ya no puedes acceder a la app (desinstalada, dispositivo perdido o bloqueado), escríbenos desde el correo registrado en tu cuenta de CarFai y procesaremos la eliminación en un plazo de 30 días.",
-    "emailButton": "Escribir a support@carfai.app",
+    "emailButton": "Escribir a carfai.info@gmail.com",
     "emailSubject": "Eliminar mi cuenta de CarFai",
     "emailBodyTemplate": "Hola equipo de CarFai,\n\nPor favor eliminen mi cuenta de CarFai.\n\nCorreo registrado: <el correo con el que te registraste>\n\nGracias.",
     "emailSla": "Respondemos en 7 días hábiles y completamos la eliminación en 30 días desde la recepción de tu solicitud, conforme al RGPD art. 17 y la Ley 25 de Quebec.",

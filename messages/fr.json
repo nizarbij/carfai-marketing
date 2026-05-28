@@ -18,6 +18,7 @@
     "navSupport": "Support",
     "navContact": "Contact",
     "navPress": "Kit presse",
+    "navAccountDeletion": "Supprimer mon compte",
     "copyright": "© {year} CarFai"
   },
   "LegalPages": {
@@ -320,7 +321,7 @@
     "inAppNote": "Si vous avez encore accès à l'app, c'est la voie la plus rapide — la suppression est automatisée et confirmée à l'écran.",
     "emailTitle": "Option 2 — Demande par courriel",
     "emailIntro": "Si vous n'avez plus accès à l'application (désinstallée, appareil perdu, verrouillé), écrivez-nous depuis l'adresse enregistrée sur votre compte CarFai et nous traiterons la suppression sous 30 jours.",
-    "emailButton": "Écrire à support@carfai.app",
+    "emailButton": "Écrire à carfai.info@gmail.com",
     "emailSubject": "Supprimer mon compte CarFai",
     "emailBodyTemplate": "Bonjour l'équipe CarFai,\n\nVeuillez supprimer mon compte CarFai.\n\nCourriel enregistré : <le courriel utilisé à l'inscription>\n\nMerci.",
     "emailSla": "Nous répondons sous 7 jours ouvrés et complétons la suppression sous 30 jours après réception de votre demande, conformément au RGPD art. 17 et à la Loi 25 du Québec.",

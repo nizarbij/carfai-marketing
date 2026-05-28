@@ -19,7 +19,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { setRequestLocale, getTranslations } from 'next-intl/server';
 
-const SUPPORT_EMAIL = 'support@carfai.app';
+const SUPPORT_EMAIL = 'carfai.info@gmail.com';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
