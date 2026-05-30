@@ -46,6 +46,16 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+  // Favicon + Apple touch icon. Next 14's `app/icon.png` convention
+  // auto-injects these only when a root `app/layout.tsx` exists; our
+  // layout lives at `app/[locale]/layout.tsx` (no root layout, next-intl
+  // owns the root via middleware), so the convention serves the files
+  // as routes but the <link> tags never reach <head>. Declaring them
+  // explicitly here injects them on every locale.
+  icons: {
+    icon:  '/icon.png',
+    apple: '/apple-icon.png',
+  },
 };
 
 // Pre-render all 4 locales statically at build time.
