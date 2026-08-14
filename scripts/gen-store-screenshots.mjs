@@ -133,8 +133,12 @@ const SEQUENCES = [
 const PLATFORMS = [
   {
     id: 'ios',
-    width:  1290,
-    height: 2796,
+    // ASC's "6.7-inch iPhone Display" slot still requires 1284×2778
+    // (the iPhone 14 Pro Max screenshot spec), NOT the 1290×2796 on-
+    // device pixel size for iPhone 15/16 Pro Max. ASC rejects 1290×2796
+    // with the "wrong dimensions" error. Keep the slot-spec.
+    width:  1284,
+    height: 2778,
     sectionIndexSize: 30,
     headlineSize:     108,
     headlineLineHeight: 1.05,
@@ -169,6 +173,27 @@ const PLATFORMS = [
     topPad:           110,
     bottomPad:        80,
     bottomZone:       140,
+  },
+  {
+    // ASC's "13-inch iPad Display" slot (iPad Pro M4). Different aspect
+    // ratio from iPhone (3:4 vs 9:19.5) — much wider, less tall. The
+    // phone frame stays central but proportionally smaller so the extra
+    // canvas breathes. Text sizes scale up ~60% vs iPhone.
+    id: 'ipad-13',
+    width:  2064,
+    height: 2752,
+    sectionIndexSize: 46,
+    headlineSize:     160,
+    headlineLineHeight: 1.05,
+    subheadSize:      64,
+    wordmarkSize:     84,
+    taglineSize:      38,
+    phoneInnerW:      680,
+    bezel:            22,
+    cornerRadius:     108,
+    topPad:           240,
+    bottomPad:        160,
+    bottomZone:       280,
   },
 ];
 
