@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
+import { INSTALL_URLS } from '../_lib/install-urls';
 
 /**
  * Apple App Store + Google Play badges. Two visual variants:
@@ -11,15 +12,14 @@ import { useTranslations } from 'next-intl';
  *   <StoreBadges variant="card" />  → icon + label + QR, two cards.
  *                                     For closing CTA / "download" sections.
  *
- * STORES_LIVE flips the badges between two states:
- *   false → visual-only, no href, no QR; "LAUNCHING SUMMER 2026" caption shown.
- *   true  → real links + QR codes; caption hidden.
+ * Live state is per-store now (was a single STORES_LIVE flag before
+ * Play shipped on its own timeline ahead of iOS). A store with a
+ * non-null URL in _lib/install-urls.ts renders as a clickable <a>;
+ * one with null renders as a disabled <div> with a coming-soon caption.
  *
- * Set to true on the day Apple + Play listings go live (see RELEASE_PLAN H5).
- * All labels are translated via the StoreBadges namespace.
+ * The "LAUNCHING SUMMER 2026" caption is shown ONLY when at least one
+ * store is still not live. Once both are live it disappears.
  */
-
-const STORES_LIVE = false;
 
 type Variant = 'pill' | 'card';
 type Surface = 'light' | 'dark';
@@ -33,7 +33,7 @@ interface Store {
   key:   'apple' | 'google';
   icon:  string;
   qr:    string;
-  href:  string;
+  href:  string | null;
 }
 
 const STORES: Store[] = [
@@ -41,15 +41,17 @@ const STORES: Store[] = [
     key:  'apple',
     icon: '/store-apple.png',
     qr:   '/qr-apple.png',
-    href: 'https://apps.apple.com/app/carfai/id0000000000',
+    href: INSTALL_URLS.apple,
   },
   {
     key:  'google',
     icon: '/store-google.png',
     qr:   '/qr-google.png',
-    href: 'https://play.google.com/store/apps/details?id=com.carfai.app',
+    href: INSTALL_URLS.google,
   },
 ];
+
+const ALL_STORES_LIVE = STORES.every((s) => s.href !== null);
 
 function useStoreCopy(s: Store) {
   const t = useTranslations('StoreBadges');
@@ -59,24 +61,14 @@ function useStoreCopy(s: Store) {
 }
 
 export function StoreBadges({ variant = 'pill', surface = 'light' }: Props) {
-  const t = useTranslations('StoreBadges');
-  const dark = surface === 'dark';
+  // "LAUNCHING SUMMER 2026" caption removed — Play is live, and the
+  // iOS-only "coming soon" state now reads better as just the dimmed/
+  // aria-disabled Apple badge sitting next to the clickable Google one.
+  // Kept ALL_STORES_LIVE around for potential future use (e.g. an
+  // "install anywhere" hint once both stores ship).
+  void ALL_STORES_LIVE;
 
-  return (
-    <div className="space-y-3">
-      {variant === 'pill' ? <PillRow surface={surface} /> : <CardRow surface={surface} />}
-      {!STORES_LIVE && (
-        <p
-          className={
-            'text-[11px] font-mono uppercase tracking-widest text-start ' +
-            (dark ? 'text-paper/55' : 'text-slate2')
-          }
-        >
-          {t('launchingCaption')}
-        </p>
-      )}
-    </div>
-  );
+  return variant === 'pill' ? <PillRow surface={surface} /> : <CardRow surface={surface} />;
 }
 
 /* ─── PILL variant ─────────────────────────────────────────────────────── */
@@ -93,9 +85,11 @@ function PillRow({ surface }: { surface: Surface }) {
 function PillBadge({ store: s, dark }: { store: Store; dark: boolean }) {
   const { sub, label } = useStoreCopy(s);
 
-  // Shared visual chrome. When STORES_LIVE is false we render a <div> with
-  // aria-disabled rather than an <a> with a stale href — keeps the design
-  // intact, avoids dead clicks and screen-reader confusion.
+  // Per-store liveness: if this store has no URL yet (e.g. iOS pre-approval),
+  // render as a <div> with aria-disabled + reduced opacity. Once the URL is
+  // populated in install-urls.ts, this same component becomes a real <a>.
+  const isLive = s.href !== null;
+
   const inner = (
     <>
       <span className="relative h-7 w-7 shrink-0 rounded-md overflow-hidden">
@@ -116,7 +110,7 @@ function PillBadge({ store: s, dark }: { store: Store; dark: boolean }) {
     'inline-flex items-center gap-3 ps-3 pe-5 py-2.5 rounded-full border ' +
     (dark ? 'bg-paper/[0.06] border-paper/15' : 'bg-paper border-rule');
 
-  if (!STORES_LIVE) {
+  if (!isLive) {
     return (
       <div
         role="group"
@@ -131,7 +125,9 @@ function PillBadge({ store: s, dark }: { store: Store; dark: boolean }) {
 
   return (
     <a
-      href={s.href}
+      href={s.href!}
+      target="_blank"
+      rel="noopener noreferrer"
       aria-label={`${sub} ${label}`}
       className={baseClass + ' transition-colors ' + (dark ? 'hover:bg-paper/10' : 'hover:bg-paperDeep')}
     >
@@ -154,10 +150,11 @@ function CardRow({ surface }: { surface: Surface }) {
 function CardBadge({ store: s, dark }: { store: Store; dark: boolean }) {
   const t = useTranslations('StoreBadges');
   const { sub, label } = useStoreCopy(s);
+  const isLive = s.href !== null;
 
   const inner = (
     <>
-      {STORES_LIVE && (
+      {isLive && (
         <div className="shrink-0 flex flex-col items-center gap-2">
           <div className="relative h-24 w-24 rounded-lg overflow-hidden bg-paper p-1">
             <Image src={s.qr} alt={`${sub} ${label}`} fill sizes="96px" className="object-contain" />
@@ -179,7 +176,7 @@ function CardBadge({ store: s, dark }: { store: Store; dark: boolean }) {
             </span>
           </span>
         </div>
-        {STORES_LIVE && (
+        {isLive && (
           <p className={'text-xs ' + (dark ? 'text-paper/55' : 'text-slate2')}>
             {t('scanHint')}
           </p>
@@ -192,7 +189,7 @@ function CardBadge({ store: s, dark }: { store: Store; dark: boolean }) {
     'flex items-center gap-5 p-5 rounded-2xl border ' +
     (dark ? 'bg-paper/[0.04] border-paper/15' : 'bg-paper border-rule');
 
-  if (!STORES_LIVE) {
+  if (!isLive) {
     return (
       <div
         role="group"
@@ -207,7 +204,9 @@ function CardBadge({ store: s, dark }: { store: Store; dark: boolean }) {
 
   return (
     <a
-      href={s.href}
+      href={s.href!}
+      target="_blank"
+      rel="noopener noreferrer"
       aria-label={`${sub} ${label}`}
       className={baseClass + ' transition-colors ' + (dark ? 'hover:bg-paper/[0.08]' : 'hover:bg-paperDeep')}
     >

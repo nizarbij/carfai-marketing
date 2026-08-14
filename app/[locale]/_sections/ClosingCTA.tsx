@@ -9,6 +9,7 @@ import { StoreBadges } from '../_components/StoreBadges';
 import { Eyebrow } from '../_components/Eyebrow';
 import { SectionIndex } from '../_components/SectionIndex';
 import { useReducedMotion } from '../_components/useReducedMotion';
+import { PRIMARY_INSTALL_URL } from '../_lib/install-urls';
 
 /**
  * Section 9 — Closing CTA. Patterns: splittext-reveal heading +
@@ -74,7 +75,7 @@ export function ClosingCTA() {
         <div className="mt-12 inline-block">
           <a
             ref={btnRef}
-            href="#"
+            href={PRIMARY_INSTALL_URL}
             className="inline-flex items-center gap-2 px-7 py-4 rounded-full bg-accent text-paper hover:bg-accentDeep transition-colors font-medium text-base md:text-lg will-change-transform"
           >
             {t('ctaButton')}

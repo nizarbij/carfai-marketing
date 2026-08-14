@@ -5,6 +5,7 @@ import { Link } from '@/i18n/navigation';
 import { Button } from '../_components/Button';
 import { Eyebrow } from '../_components/Eyebrow';
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from '../_components/Accordion';
+import { PRIMARY_INSTALL_URL } from '../_lib/install-urls';
 
 const CONTACT_EMAIL = 'carfai.info@gmail.com';
 
@@ -147,7 +148,7 @@ function PricingPageContent() {
                     </div>
                   </div>
                   <p className="text-base md:text-lg text-slate2 leading-relaxed">{featured.summary}</p>
-                  <Button href="#" variant="accent" size="lg" className="shrink-0">{featured.cta}</Button>
+                  <Button href={PRIMARY_INSTALL_URL} variant="accent" size="lg" className="shrink-0">{featured.cta}</Button>
                 </article>
               )}
 
@@ -164,7 +165,7 @@ function PricingPageContent() {
                     </div>
                     <p className="text-sm text-slate2 leading-relaxed flex-1 mb-6">{tier.summary}</p>
                     <Button
-                      href="#"
+                      href={PRIMARY_INSTALL_URL}
                       variant="ink"
                       className="!px-4 !py-2.5 !text-sm justify-center"
                     >
@@ -192,7 +193,7 @@ function PricingPageContent() {
                 <p className="text-base md:text-lg text-slate2 leading-relaxed">
                   {ts('bundleBody')}
                 </p>
-                <Button href="#" variant="ink" size="md" className="shrink-0">
+                <Button href={PRIMARY_INSTALL_URL} variant="ink" size="md" className="shrink-0">
                   {ts('bundleCta')}
                 </Button>
               </article>

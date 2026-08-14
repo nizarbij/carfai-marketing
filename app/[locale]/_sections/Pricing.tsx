@@ -1,6 +1,7 @@
 import { useTranslations } from 'next-intl';
 import { Button } from '../_components/Button';
 import { SectionIndex } from '../_components/SectionIndex';
+import { PRIMARY_INSTALL_URL } from '../_lib/install-urls';
 
 /**
  * Section 8 — Pricing. Sticky-stack with the recommended tier
@@ -80,7 +81,7 @@ export function Pricing() {
             </div>
 
             <Button
-              href="#"
+              href={PRIMARY_INSTALL_URL}
               variant={tier.accent ? 'accent' : 'ink'}
               size={tier.accent ? 'lg' : 'md'}
               className="shrink-0"
@@ -112,7 +113,7 @@ export function Pricing() {
           <p className="text-base md:text-lg text-slate2 leading-relaxed max-w-prose">
             {t('bundleBody')}
           </p>
-          <Button href="#" variant="ink" size="md" className="shrink-0">
+          <Button href={PRIMARY_INSTALL_URL} variant="ink" size="md" className="shrink-0">
             {t('bundleCta')}
           </Button>
         </article>
