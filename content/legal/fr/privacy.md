@@ -3,7 +3,7 @@
 # Politique de confidentialité de CarFai
 
 **Date d'entrée en vigueur** : 2026-05-20
-**Dernière mise à jour** : 2026-05-20
+**Dernière mise à jour** : 2026-07-18
 
 La présente Politique de confidentialité décrit la manière dont **CarFai** (« CarFai », « nous », « notre », « nos ») collecte, utilise, partage et protège les informations lorsque vous utilisez l'application mobile CarFai et tout service connexe (collectivement, le « Service »).
 
@@ -35,6 +35,33 @@ En utilisant le Service, vous consentez à la collecte et à l'utilisation des i
 - Nous n'accédons **pas** au microphone ou aux contacts de votre téléphone.
 - Nous ne lisons **pas** vos SMS, courriels ou applications de messagerie.
 - Nous n'utilisons **pas** l'identifiant publicitaire Android (`AD_ID`) ; l'autorisation est explicitement bloquée.
+
+### 1.4 Traitement par IA et fournisseur d'IA tiers
+
+CarFai s'appuie sur **Anthropic, PBC** (concepteur de la famille de modèles d'IA Claude) en tant que fournisseur d'IA tiers pour alimenter deux fonctionnalités destinées à l'utilisateur :
+
+- **Numérisation de documents** — extraction du montant, de la date, du fournisseur et de la catégorie à partir d'images de documents (reçus, factures, immatriculations) que vous photographiez ou téléversez.
+- **AI Advisor** — réponses aux questions que vous posez sur votre véhicule (conseils d'entretien, analyse des coûts, questions générales sur le véhicule).
+
+**Données envoyées à Anthropic** :
+- Les images et le texte des documents que vous numérisez ou téléversez.
+- Les détails de votre véhicule (marque, modèle, année, kilométrage, dépenses et autres champs que vous avez saisis).
+- Les questions et messages que vous envoyez à l'AI Advisor.
+
+**Comment ces données sont collectées** : à partir des documents que vous photographiez ou téléversez dans l'application, et à partir des informations que vous saisissez concernant votre véhicule.
+
+**Utilisation par Anthropic** : uniquement pour fournir la réponse d'IA demandée — à savoir : (a) extraire les champs de vos documents, (b) générer des conseils d'entretien et de coûts, et (c) répondre à vos questions.
+
+**Conditions contractuelles et de traitement** :
+- Anthropic traite vos données en vertu d'un accord de traitement des données (les Conditions pour les clients commerciaux d'Anthropic) dont les protections sont équivalentes aux engagements pris par CarFai dans la présente Politique.
+- Anthropic **n'utilise pas vos données pour entraîner ses modèles**.
+- Les données sont **chiffrées en transit** entre l'application CarFai et les serveurs d'Anthropic (TLS 1.2+).
+
+**Votre consentement et votre contrôle** :
+- Vous devez donner un **consentement explicite dans l'application** avant qu'aucune donnée ne soit envoyée à Anthropic.
+- Vous pouvez **retirer ce consentement à tout moment** dans **Paramètres → Confidentialité**. Le retrait du consentement désactive les fonctionnalités d'IA énumérées ci-dessus.
+
+Pour le détail technique complet de ce que CarFai envoie à Anthropic par requête, les modalités de conservation et le fonctionnement des fonctionnalités d'IA (vos propres données vs référentiels communautaires anonymes vs contenu web public), voir la **Section 4 — Traitement par IA — divulgation spéciale**.
 
 ## 2. Comment nous utilisons les informations
 
@@ -219,3 +246,4 @@ Nous pouvons mettre à jour cette Politique de temps à autre. La date de « Der
 | Version | Date | Notes |
 |---|---|---|
 | v1 | 2026-05-20 | Publication initiale. |
+| v1.1 | 2026-07-18 | Ajout de la Section 1.4 « Traitement par IA et fournisseur d'IA tiers » — divulgation en langage clair de la dépendance à Anthropic, flux de consentement explicite dans l'application et révocation via Paramètres → Confidentialité. Section 4 existante (conditions détaillées de traitement par IA) inchangée. |

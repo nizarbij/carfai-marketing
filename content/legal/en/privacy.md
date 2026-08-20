@@ -1,7 +1,7 @@
 # CarFai Privacy Policy
 
 **Effective date**: 2026-05-20
-**Last updated**: 2026-05-20
+**Last updated**: 2026-07-18
 
 This Privacy Policy describes how **CarFai** ("CarFai", "we", "us", "our") collects, uses, shares, and protects information when you use the CarFai mobile application and any related services (collectively, the "Service").
 
@@ -33,6 +33,33 @@ By using the Service you agree to the collection and use of information in accor
 - We do **not** access your phone's microphone or contacts.
 - We do **not** read your SMS, email, or messaging apps.
 - We do **not** use the Android Advertising ID (`AD_ID`); the permission is explicitly blocked.
+
+### 1.4 AI Processing & Third-Party AI Provider
+
+CarFai relies on **Anthropic, PBC** (developer of the Claude family of AI models) as a third-party AI provider to power two user-facing features:
+
+- **Document scanning** — extracting the amount, date, vendor, and category from images of documents (receipts, invoices, registrations) that you photograph or upload.
+- **AI Advisor** — answering questions you ask about your vehicle (maintenance guidance, cost analysis, general vehicle questions).
+
+**Data sent to Anthropic**:
+- The images and text of documents you scan or upload.
+- Your vehicle details (make, model, year, mileage, expenses, and other fields you have entered).
+- The questions and messages you send to the AI Advisor.
+
+**How this data is collected**: from documents you photograph or upload inside the app, and from information you enter about your vehicle.
+
+**How Anthropic uses the data**: solely to provide the requested AI response — namely, to (a) extract fields from your documents, (b) generate maintenance and cost guidance, and (c) answer your questions.
+
+**Contractual and processing terms**:
+- Anthropic processes your data under a data-processing agreement (Anthropic's Commercial Customer Terms) whose protections are equivalent to CarFai's own commitments in this Policy.
+- Anthropic **does not use your data to train its models**.
+- Data is **encrypted in transit** between the CarFai app and Anthropic's servers (TLS 1.2+).
+
+**Your consent and control**:
+- You must give **explicit in-app consent** before any data is sent to Anthropic.
+- You can **revoke that consent at any time** in **Settings → Privacy**. Revoking consent disables the AI-powered features listed above.
+
+For the full technical detail on what CarFai sends to Anthropic per request, retention specifics, and how AI features draw on your own data vs anonymous community benchmarks vs public web content, see **Section 4 — AI processing — special disclosure**.
 
 ## 2. How we use information
 
@@ -217,3 +244,4 @@ We may update this Policy from time to time. The "Last updated" date at the top 
 | Version | Date | Notes |
 |---|---|---|
 | v1 | 2026-05-20 | Initial publication. |
+| v1.1 | 2026-07-18 | Added Section 1.4 "AI Processing & Third-Party AI Provider" — plain-language disclosure of Anthropic dependency, explicit in-app consent flow, and revocation via Settings → Privacy. Existing Section 4 (detailed AI processing terms) unchanged. |
