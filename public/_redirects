@@ -5,11 +5,49 @@
 # Both www.carfai.app and carfai.app resolve to the same Cloudflare Pages
 # project. Without this rule Google indexes both variants and treats them as
 # duplicate content, splitting ranking signal. Force the apex as canonical.
-# Order matters — must precede the locale-root rule below so the www request
+# Order matters — must precede the locale rules below so the www request
 # isn't first 302'd to /en on the wrong host.
 https://www.carfai.app/*    https://carfai.app/:splat    301!
 
 # ── Root → default locale ───────────────────────────────────────────────────
-# Static export with localePrefix: 'as-needed' generates /en, /fr, /es, /ar
-# but no index.html at /, so visitors hitting the apex URL would 404.
+# The static export generates /en, /fr, /es, /ar but no index.html at /, so
+# visitors hitting the apex URL would 404.
 /    /en    302
+
+# ── Unprefixed routes → /en/* ───────────────────────────────────────────────
+# `i18n/routing.ts` uses localePrefix: 'always', so the export contains ONLY
+# /en/privacy, /fr/privacy, … and nothing at /privacy. Anything that was
+# shared or registered as an unprefixed URL 404s without these rules.
+#
+# This is not cosmetic. These URLs are filed with third parties that check
+# them:
+#   /privacy           → Play Console Data Safety + App Store Connect privacy
+#   /account-deletion  → Play's 2024 account-deletion requirement
+#   /terms             → store listings, EULA references
+# A 404 on any of them is a store-policy problem, not just a broken link.
+#
+# Enumerated explicitly rather than using a `/*` catch-all: a splat would also
+# swallow /fr/*, /es/*, /ar/* and trap non-English visitors on the English
+# tree. Explicit rules cannot misfire that way.
+#
+# 302 (not 301) on purpose — the prefix strategy has already flipped once
+# ('as-needed' → 'always'). 301s are cached hard by browsers and would be
+# painful to walk back. The canonical tags in the page <head> already tell
+# search engines which URL is authoritative, so the SEO cost of 302 here is
+# negligible. Revisit once the prefix strategy has been stable for a while.
+
+# Marketing + product routes
+/pricing             /en/pricing             302
+/support             /en/support             302
+/contact             /en/contact             302
+/press               /en/press               302
+/account-deletion    /en/account-deletion    302
+
+# Legal routes (must match LEGAL_PAGES in app/[locale]/legal/_data/pages.ts)
+/privacy             /en/privacy             302
+/terms               /en/terms               302
+/eula                /en/eula                302
+/ai-disclosure       /en/ai-disclosure       302
+/cookies             /en/cookies             302
+/dpa                 /en/dpa                 302
+/aup                 /en/aup                 302
