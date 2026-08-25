@@ -101,7 +101,7 @@ Written (Phase 0 + Phase 1, 2026-08-23):
 
 Not yet written — write each when its phase is actually reached, not before:
 
-- ⬜ `references/content-system.md` — **Phase 2.** Content pillars, hook library, script templates, caption formulas, Facebook Group rules.
+- ✅ `references/content-system.md` — 4 content pillars, hook library, 4 script templates, caption formulas per platform, Facebook Group rules
 - ⬜ `references/growth-and-metrics.md` — **Phase 4.** Cold-start tactics, KPIs, iteration loop. Writing this before there is data to analyze produces fiction.
 
 Generated assets:
