@@ -35,8 +35,7 @@
     "appleLabel": "App Store",
     "googleSub": "Disponible en",
     "googleLabel": "Google Play",
-    "scanHint": "Escanea el QR o toca para abrir.",
-    "launchingCaption": "Lanzamiento verano 2026"
+    "scanHint": "Escanea el QR o toca para abrir."
   },
   "Hero": {
     "eyebrow": "Para conductores · para flotas",
@@ -233,11 +232,11 @@
     "sectionTitle": "Vistas previas de Play Store",
     "sectionIntro": "Seis tomas que recorren el producto en el mismo orden que la ficha de Play Store — inicio, captura, asesor, flota, OBD2, gastos.",
     "contactCta": "¿Necesitas otra cosa? carfai.info@gmail.com",
-    "captionHero":     "Inicio — La memoria de tu auto, reinventada",
-    "captionCapture":  "Captura — Foto. Extrae. Listo.",
-    "captionAdvisor":  "Asesor — Pregúntale a tu auto lo que sea",
-    "captionFleet":    "Flota — Gestiona tu flota con confianza",
-    "captionObd2":     "OBD2 — Conecta. Diagnostica. Conduce mejor.",
+    "captionHero": "Inicio — La memoria de tu auto, reinventada",
+    "captionCapture": "Captura — Foto. Extrae. Listo.",
+    "captionAdvisor": "Asesor — Pregúntale a tu auto lo que sea",
+    "captionFleet": "Flota — Gestiona tu flota con confianza",
+    "captionObd2": "OBD2 — Conecta. Diagnostica. Conduce mejor.",
     "captionSpending": "Gastos — Cada vehículo. Cada recibo. Una sola app."
   },
   "ContactPage": {

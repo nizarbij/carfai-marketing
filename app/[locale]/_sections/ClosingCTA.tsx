@@ -57,7 +57,11 @@ export function ClosingCTA() {
   );
 
   return (
-    <section ref={sectionRef} className="border-t border-rule bg-ink text-paper">
+    // id="install" is the target of PRIMARY_INSTALL_URL once both stores are
+    // live — every "Start free" / tier CTA scrolls here so the visitor picks
+    // their own platform from the badge cards below. Renaming this id breaks
+    // every install CTA on the site; see app/[locale]/_lib/install-urls.ts.
+    <section id="install" ref={sectionRef} className="border-t border-rule bg-ink text-paper">
       <div className="mx-auto max-w-6xl px-6 py-32 md:py-48 text-center">
         <SectionIndex number={9} label={t('eyebrow')} surface="dark" align="center" className="mb-10 md:mb-14" />
 

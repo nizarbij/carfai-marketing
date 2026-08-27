@@ -13,7 +13,7 @@ Claude cannot log into platforms or publish. What this skill produces is a **rea
 
 CARFAI (Car Financial and Administrative Intelligence) is a React Native/Expo app for vehicle document management and fleet intelligence. Positioning line: **"A second opinion for your car."** Signoff: **"Drive smarter."** Both are shipped strings — the site h1 and the wordmark tagline respectively. Spoken as **"car-FYE"**. Solo-founded, built with Claude Code, Supabase, and the Claude API. Two audiences: gig-economy drivers (B2C) and fleet managers (B2B). Pre-revenue as of launch — this constrains what claims are honest. See `references/brand-and-voice.md`.
 
-**Live status (2026-08-23)**: Google Play **live** (`com.carfai.app`). Apple App Store **still in review** — no iOS link, no clickable App Store badge, until it clears.
+**Live status (2026-08-27)**: **Both stores live.** Google Play (`com.carfai.app`) and Apple App Store (`https://apps.apple.com/app/id6767415867`). CTAs may now point at either store, or at `carfai.app` which routes per device.
 
 ## Phase map
 

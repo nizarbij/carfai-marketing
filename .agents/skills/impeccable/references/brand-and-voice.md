@@ -115,20 +115,18 @@ If a brief asks for a testimonial video, counter with the founder-story or the l
 
 ---
 
-## What's actually live (as of 2026-07-18)
+## What's actually live (as of 2026-08-27)
 
 Everything a CTA can point to must be true on the day it posts.
 
 | Surface | Status | Link |
 |---|---|---|
 | Google Play | ✅ **Live** | `https://play.google.com/store/apps/details?id=com.carfai.app` |
-| Apple App Store | ⏳ In review | No link. Do not write "available on iOS" or show an App Store badge as clickable. |
+| Apple App Store | ✅ **Live** | `https://apps.apple.com/app/id6767415867` |
 | Website | ✅ Live, 4 locales | `https://carfai.app` |
 | Press kit | ✅ Live | `https://carfai.app/press` |
 
-**Until Apple approves**: every link-out goes to Play or to `carfai.app`. If a video shows an iPhone (the store screenshots do), the CTA still says Google Play or "link in bio" — never "download on the App Store".
-
-When iOS goes live, update this table, `assets/profile-copy.md`, and `app/[locale]/_lib/install-urls.ts` in the same pass.
+**Both stores are live**, so "download on the App Store" and "get it on Google Play" are both true claims now. Prefer pointing at `carfai.app` in copy where one link has to serve everyone — the site routes per device and is already localized.
 
 ---
 

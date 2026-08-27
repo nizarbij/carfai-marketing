@@ -185,9 +185,9 @@ All are square with **no rounded corners baked in** — every platform applies i
 
 ## Link strategy
 
-**Now (Play live, iOS in review)** — link goes straight to the Play Store on the TikTok accounts, and to `carfai.app` on Instagram/Facebook. No link-in-bio aggregator yet; one hop is better than two.
+**Both stores live since 2026-08-27.** Every bio link should now point at **`carfai.app`** (or `carfai.app/{locale}`), not at a single store. The site detects the visitor's device and shows the right badge, so one link serves iPhone and Android users, and the traffic lands on a property you own.
 
-**When iOS approves** — switch all links to `carfai.app` (or `carfai.app/{locale}`). The site's store badges already handle store routing per platform, and `install-urls.ts` makes it a one-line change. That's better than an aggregator because it keeps the traffic on a property you own and it's already localized.
+Update the TikTok bio link — it was pointing straight at Google Play while iOS was pending, which now sends iPhone users to the wrong store.
 
 Do not add a Linktree. It adds a hop, it's a third-party dependency, and `carfai.app` already does the job better.
 

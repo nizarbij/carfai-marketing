@@ -26,9 +26,11 @@ import { fileURLToPath } from 'node:url';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, '..');
 
-// TODO at launch: replace with the real store URLs.
+// Both stores live as of 2026-08-27. Keep in sync with
+// app/[locale]/_lib/install-urls.ts — a QR encoding a stale URL is worse than
+// no QR, because nothing on the page reveals that it's broken.
 const URLS = {
-  apple:  'https://apps.apple.com/app/carfai/id0000000000',
+  apple:  'https://apps.apple.com/app/id6767415867',
   google: 'https://play.google.com/store/apps/details?id=com.carfai.app',
 };
 

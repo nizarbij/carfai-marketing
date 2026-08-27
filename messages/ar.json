@@ -35,8 +35,7 @@
     "appleLabel": "App Store",
     "googleSub": "احصل عليه من",
     "googleLabel": "Google Play",
-    "scanHint": "امسح رمز QR أو انقر للفتح.",
-    "launchingCaption": "الإطلاق في صيف 2026"
+    "scanHint": "امسح رمز QR أو انقر للفتح."
   },
   "Hero": {
     "eyebrow": "للسائقين · للأساطيل",
@@ -233,11 +232,11 @@
     "sectionTitle": "معاينات Play Store",
     "sectionIntro": "ست لقطات تستعرض المنتج بالترتيب نفسه الذي تتبعه صفحة Play Store — الرئيسية، المسح، المستشار، الأسطول، OBD2، الإنفاق.",
     "contactCta": "هل تحتاج شيئًا آخر؟ carfai.info@gmail.com",
-    "captionHero":     "الرئيسية — ذاكرة سيارتك، من جديد",
-    "captionCapture":  "المسح — صَوِّر. استخرج. تم.",
-    "captionAdvisor":  "المستشار — اسأل سيارتك أي شيء",
-    "captionFleet":    "الأسطول — أدِر أسطولك بثقة",
-    "captionObd2":     "OBD2 — اتصل. شخِّص. قُد بذكاء.",
+    "captionHero": "الرئيسية — ذاكرة سيارتك، من جديد",
+    "captionCapture": "المسح — صَوِّر. استخرج. تم.",
+    "captionAdvisor": "المستشار — اسأل سيارتك أي شيء",
+    "captionFleet": "الأسطول — أدِر أسطولك بثقة",
+    "captionObd2": "OBD2 — اتصل. شخِّص. قُد بذكاء.",
     "captionSpending": "الإنفاق — كل مركبة. كل إيصال. تطبيق واحد."
   },
   "ContactPage": {

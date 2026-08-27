@@ -7,9 +7,14 @@
 > real app UI. Nothing is invented. Where a figure is illustrative it's framed in
 > second person as a hypothetical, never as someone's result.
 >
-> **Link state**: TikTok/Instagram bio links are still locked (new-account
-> restriction). Every CTA below says the URL out loud and on screen instead of
-> "link in bio". Switch to "link in bio" once the fields unlock.
+> **Link state (updated 2026-08-27)**: both stores are now live. Every CTA points
+> at `carfai.app`, which detects the device and shows the right store — so one
+> link serves iPhone and Android. Do **not** hard-code a single store link in a
+> caption any more; it sends half the audience to the wrong place.
+>
+> The TikTok/Instagram bio link fields may still be locked by the new-account
+> restriction, which is why CTAs say the URL out loud and on screen rather than
+> "link in bio". Switch to "link in bio" once those fields unlock.
 
 ---
 
@@ -334,7 +339,7 @@ https://carfai.app
 14–26s  The build wasn't the hard part. The store submission was — privacy
         forms, data safety declarations, screenshots at exact pixel sizes
         that get rejected if you're off by six.
-26–34s  It's live on Android now. iOS is still in review.
+26–34s  It is live on both stores now.
 34–38s  If you've been sitting on something, the submission is survivable.
         Just start earlier than you think you need to.
 ```
@@ -372,7 +377,7 @@ It scans receipts, reads OBD2 fault codes, and answers questions about your spec
 
 The build wasn't the hard part. The store submission was — privacy declarations, data safety forms, screenshots that get rejected for being six pixels off.
 
-Live on Google Play. iOS still in review.
+Live on Google Play and the App Store.
 
 carfai.app
 
@@ -387,7 +392,7 @@ It scans vehicle receipts and extracts the amounts automatically, reads OBD2 fau
 
 The engineering wasn't the difficult part. Store submission was: privacy policy requirements, data safety declarations, screenshot dimensions that fail validation over a few pixels, and review cycles that each cost days.
 
-It's live on Google Play now. iOS is still in review.
+It is live on Google Play and the App Store.
 
 If you're sitting on something unshipped: the submission process is survivable, but start it earlier than you think you need to.
 
