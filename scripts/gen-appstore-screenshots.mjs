@@ -81,17 +81,17 @@ const PANELS = [
     sub: 'Documents, spending and service history — tracked automatically.',
   },
   {
-    // ⚠️ PENDING AN iOS CAPTURE.
-    // public/app-scan.jpg exists but is an ANDROID screenshot — its
-    // three-button navigation bar is visible at the bottom. Shipping an
-    // Android capture in an App Store listing is a rejection risk, so this
-    // panel is skipped until an iPhone capture of the same screen exists.
-    // Capture: open the app on the iPhone → camera tab → photograph a
-    // receipt → screenshot the "Analyzing document…" state.
+    // The scan story told through its RESULT, not the act of scanning.
+    // IMG_9674 is a genuine iOS capture of the camera screen, but it's an
+    // empty black viewfinder with a "18/50 documents used — Upgrade" nag in
+    // it: visually dead inside a device frame, and it points the eye at a
+    // usage limit on the second panel a shopper sees. IMG_9673 shows 16
+    // documents auto-sorted into 7 categories, which is the evidence for
+    // the claim the headline makes.
     id: '02_scan',
-    src: join(IOS, 'scan-ios.png'),
-    headline: 'Snap a receipt.\nSkip the typing.',
-    sub: 'AI reads the amount, vendor, date and category for you.',
+    src: join(IOS, 'IMG_9673.PNG'),
+    headline: 'Snap a receipt.\nIt files itself.',
+    sub: 'AI reads the amount, vendor and date — then sorts it by category.',
   },
   {
     id: '03_advisor',
@@ -100,12 +100,16 @@ const PANELS = [
     sub: 'Answers from your own service history — not generic web results.',
   },
   {
-    // ⚠️ PENDING AN iOS CAPTURE — public/app-obd2.jpg is an Android screenshot.
-    // Capture: iPhone → OBD2 dashboard with the fault-code card visible.
-    id: '04_obd2',
-    src: join(IOS, 'obd2-ios.png'),
-    headline: 'Check engine light,\nexplained.',
-    sub: 'Plug in any OBD2 adapter for fault codes in plain language.',
+    // Predictive maintenance — a real differentiator, and the strongest
+    // screen left in the set. Took the OBD2 panel's slot because there is
+    // still no iOS capture of the OBD2 dashboard (public/app-obd2.jpg is
+    // Android). To run both: capture the OBD2 screen on the iPhone, save it
+    // as output/ios-rounded/obd2-ios.png, and re-add a panel — Apple allows
+    // up to 10 screenshots, so nothing has to be dropped for it.
+    id: '04_maintenance',
+    src: join(IOS, 'IMG_9675.PNG'),
+    headline: 'Know what breaks\nbefore it does.',
+    sub: 'An AI maintenance calendar built from your own service records.',
   },
   {
     id: '05_spending',
