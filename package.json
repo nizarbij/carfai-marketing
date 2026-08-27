@@ -16,6 +16,7 @@
     "gen:tiktok": "node scripts/generate-tiktok.mjs",
     "gen:social": "node scripts/gen-social-avatars.mjs",
     "gen:store": "node scripts/gen-store-screenshots.mjs",
+    "gen:appstore": "node scripts/gen-appstore-screenshots.mjs",
     "gen:play": "node scripts/gen-play-graphics.mjs",
     "gen:qr": "node scripts/generate-qr.mjs",
     "gen:logo": "node scripts/trim-logo.mjs",
