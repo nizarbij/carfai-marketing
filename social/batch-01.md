@@ -1,5 +1,19 @@
 # CarFai — content batch 01
 
+> ⚠️ **SUPERSEDED 2026-08-29 by `social/production-guide.md`.**
+>
+> This file assumed shots filmed by hand — receipts placed on tables, an OBD2
+> adapter plugged in on camera, and CF-005 shot to camera. Founder direction is
+> that nothing gets filmed: content is screen recordings plus Veo-generated
+> clips only.
+>
+> The production guide carries the same concepts rewritten as **Veo prompts**,
+> so almost nothing here was wasted — only CF-005 (founder to camera) is
+> dropped outright.
+>
+> Kept for the captions, which are still current and still good.
+
+
 > First posting week. Produced 2026-08-23 · Phase 3.
 > Format per the output contract in `.agents/skills/impeccable/agents/carfai-social.md`.
 >
