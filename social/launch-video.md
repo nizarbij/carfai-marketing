@@ -33,7 +33,7 @@ using Veo for **one** shot and anchoring everything else to real assets.
 | Asset | Path | Status |
 |---|---|---|
 | Shoebox avalanche clip | `output/geminai-local/c_f_b_d_b_c_a_cmp_.mp4` | ✅ reuse as the hook |
-| 6 video frames, 1080×1920 | `output/appstore/video/*.png` | ✅ `npm run gen:appstore` |
+| 6 video frames, 1080×1920 | `output/appstore/en/video/*.png` | ✅ `npm run gen:appstore` |
 | Store badges | `public/store-apple.png`, `public/store-google.png` | ✅ |
 | Outro generator | `social/carfai-outro.html` | ✅ tagline already "Drive smarter." |
 | Closing shot | — | ⬜ **the one Veo generation** |
@@ -46,11 +46,11 @@ using Veo for **one** shot and anchoring everything else to real assets.
 |---|---|---|---|
 | 1 | 0.0–3.5 | Receipts avalanche — the problem | existing mp4 |
 | 2 | 3.5–6.0 | Title card: "There's a better way." | CapCut text |
-| 3 | 6.0–9.0 | Home screen | `video/01_home.png` |
-| 4 | 9.0–12.0 | Scan → filed automatically | `video/02_scan.png` |
-| 5 | 12.0–15.0 | AI Advisor | `video/03_advisor.png` |
-| 6 | 15.0–18.0 | Maintenance calendar | `video/04_maintenance.png` |
-| 7 | 18.0–20.5 | Spending analytics | `video/05_spending.png` |
+| 3 | 6.0–9.0 | Home screen | `en/video/01_home.png` |
+| 4 | 9.0–12.0 | Scan → filed automatically | `en/video/02_scan.png` |
+| 5 | 12.0–15.0 | AI Advisor | `en/video/03_advisor.png` |
+| 6 | 15.0–18.0 | Maintenance calendar | `en/video/04_maintenance.png` |
+| 7 | 18.0–20.5 | Spending analytics | `en/video/05_spending.png` |
 | 8 | 20.5–25.5 | **"Now available"** + both badges | CapCut |
 | 9 | 25.5–28.0 | Closing live-action shot | **Veo** |
 | 10 | 28.0–30.0 | Outro sting | `carfai-outro.html` |
@@ -80,7 +80,7 @@ Inter Medium, 76px, `#FAFAF7`. Fades in over 0.3s, holds, cuts.
 
 ### 3–7 · 6.0–20.5 — The app
 
-Five frames from `output/appstore/video/`. Each gets **~3 s** with a slow
+Five frames from `output/appstore/en/video/`. Each gets **~3 s** with a slow
 Ken Burns: scale 100% → 106%, no pan. Hard cuts between them, no dissolves —
 dissolves read as slow on short-form.
 
@@ -127,7 +127,7 @@ Run this in **Gemini Pro's interface**, not the API. The interface holds
 consistency far better, and it's inside the subscription you already pay for
 (the API path cost ~$5 for unusable output).
 
-Give it **`output/appstore/video/01_home.png` as a reference image** so the
+Give it **`output/appstore/en/video/01_home.png` as a reference image** so the
 phone and the app's look carry over.
 
 ```

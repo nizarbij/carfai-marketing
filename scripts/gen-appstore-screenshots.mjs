@@ -5,16 +5,15 @@
  * on a CarFai-gradient background with a headline, in the style App Store
  * listings actually use (cf. CARFAX, Mint, YNAB).
  *
- *   npm run gen:appstore
+ *   npm run gen:appstore                  # all locales
+ *   npm run gen:appstore -- --locale fr   # one locale
  *
- * OUTPUT → output/appstore/
- *   6.5/01_home.png … 06_fleet.png     1242 × 2688   (iPhone 11 Pro Max / XS Max slot)
- *   6.9/01_home.png … 06_fleet.png     1290 × 2796   (iPhone 16 Pro Max slot)
- *
- * WHY TWO SIZES
- *   ASC validates uploads against exact per-slot dimensions and rejects
- *   anything else. 1242×2688 is the size already accepted for this listing;
- *   1290×2796 covers the 6.9" slot. Generating both avoids a re-run.
+ * OUTPUT → output/appstore/<locale>/<slot>/
+ *   6.5/    1242 × 2688   iPhone 6.5" slot (already accepted for this listing)
+ *   6.9/    1290 × 2796   iPhone 6.9" slot
+ *   video/  1080 × 1920   9:16 frames for the launch video (see
+ *                         social/launch-video.md) — the store slots are 0.462
+ *                         aspect and letterbox badly in a video timeline
  *
  * APP STORE COMPLIANCE
  *   Apple permits marketing screenshots with text, backgrounds and device
@@ -31,16 +30,14 @@
  *   All captures must be genuine iOS screenshots. output/ios-rounded/ holds
  *   real iPhone captures at 1170×2532.
  *
- *   Currently generating 4 of 6 panels. Scan and OBD2 are skipped: the only
- *   captures of those screens (public/app-scan.jpg, public/app-obd2.jpg) were
- *   taken on ANDROID — their three-button navigation bar is visible — and an
- *   Android capture in an App Store listing is a rejection risk. Drop iPhone
- *   captures at output/ios-rounded/scan-ios.png and obd2-ios.png and re-run to
- *   get all six.
+ *   Excluded on purpose: the old Documents capture (near-empty, reads as an
+ *   app with no content), all three pricing screens (one is in French, and
+ *   leading a listing with a paywall converts badly), and the camera-view
+ *   capture (an empty black viewfinder carrying an upgrade nag).
  *
- *   Excluded on purpose: the Documents screen (near-empty, reads as an app with
- *   no content) and all three pricing screens (one is in French, and leading a
- *   store listing with a paywall converts badly).
+ *   Still missing: an iOS capture of the OBD2 dashboard. public/app-obd2.jpg
+ *   is an ANDROID screenshot — its three-button nav bar is visible — and an
+ *   Android capture in an App Store listing is a rejection risk.
  * ─────────────────────────────────────────────────────────────────────────────
  */
 
@@ -65,70 +62,77 @@ const SANS = "Inter, 'Segoe UI', system-ui, -apple-system, sans-serif";
 
 /* ─── Slots ──────────────────────────────────────────────────────────────── */
 const SLOTS = [
-  { id: '6.5', width: 1242, height: 2688 },
-  { id: '6.9', width: 1290, height: 2796 },
-  // Video frames. 9:16 (0.5625) is noticeably wider than the store slots
-  // (0.462), so store exports letterbox badly in a video timeline. Same
-  // composition, re-laid out for the video frame — drop straight into CapCut
-  // and Ken Burns them. See social/launch-video.md.
+  { id: '6.5',   width: 1242, height: 2688 },
+  { id: '6.9',   width: 1290, height: 2796 },
   { id: 'video', width: 1080, height: 1920 },
 ];
 
-/* ─── Panels ─────────────────────────────────────────────────────────────── */
+/* ─── Panels — structure only; copy lives in COPY below ──────────────────── */
 const IOS = join(ROOT, 'output', 'ios-rounded');
-const PUB = join(ROOT, 'public');
 
 const PANELS = [
-  {
-    id: '01_home',
-    src: join(IOS, 'IMG_9138.png'),
-    headline: 'Every car cost,\nin one place.',
-    sub: 'Documents, spending and service history — tracked automatically.',
-  },
-  {
-    // The scan story told through its RESULT, not the act of scanning.
-    // IMG_9674 is a genuine iOS capture of the camera screen, but it's an
-    // empty black viewfinder with a "18/50 documents used — Upgrade" nag in
-    // it: visually dead inside a device frame, and it points the eye at a
-    // usage limit on the second panel a shopper sees. IMG_9673 shows 16
-    // documents auto-sorted into 7 categories, which is the evidence for
-    // the claim the headline makes.
-    id: '02_scan',
-    src: join(IOS, 'IMG_9673.PNG'),
-    headline: 'Snap a receipt.\nIt files itself.',
-    sub: 'AI reads the amount, vendor and date — then sorts it by category.',
-  },
-  {
-    id: '03_advisor',
-    src: join(IOS, 'IMG_9142.png'),
-    headline: 'Ask anything\nabout your car.',
-    sub: 'Answers from your own service history — not generic web results.',
-  },
-  {
-    // Predictive maintenance — a real differentiator, and the strongest
-    // screen left in the set. Took the OBD2 panel's slot because there is
-    // still no iOS capture of the OBD2 dashboard (public/app-obd2.jpg is
-    // Android). To run both: capture the OBD2 screen on the iPhone, save it
-    // as output/ios-rounded/obd2-ios.png, and re-add a panel — Apple allows
-    // up to 10 screenshots, so nothing has to be dropped for it.
-    id: '04_maintenance',
-    src: join(IOS, 'IMG_9675.PNG'),
-    headline: 'Know what breaks\nbefore it does.',
-    sub: 'An AI maintenance calendar built from your own service records.',
-  },
-  {
-    id: '05_spending',
-    src: join(IOS, 'IMG_9141.png'),
-    headline: 'See what your car\nreally costs.',
-    sub: 'Monthly totals, category breakdowns and spending trends.',
-  },
-  {
-    id: '06_fleet',
-    src: join(IOS, 'IMG_9140.png'),
-    headline: 'From one car\nto a whole fleet.',
-    sub: 'Team roles, driver assignment and org-wide analytics.',
-  },
+  { id: '01_home',        src: join(IOS, 'IMG_9138.png') },
+  // The scan story told through its RESULT rather than the act. IMG_9673
+  // shows 16 documents auto-sorted into 7 categories, which is the evidence
+  // the headline claims — an empty camera viewfinder proves nothing.
+  { id: '02_scan',        src: join(IOS, 'IMG_9673.PNG') },
+  { id: '03_advisor',     src: join(IOS, 'IMG_9142.png') },
+  // Predictive maintenance took the OBD2 slot; see SOURCE SELECTION above.
+  { id: '04_maintenance', src: join(IOS, 'IMG_9675.PNG') },
+  { id: '05_spending',    src: join(IOS, 'IMG_9141.png') },
+  { id: '06_fleet',       src: join(IOS, 'IMG_9140.png') },
 ];
+
+/* ─── Copy per locale ─────────────────────────────────────────────────────────
+ * French terminology follows the live site's messages/fr.json so the listing
+ * and carfai.app read as one product — "le conseiller", "la flotte", "frais"
+ * rather than freshly-invented synonyms.
+ *
+ * ⚠️  The captures are ENGLISH UI. A French listing showing an English app is
+ * a visible quality gap, though not a rejection reason. The app ships French,
+ * so the proper fix is re-capturing the six screens with the app set to French
+ * and pointing SRC_OVERRIDES at them — no other change needed.
+ *
+ * French runs ~15-20% longer than English, so the headlines are kept short on
+ * purpose; the layout wraps fine but long lines flatten the visual hierarchy.
+ * ───────────────────────────────────────────────────────────────────────────*/
+const COPY = {
+  en: {
+    '01_home':        { headline: 'Every car cost,\nin one place.',    sub: 'Documents, spending and service history — tracked automatically.' },
+    '02_scan':        { headline: 'Snap a receipt.\nIt files itself.', sub: 'AI reads the amount, vendor and date — then sorts it by category.' },
+    '03_advisor':     { headline: 'Ask anything\nabout your car.',     sub: 'Answers from your own service history — not generic web results.' },
+    '04_maintenance': { headline: 'Know what breaks\nbefore it does.', sub: 'An AI maintenance calendar built from your own service records.' },
+    '05_spending':    { headline: 'See what your car\nreally costs.',  sub: 'Monthly totals, category breakdowns and spending trends.' },
+    '06_fleet':       { headline: 'From one car\nto a whole fleet.',   sub: 'Team roles, driver assignment and org-wide analytics.' },
+  },
+  // Headlines must fit TWO lines. Every slot wraps at 19 characters per line
+  // (the widths differ but the type scale is proportional, so the character
+  // budget lands identically on all three). French runs long, so three of
+  // these are deliberately shorter than a literal translation would be — a
+  // three-line headline pushes the device down and flattens the hierarchy.
+  // Verify with: node -e "…wrap(headline, 19)" before changing any of them.
+  fr: {
+    '01_home':        { headline: 'Vos frais auto,\nau même endroit.',        sub: "Documents, dépenses et historique d'entretien — suivis automatiquement." },
+    '02_scan':        { headline: 'Scannez un reçu.\nIl se classe seul.',     sub: "L'IA lit le montant, le marchand et la date, puis range par catégorie." },
+    '03_advisor':     { headline: 'Demandez tout\nsur votre voiture.',        sub: 'Des réponses tirées de votre historique, pas du web générique.' },
+    '04_maintenance': { headline: 'Sachez ce qui lâche\navant que ça lâche.', sub: "Un calendrier d'entretien par IA, bâti sur vos propres factures." },
+    '05_spending':    { headline: 'Le vrai coût\nde votre voiture.',          sub: 'Totaux mensuels, répartition par catégorie et tendances.' },
+    '06_fleet':       { headline: "D'une voiture\nà toute une flotte.",       sub: "Rôles d'équipe, affectation des conducteurs et analyses d'organisation." },
+  },
+};
+
+/**
+ * Per-locale capture overrides. Empty means "reuse the English captures".
+ * Once French screen captures exist, add e.g.
+ *   fr: { '01_home': join(IOS, 'fr', 'IMG_xxxx.PNG'), … }
+ * and the French set picks them up with nothing else to change.
+ */
+const SRC_OVERRIDES = { fr: {} };
+
+const localeFlag = process.argv.indexOf('--locale');
+const LOCALES = localeFlag >= 0 && process.argv[localeFlag + 1]
+  ? [process.argv[localeFlag + 1]]
+  : Object.keys(COPY);
 
 /* ─── Helpers ────────────────────────────────────────────────────────────── */
 
@@ -162,7 +166,6 @@ async function buildDevice(srcPath, innerW) {
   const outerW = innerW + bezel * 2;
   const outerH = innerH + bezel * 2;
 
-  // Round the capture's own corners so it sits flush inside the bezel.
   const innerRadius = Math.max(2, radius - bezel);
   const mask = Buffer.from(
     `<svg xmlns="http://www.w3.org/2000/svg" width="${innerW}" height="${innerH}">` +
@@ -194,20 +197,23 @@ async function buildDevice(srcPath, innerW) {
 
 /* ─── Compose one panel ──────────────────────────────────────────────────── */
 
-async function compose(slot, panel, index) {
+async function compose(locale, slot, panel, index) {
   const { width: W, height: H } = slot;
 
-  if (!existsSync(panel.src)) return null;  // caller reports it as skipped
+  const copy = COPY[locale][panel.id];
+  const src  = (SRC_OVERRIDES[locale] && SRC_OVERRIDES[locale][panel.id]) || panel.src;
+
+  if (!existsSync(src)) return null;   // caller reports it as skipped
 
   const padX = Math.round(W * 0.085);
   const usableW = W - padX * 2;
 
-  // Type scale relative to canvas width so both slots look identical.
+  // Type scale relative to canvas width so every slot looks identical.
   const headSize = Math.round(W * 0.077);
   const subSize  = Math.round(W * 0.0335);
 
-  const headLines = wrap(panel.headline, Math.floor(usableW / (headSize * 0.55)));
-  const subLines  = wrap(panel.sub,      Math.floor(usableW / (subSize  * 0.52)));
+  const headLines = wrap(copy.headline, Math.floor(usableW / (headSize * 0.55)));
+  const subLines  = wrap(copy.sub,      Math.floor(usableW / (subSize  * 0.52)));
 
   const headTop = Math.round(H * 0.062) + headSize;
   const headLH  = Math.round(headSize * 1.12);
@@ -215,14 +221,13 @@ async function compose(slot, panel, index) {
   const subLH   = Math.round(subSize * 1.38);
   const textBottom = subTop + (subLines.length - 1) * subLH;
 
-  // Device: centred, bleeding a little past the bottom edge so it reads as
-  // larger than the frame — the standard trick in store listings.
+  // Device bleeds a little past the bottom edge so it reads as larger than
+  // the frame — the standard trick in store listings.
   const deviceW = Math.round(W * 0.72);
-  const device  = await buildDevice(panel.src, deviceW);
-  const deviceX = Math.round((W - device.outerW) / 2);
+  const device  = await buildDevice(src, deviceW);
   const deviceY = Math.round(textBottom + H * 0.055);
 
-  // Alternate a slight tilt so the set has rhythm when seen as a row.
+  // Alternate a slight tilt so the set has rhythm seen as a row.
   const tilt = index % 2 === 0 ? -1.2 : 1.2;
   const rotated = await sharp(device.buf)
     .rotate(tilt, { background: { r: 0, g: 0, b: 0, alpha: 0 } })
@@ -258,7 +263,7 @@ async function compose(slot, panel, index) {
     </text>
   </svg>`);
 
-  const outDir = join(OUT, slot.id);
+  const outDir = join(OUT, locale, slot.id);
   mkdirSync(outDir, { recursive: true });
   const outFile = join(outDir, `${panel.id}.png`);
 
@@ -274,18 +279,22 @@ async function compose(slot, panel, index) {
 
 console.log(`\n  CarFai — App Store screenshots\n`);
 
-for (const slot of SLOTS) {
-  console.log(`  [${slot.id}"]  ${slot.width} × ${slot.height}`);
-  for (let i = 0; i < PANELS.length; i++) {
-    const f = await compose(slot, PANELS[i], i);
-    if (!f) {
-      console.log(`    ⏭  ${PANELS[i].id.padEnd(14)} skipped — needs an iOS capture at ${PANELS[i].src.replace(ROOT, '.')}`);
-      continue;
+for (const locale of LOCALES) {
+  if (!COPY[locale]) { console.log(`  ✖ unknown locale: ${locale}`); continue; }
+  console.log(`  ══ ${locale.toUpperCase()} ══`);
+  for (const slot of SLOTS) {
+    console.log(`  [${slot.id}]  ${slot.width} × ${slot.height}`);
+    for (let i = 0; i < PANELS.length; i++) {
+      const f = await compose(locale, slot, PANELS[i], i);
+      if (!f) {
+        console.log(`    ⏭  ${PANELS[i].id.padEnd(16)} skipped — missing capture`);
+        continue;
+      }
+      const kb = Math.round(statSync(f).size / 1024);
+      console.log(`    ✓ ${PANELS[i].id.padEnd(16)} ${String(kb).padStart(4)} KB`);
     }
-    const kb = Math.round(statSync(f).size / 1024);
-    console.log(`    ✓ ${PANELS[i].id.padEnd(14)} ${String(kb).padStart(4)} KB`);
+    console.log();
   }
-  console.log();
 }
 
-console.log(`  Done → output/appstore/\n`);
+console.log(`  Done → output/appstore/<locale>/<slot>/\n`);
