@@ -67,6 +67,11 @@ const SANS = "Inter, 'Segoe UI', system-ui, -apple-system, sans-serif";
 const SLOTS = [
   { id: '6.5', width: 1242, height: 2688 },
   { id: '6.9', width: 1290, height: 2796 },
+  // Video frames. 9:16 (0.5625) is noticeably wider than the store slots
+  // (0.462), so store exports letterbox badly in a video timeline. Same
+  // composition, re-laid out for the video frame — drop straight into CapCut
+  // and Ken Burns them. See social/launch-video.md.
+  { id: 'video', width: 1080, height: 1920 },
 ];
 
 /* ─── Panels ─────────────────────────────────────────────────────────────── */
