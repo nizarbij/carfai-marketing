@@ -498,16 +498,30 @@ https://carfai.app
 
 ---
 
-# Your existing "Available now" video
+# The "Available now" video — POSTED Day 1
 
-**Don't post it yet.** It goes at **Day 24**, not day 1.
+Published 2026-08-30 to TikTok, Instagram and Facebook.
 
-A launch announcement on a zero-follower account reaches almost nobody. Posted
-after three weeks of content, it lands on an audience that already knows what
-CarFai is — which is when an availability message actually converts.
+I had scheduled it for Day 24, reasoning that a launch announcement to zero
+followers reaches almost nobody. It went out on Day 1 instead. That is a
+sub-optimal use of the asset, not a harmful one — nothing about it is wrong,
+it simply spent its reach before there was an audience to reach.
 
-If you want to use it sooner: put it in **Instagram Stories** now (Stories reach
-your existing followers, so there's no waste), and keep the feed slot for Day 24.
+**What changes**: the calendar shifts up. The announcement is Day 1; everything
+else follows in order. No piece is lost.
+
+**How to recover the value**:
+
+- **Pin it** on the TikTok profile. New visitors arriving from later videos will
+  see it first, which is the job it was meant to do.
+- **Re-cut it at ~day 25** as a 10-second version with a different hook. Same
+  message, different opening, posted to an audience that now exists. Not a
+  repost — a genuinely different edit.
+- **Keep it in Stories rotation**. Stories reach followers you accumulate later,
+  so it keeps working as the account grows.
+
+**The lesson for next time**: announcements convert on an audience, not into a
+void. Demos and numbers build the audience; announcements harvest it.
 
 ---
 
